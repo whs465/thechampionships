@@ -467,6 +467,10 @@
             </div>
           </div>
         </div>
+        <div class="mt-2 pt-2 text-center text-muted h6">
+          <i class="uil uil-clock-two"></i>Updated
+          <span id="updated"></span>
+        </div>
       </div>
     </section>
 
@@ -1479,12 +1483,26 @@
         if (this.readyState == 4 && this.status == 200) {
           let data = JSON.parse(this.responseText).feed.entry
 
-          let col, i, p, p1, p2, total, flag
+          let col, i, p, p1, p2, total, flag, lastUpdated
+          lastUpdated = true
 
           for (i = 0; i < data.length; i++) {
             let pNumber = data[i]['gsx$_cn6ca']['$t']
 
             if (pNumber !== 'x' && pNumber !== '#') {
+              if (
+                lastUpdated &&
+                typeof data[i]['gsx$_dcgjs']['$t'] !== 'undefined'
+              ) {
+                const date = new Date(data[i]['gsx$_dcgjs']['$t'])
+                document.getElementById('updated').innerHTML =
+                  new Intl.DateTimeFormat('en-GB', {
+                    dateStyle: 'medium',
+                    timeStyle: 'long',
+                  }).format(date)
+
+                lastUpdated = false
+              }
               flag = ''
               if (typeof data[i]['gsx$_d9ney'] === 'undefined') {
                 flag = ''
