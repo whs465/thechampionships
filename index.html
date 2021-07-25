@@ -1152,11 +1152,19 @@
                   <div class="custom-form bg-white">
                     <div id="message"></div>
                     <form
-                      method="post"
-                      action="php/contact.php"
+                      method="POST"
+                      netlify-honeypot="bot-field"
+                      data-netlify="true"
                       name="contact-form"
                       id="contact-form"
                     >
+                      <div aria-hidden="true">
+                        <p class="d-none">
+                          <label
+                            >Don't fill out. <input name="bot-field" />
+                          </label>
+                        </p>
+                      </div>
                       <div class="row">
                         <div class="col-lg-6">
                           <div class="mb-3">
