@@ -52,7 +52,11 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
   </head>
 
-  <body>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar-navlist"
+    data-bs-offset="20"
+  >
     <!-- Loader -->
     <div id="preloader">
       <div id="status">
@@ -64,39 +68,76 @@
     </div>
     <!-- Loader -->
 
-    <!-- Navbar Start -->
-    <!-- <header id="topnav" class="defaultscroll sticky">
+    <!-- Navbar STart -->
+    <header id="topnav" class="defaultscroll">
       <div class="container">
         <!-- Logo container-->
-    <!-- <a class="logo" href="index.html">
-          <span class="logo-light-mode">
-            <img src="images/logo-dark.png" class="l-dark" height="24" alt="" />
+        <div>
+          <a class="logo" href="#">
             <img
-              src="images/logo-light.png"
-              class="l-light"
+              src="images/bg.png"
               height="24"
+              class="logo-light-mode"
               alt=""
             />
-          </span>
-          <img
-            src="images/logo-light.png"
-            height="24"
-            class="logo-dark-mode"
-            alt=""
-          />
-        </a> -->
+          </a>
+        </div>
 
-    <!-- End Logo container-->
+        <!--end login button-->
+        <!-- End Logo container-->
+        <div class="menu-extras">
+          <div class="menu-item">
+            <!-- Mobile menu toggle-->
+            <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+              <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <!-- End mobile menu toggle-->
+          </div>
+        </div>
 
-    <!-- </div> -->
-    <!--end container-->
-    <!-- </header> -->
+        <div id="navigation">
+          <!-- Navigation Menu-->
+          <ul class="navigation-menu nav-right" id="navmenu-nav">
+            <li class="has-submenu">
+              <a href="#home">Home</a>
+            </li>
+            <li class="has-submenu">
+              <a href="#howitworks">How it works?</a>
+            </li>
+            <li class="has-submenu">
+              <a href="#benefit">Benefits</a>
+            </li>
+            <li class="has-submenu">
+              <a href="#courts">Courts</a>
+            </li>
+            <li class="has-submenu">
+              <a href="#faq">FAQ</a>
+            </li>
+
+            <li class="has-submenu">
+              <a href="#contact">Contact</a>
+            </li>
+            <li class="has-submenu">
+              <a href="#testimonial">Review</a>
+            </li>
+          </ul>
+          <!--end navigation menu-->
+        </div>
+        <!--end navigation-->
+      </div>
+      <!--end container-->
+    </header>
     <!--end header-->
     <!-- Navbar End -->
 
     <!-- Hero Start -->
     <section
       class="bg-half-170 bg-light bg-animation-left crypto-home d-table w-100"
+      id="home"
     >
       <div class="container position-relative" style="z-index: 1">
         <div class="container">
@@ -474,11 +515,11 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container mt-100 mt-60">
+    <section class="section" id="howitworks">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="features-absolute rounded bg-white">
+            <div class="rounded bg-white">
               <div class="row">
                 <div class="col-lg-8 col-md-12 my-4">
                   <div class="col-12 text-center">
@@ -603,7 +644,7 @@
     <!--end section-->
 
     <!-- Section END -->
-    <section class="section">
+    <section class="section" id="benefit">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
@@ -911,7 +952,7 @@
     </section>
     <!--end section-->
     <!-- Section start -->
-    <section class="section">
+    <section class="section" id="courts">
       <!-- Crypto Portfolio end -->
       <div class="container">
         <div class="row justify-content-center">
@@ -955,7 +996,9 @@
         <!--end row-->
       </div>
       <!--end container-->
+    </section>
 
+    <section class="section" id="faq">
       <div class="container mt-100 mt-60">
         <div class="row justify-content-center">
           <div class="col-12">
@@ -1113,191 +1156,189 @@
         <!--end row-->
       </div>
       <!--end container-->
+    </section>
 
-      <!-- Contact Start -->
-      <section class="section pb-0" id="contact">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <div class="section-title mb-4 pb-2">
-                <h4
-                  class="title mb-4"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                >
-                  Get In Touch !
-                </h4>
-                <p
-                  class="text-muted para-desc mx-auto mb-0"
-                  data-aos="fade-up"
-                  data-aos-duration="1400"
-                >
-                  If you can’t find the answer you’re looking for, we’re here to
-                  lend a hand.
-                </p>
-              </div>
-            </div>
-            <!--end col-->
-          </div>
-          <!--end row-->
-
-          <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 mt-4 pt-2 order-2 order-md-1">
-              <div
-                class="card rounded shadow border-0"
+    <!-- Contact Start -->
+    <section class="section pb-0" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+              <h4
+                class="title mb-4"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                <div class="card-body">
-                  <div class="custom-form bg-white">
-                    <div id="message"></div>
-                    <form
-                      method="POST"
-                      netlify-honeypot="bot-field"
-                      data-netlify="true"
-                      name="contact-form"
-                      id="contact-form"
-                    >
-                      <div aria-hidden="true">
-                        <p class="d-none">
-                          <label
-                            >Don't fill out. <input name="bot-field" />
-                          </label>
-                        </p>
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-6">
-                          <div class="mb-3">
-                            <label class="form-label"
-                              >Your Name
-                              <span class="text-danger">*</span></label
-                            >
-                            <div class="form-icon position-relative">
-                              <i
-                                data-feather="user"
-                                class="fea icon-sm icons"
-                              ></i>
-                              <input
-                                name="name"
-                                id="name"
-                                type="text"
-                                class="form-control ps-5"
-                                placeholder="First Name :"
-                                required
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <!--end col-->
-                        <div class="col-lg-6">
-                          <div class="mb-3">
-                            <label class="form-label"
-                              >Your Email
-                              <span class="text-danger">*</span></label
-                            >
-                            <div class="form-icon position-relative">
-                              <i
-                                data-feather="mail"
-                                class="fea icon-sm icons"
-                              ></i>
-                              <input
-                                name="email"
-                                id="email2"
-                                type="email"
-                                class="form-control ps-5"
-                                placeholder="Your email :"
-                                required
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <!--end col-->
-                        <div class="col-lg-12">
-                          <div class="mb-3">
-                            <label class="form-label">Comments</label>
-                            <div class="form-icon position-relative">
-                              <i
-                                data-feather="message-circle"
-                                class="fea icon-sm icons"
-                              ></i>
-                              <textarea
-                                name="comments"
-                                id="comments"
-                                rows="4"
-                                class="form-control ps-5"
-                                placeholder="Your Message :"
-                                required
-                              ></textarea>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--end row-->
-                      <div class="row">
-                        <div class="col-sm-12 text-center">
-                          <div class="d-grid">
-                            <input
-                              type="submit"
-                              id="submit"
-                              name="send"
-                              class="submitBnt btn btn-primary"
-                              value="Send Message"
-                            />
-                            <div id="simple-msg"></div>
-                          </div>
-                        </div>
-                        <!--end col-->
-                      </div>
-                      <!--end row-->
-                    </form>
-                    <!--end form-->
-                  </div>
-                  <!--end custom-form-->
-                </div>
-              </div>
+                Get In Touch !
+              </h4>
+              <p
+                class="text-muted para-desc mx-auto mb-0"
+                data-aos="fade-up"
+                data-aos-duration="1400"
+              >
+                If you can’t find the answer you’re looking for, we’re here to
+                lend a hand.
+              </p>
             </div>
-            <!--end col-->
-
-            <div class="col-lg-7 col-md-6 mt-4 pt-2 order-1 order-md-2">
-              <div class="title-heading ms-lg-4">
-                <p
-                  class="text-muted para-desc mx-auto mb-5"
-                  data-aos="fade-up"
-                  data-aos-duration="1400"
-                >
-                  At
-                  <span class="text-primary fw-bold"
-                    >The Championships&reg;</span
-                  >, we are happy to answer any questions you might have,
-                  explore potential changes and receive requests from interested
-                  affiliates.
-                </p>
-                <p
-                  class="text-muted para-desc mx-auto mb-0"
-                  data-aos="fade-up"
-                  data-aos-duration="1400"
-                >
-                  If you have a problem, if no one else can help, and if you can
-                  find us, maybe you can get some help at
-                  <span class="text-primary fw-bold"
-                    >The Championships&reg;</span
-                  >.
-                </p>
-              </div>
-            </div>
-            <!--end col-->
           </div>
-          <!--end row-->
+          <!--end col-->
         </div>
-        <!--end contact-->
+        <!--end row-->
 
-        <!--end container-->
-      </section>
-      <!--end section-->
-      <!-- Contact End -->
+        <div class="row align-items-center">
+          <div class="col-lg-5 col-md-6 mt-4 pt-2 order-2 order-md-1">
+            <div
+              class="card rounded shadow border-0"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div class="card-body">
+                <div class="custom-form bg-white">
+                  <div id="message"></div>
+                  <form
+                    method="POST"
+                    netlify-honeypot="bot-field"
+                    data-netlify="true"
+                    name="contact-form"
+                    id="contact-form"
+                  >
+                    <div aria-hidden="true">
+                      <p class="d-none">
+                        <label
+                          >Don't fill out. <input name="bot-field" />
+                        </label>
+                      </p>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >Your Name <span class="text-danger">*</span></label
+                          >
+                          <div class="form-icon position-relative">
+                            <i
+                              data-feather="user"
+                              class="fea icon-sm icons"
+                            ></i>
+                            <input
+                              name="name"
+                              id="name"
+                              type="text"
+                              class="form-control ps-5"
+                              placeholder="First Name :"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >Your Email
+                            <span class="text-danger">*</span></label
+                          >
+                          <div class="form-icon position-relative">
+                            <i
+                              data-feather="mail"
+                              class="fea icon-sm icons"
+                            ></i>
+                            <input
+                              name="email"
+                              id="email2"
+                              type="email"
+                              class="form-control ps-5"
+                              placeholder="Your email :"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                      <div class="col-lg-12">
+                        <div class="mb-3">
+                          <label class="form-label">Comments</label>
+                          <div class="form-icon position-relative">
+                            <i
+                              data-feather="message-circle"
+                              class="fea icon-sm icons"
+                            ></i>
+                            <textarea
+                              name="comments"
+                              id="comments"
+                              rows="4"
+                              class="form-control ps-5"
+                              placeholder="Your Message :"
+                              required
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--end row-->
+                    <div class="row">
+                      <div class="col-sm-12 text-center">
+                        <div class="d-grid">
+                          <input
+                            type="submit"
+                            id="submit"
+                            name="send"
+                            class="submitBnt btn btn-primary"
+                            value="Send Message"
+                          />
+                          <div id="simple-msg"></div>
+                        </div>
+                      </div>
+                      <!--end col-->
+                    </div>
+                    <!--end row-->
+                  </form>
+                  <!--end form-->
+                </div>
+                <!--end custom-form-->
+              </div>
+            </div>
+          </div>
+          <!--end col-->
 
-      <!-- Rate Start -->
+          <div class="col-lg-7 col-md-6 mt-4 pt-2 order-1 order-md-2">
+            <div class="title-heading ms-lg-4">
+              <p
+                class="text-muted para-desc mx-auto mb-5"
+                data-aos="fade-up"
+                data-aos-duration="1400"
+              >
+                At
+                <span class="text-primary fw-bold">The Championships&reg;</span
+                >, we are happy to answer any questions you might have, explore
+                potential changes and receive requests from interested
+                affiliates.
+              </p>
+              <p
+                class="text-muted para-desc mx-auto mb-0"
+                data-aos="fade-up"
+                data-aos-duration="1400"
+              >
+                If you have a problem, if no one else can help, and if you can
+                find us, maybe you can get some help at
+                <span class="text-primary fw-bold">The Championships&reg;</span
+                >.
+              </p>
+            </div>
+          </div>
+          <!--end col-->
+        </div>
+        <!--end row-->
+      </div>
+      <!--end contact-->
 
+      <!--end container-->
+    </section>
+    <!--end section-->
+    <!-- Contact End -->
+
+    <!-- Rate Start -->
+    <section class="section" id="testimonial">
       <div class="container mt-100 mt-60">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
@@ -1514,6 +1555,7 @@
     <!-- Section End -->
 
     <!-- Section start -->
+
     <div class="position-relative">
       <div class="shape overflow-hidden text-footer">
         <svg
