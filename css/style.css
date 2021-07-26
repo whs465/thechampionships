@@ -2241,7 +2241,7 @@ p {
   top: 0;
   z-index: 999;
   background-color: transparent;
-  background-image: linear-gradient(100deg, #00521f 78%, #54008b 100%);
+  background-image: linear-gradient(#573886, #00521f, #00521f);
   border: 0;
   transition: all 0.5s ease;
 }
