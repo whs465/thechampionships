@@ -317,11 +317,13 @@ geojson.features.forEach(function (marker) {
     .setPopup(
       new mapboxgl.Popup({ offset: 25 }) // add popups
         .setHTML(
-          '<h4>' +
-            marker.properties.title +
-            '</h4><p>' +
-            marker.properties.description +
-            '</p>'
+          ` <h4>
+              ${marker.properties.title}
+            </h4>
+            <p>
+              ${marker.properties.description}
+            </p>
+          `
         )
     )
     .addTo(map)

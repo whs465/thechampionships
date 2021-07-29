@@ -1711,261 +1711,241 @@
     <script src="js/plugins.init.js"></script>
     <!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
     <script src="js/app.js"></script>
-    <!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
 
     <script type="text/javascript">
-      let xmlhttp = new XMLHttpRequest()
-      xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          let data = JSON.parse(this.responseText).feed.entry
+      async function getData() {
+        let url =
+          'https://spreadsheets.google.com/feeds/list/1gqQUBskHW8ng3vQpN_f622zH00qtSuFT4u4dLdVDULI/od6/public/values?alt=json'
+        try {
+          let res = await fetch(url)
+          return await res.json()
+        } catch (error) {
+          console.log(error)
+        }
+      }
 
-          let col, i, p, p1, p2, total, flag, lastUpdated
-          lastUpdated = true
+      async function formatJson() {
+        let scores = await getData()
+        const data = []
 
-          for (i = 0; i < data.length; i++) {
-            let pNumber = data[i]['gsx$_cn6ca']['$t']
+        const rows = scores.feed.entry
 
-            if (pNumber !== 'x' && pNumber !== '#') {
-              if (
-                lastUpdated &&
-                typeof data[i]['gsx$_dcgjs']['$t'] !== 'undefined'
-              ) {
-                const date = new Date(data[i]['gsx$_dcgjs']['$t'])
-                document.getElementById('updated').innerHTML =
-                  new Intl.DateTimeFormat('en-GB', {
-                    dateStyle: 'medium',
-                    timeStyle: 'long',
-                  }).format(date)
+        for (const row of rows) {
+          const formattedRow = {}
 
-                lastUpdated = false
-              }
+          for (const key in row) {
+            if (key.startsWith('gsx$')) {
+              /* The actual row names from your spreadsheet
+               * are formatted like "gsx$title".
+               * Therefore, we need to find keys in this object
+               * that start with "gsx$", and then strip that
+               * out to get the actual row name
+               */
+              formattedRow[key.replace('gsx$', '')] = row[key].$t
+            }
+          }
+          data.push(formattedRow)
+        }
+
+        return data
+      }
+      async function renderScores() {
+        let scores = await formatJson()
+        lastUpdated = true
+        boxSeparator = `<th class="text-center">
+                          <i class="mdi mdi-tennis-ball text-primary"></i>
+                        </th>
+                        `
+
+        for (i = 0; i < scores.length; i++) {
+          let pNumber = scores[i]._cn6ca
+
+          if (pNumber !== 'x' && pNumber !== '#') {
+            if (lastUpdated && typeof scores[i]._dcgjs !== 'undefined') {
+              const date = new Date(scores[i]._dcgjs)
+              document.getElementById('updated').innerHTML =
+                new Intl.DateTimeFormat('en-GB', {
+                  dateStyle: 'medium',
+                  timeStyle: 'long',
+                }).format(date)
+
+              lastUpdated = false
+            }
+            flag = ''
+            if (typeof scores[i]._d9ney === 'undefined') {
               flag = ''
-              if (typeof data[i]['gsx$_d9ney'] === 'undefined') {
-                flag = ''
-              } else {
-                flag =
-                  '<span class="logo-light-mode"><img src="images/' +
-                  data[i]['gsx$_d9ney']['$t'] +
-                  '_h.gif" class="me-1 l-light" height="13" width="21.5" alt="" /></span>'
-              }
+            } else {
+              flag = `<span class="logo-light-mode">
+                <img src="images/${scores[i]._d9ney}_h.gif" class="me-1 l-light" height="13" width="21.5" alt="" />
+                </span>
+              `
+            }
 
-              let p = data[i]['gsx$_cokwr']['$t']
+            let p = scores[i]._cokwr
 
-              if (
-                (data[i]['gsx$_cx0b9']['$t'] === '1' ||
-                  data[i]['gsx$_cx0b9']['$t'] === '2') &&
-                false //mientras empezamos
-              ) {
-                p =
-                  data[i]['gsx$_cokwr']['$t'] +
-                  '<span class="badge even-short-badge rounded-pill bg-soft-success ms-1">' +
-                  data[i]['gsx$_cx0b9']['$t'] +
-                  '</span>'
-              }
-              col = 1
+            if (
+              (scores[i]._cx0b9 === '1' || scores[i]._cx0b9 === '2') &&
+              scores[i]._cvlqs !== '0'
+            ) {
+              p = `
+                ${scores[i]._cokwr}
+                <span class="badge even-short-badge rounded-pill bg-soft-success ms-1">
+                ${scores[i]._cx0b9}
+                </span>
+                `
+            }
+            col = 1
 
-              if (typeof data[i]['gsx$_cpzh4'] === 'undefined') {
-                p1 = ''
-              } else {
-                p1 = data[i]['gsx$_cpzh4']['$t']
-              }
+            p1 = typeof scores[i]._cpzh4 === 'undefined' ? '' : scores[i]._cpzh4
+            let cellP1 =
+              p1 === '@' ? boxSeparator : `<td class="text-center">${p1}</td>`
+            col += 1
 
-              let cellP1 =
-                p1 === '@'
-                  ? '<th class="text-center"><i class="mdi mdi-tennis-ball text-primary"></i></th>'
-                  : '<td class="text-center">' + p1 + '</td>'
-              col += 1
+            p2 = typeof scores[i]._cre1l === 'undefined' ? '' : scores[i]._cre1l
+            let cellP2 =
+              p2 === '@' ? boxSeparator : `<td class="text-center">${p2}</td>`
+            col += 1
 
-              if (typeof data[i]['gsx$_cre1l'] === 'undefined') {
-                p2 = ''
-              } else {
-                p2 = data[i]['gsx$_cre1l']['$t']
-              }
+            p3 = typeof scores[i]._chk2m === 'undefined' ? '' : scores[i]._chk2m
 
-              let cellP2 =
-                p2 === '@'
-                  ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i></th>'
-                  : '<td class="text-center">' + p2 + '</td>'
-              col += 1
+            let cellP3 =
+              p3 === '@' ? boxSeparator : `<td class="text-center">${p3}</td>`
+            col += 1
 
-              if (typeof data[i]['gsx$_chk2m'] === 'undefined') {
-                p3 = ''
-              } else {
-                p3 = data[i]['gsx$_chk2m']['$t']
-              }
+            p4 = typeof scores[i]._ciyn3 === 'undefined' ? '' : scores[i]._ciyn3
 
-              let cellP3 =
-                p3 === '@'
-                  ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i></th>'
-                  : '<td class="text-center">' + p3 + '</td>'
-              col += 1
+            let cellP4 =
+              p4 === '@' ? boxSeparator : `<td class="text-center">${p4}</td>`
+            col += 1
 
-              if (typeof data[i]['gsx$_ciyn3'] === 'undefined') {
-                p4 = ''
-              } else {
-                p4 = data[i]['gsx$_ciyn3']['$t']
-              }
+            p5 = typeof scores[i]._ckd7g === 'undefined' ? '' : scores[i]._ckd7g
 
-              let cellP4 =
-                p4 === '@'
-                  ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i></th>'
-                  : '<td class="text-center">' + p4 + '</td>'
-              col += 1
+            let cellP5 =
+              p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
+            col += 1
 
-              if (typeof data[i]['gsx$_ckd7g'] === 'undefined') {
-                p5 = ''
-              } else {
-                p5 = data[i]['gsx$_ckd7g']['$t']
-              }
+            // if (typeof scores[i]._clrrx  === 'undefined') {
+            //   p6 = ''
+            // } else {
+            //   p6 = scores[i]._clrrx
+            // }
 
-              let cellP5 =
-                p5 === '@'
-                  ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i></th>'
-                  : '<td class="text-center">' + p5 + '</td>'
-              col += 1
+            // let cellP6 =
+            //   i === col
+            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
+            //       p6 +
+            //       '</th>'
+            //     : '<td class="text-center">' + p6 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_clrrx'] === 'undefined') {
-              //   p6 = ''
-              // } else {
-              //   p6 = data[i]['gsx$_clrrx']['$t']
-              // }
+            // if (typeof scores[i]._cyevm  === 'undefined') {
+            //   p7 = ''
+            // } else {
+            //   p7 = scores[i]._cyevm
+            // }
 
-              // let cellP6 =
-              //   i === col
-              //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-              //       p6 +
-              //       '</th>'
-              //     : '<td class="text-center">' + p6 + '</td>'
-              // col += 1
+            // let cellP7 =
+            //   i === col
+            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
+            //       p7 +
+            //       '</th>'
+            //     : '<td class="text-center">' + p7 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_cyevm'] === 'undefined') {
-              //   p7 = ''
-              // } else {
-              //   p7 = data[i]['gsx$_cyevm']['$t']
-              // }
+            // if (typeof scores[i]._cztg3  === 'undefined') {
+            //   p8 = ''
+            // } else {
+            //   p8 = scores[i]._cztg3
+            // }
 
-              // let cellP7 =
-              //   i === col
-              //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-              //       p7 +
-              //       '</th>'
-              //     : '<td class="text-center">' + p7 + '</td>'
-              // col += 1
+            // let cellP8 =
+            //   i === col
+            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
+            //       p8 +
+            //       '</th>'
+            //     : '<td class="text-center">' + p8 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_cztg3'] === 'undefined') {
-              //   p8 = ''
-              // } else {
-              //   p8 = data[i]['gsx$_cztg3']['$t']
-              // }
+            // if (typeof scores[i]._d180g  === 'undefined') {
+            //   p9 = ''
+            // } else {
+            //   p9 = scores[i]._d180g
+            // }
 
-              // let cellP8 =
-              //   i === col
-              //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-              //       p8 +
-              //       '</th>'
-              //     : '<td class="text-center">' + p8 + '</td>'
-              // col += 1
+            // let cellP9 =
+            //   i === col
+            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
+            //       p9 +
+            //       '</th>'
+            //     : '<td class="text-center">' + p9 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_d180g'] === 'undefined') {
-              //   p9 = ''
-              // } else {
-              //   p9 = data[i]['gsx$_d180g']['$t']
-              // }
+            // if (typeof scores[i]._d2mkx  === 'undefined') {
+            //   p10 = ''
+            // } else {
+            //   p10 = scores[i]._d2mkx
+            // }
 
-              // let cellP9 =
-              //   i === col
-              //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-              //       p9 +
-              //       '</th>'
-              //     : '<td class="text-center">' + p9 + '</td>'
-              // col += 1
+            // let cellP10 =
+            //   i === col
+            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
+            //       p10 +
+            //       '</th>'
+            //     : '<td class="text-center">' + p10 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_d2mkx'] === 'undefined') {
-              //   p10 = ''
-              // } else {
-              //   p10 = data[i]['gsx$_d2mkx']['$t']
-              // }
+            // if (typeof scores[i]._cssly  === 'undefined') {
+            //   p11 = ''
+            // } else {
+            //   p11 = scores[i]._cssly
+            // }
 
-              // let cellP10 =
-              //   i === col
-              //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-              //       p10 +
-              //       '</th>'
-              //     : '<td class="text-center">' + p10 + '</td>'
-              // col += 1
+            // let cellP11 =
+            //   i === col
+            //     ? '<td style="background: grey">' + p11 + '</td>'
+            //     : '<td class="text-center">' + p11 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_cssly'] === 'undefined') {
-              //   p11 = ''
-              // } else {
-              //   p11 = data[i]['gsx$_cssly']['$t']
-              // }
+            // if (typeof scores[i]._cu76f  === 'undefined') {
+            //   p12 = ''
+            // } else {
+            //   p12 = scores[i]._cu76f
+            // }
 
-              // let cellP11 =
-              //   i === col
-              //     ? '<td style="background: grey">' + p11 + '</td>'
-              //     : '<td class="text-center">' + p11 + '</td>'
-              // col += 1
+            // let cellP12 =
+            //   i === col
+            //     ? '<td style="background: grey">' + p12 + '</td>'
+            //     : '<td class="text-center">' + p12 + '</td>'
+            // col += 1
 
-              // if (typeof data[i]['gsx$_cu76f'] === 'undefined') {
-              //   p12 = ''
-              // } else {
-              //   p12 = data[i]['gsx$_cu76f']['$t']
-              // }
+            let total = scores[i]._cvlqs
 
-              // let cellP12 =
-              //   i === col
-              //     ? '<td style="background: grey">' + p12 + '</td>'
-              //     : '<td class="text-center">' + p12 + '</td>'
-              // col += 1
+            strHtml = `
+              <tr>
+                <td class="text-center">${pNumber}</td>
+                <td class="text-nowrap">${flag}${p}</td>
+                ${cellP1}
+                ${cellP2}
+                ${cellP3}
+                ${cellP4}
+                ${cellP5}
+                <td class="text-center">${total}</td>
+              </tr>`
 
-              let total = data[i]['gsx$_cvlqs']['$t']
-
-              strHtml =
-                '<tr>' +
-                '<td class="text-center">' +
-                pNumber +
-                '</td>' +
-                '<td class="text-nowrap">' +
-                flag +
-                p +
-                '</td>' +
-                cellP1 +
-                cellP2 +
-                cellP3 +
-                cellP4 +
-                cellP5 +
-                // cellP6 +
-                // cellP7 +
-                // cellP8 +
-                // cellP9 +
-                // cellP10 +
-                // // cellP11 +
-                // cellP12 +
-                '<td class="text-center">' +
-                total +
-                '</td>' +
-                '</tr>'
-
-              if (data[i]['gsx$_db1zf']['$t'] === '1') {
-                document.getElementById('box1').innerHTML += strHtml
-              } else if (data[i]['gsx$_db1zf']['$t'] === '2') {
-                document.getElementById('box2').innerHTML += strHtml
-              } else if (data[i]['gsx$_db1zf']['$t'] === '3') {
-                document.getElementById('box3').innerHTML += strHtml
-              } else if (data[i]['gsx$_db1zf']['$t'] === '4') {
-                document.getElementById('box4').innerHTML += strHtml
-              }
+            if (scores[i]._db1zf === '1') {
+              document.getElementById('box1').innerHTML += strHtml
+            } else if (scores[i]._db1zf === '2') {
+              document.getElementById('box2').innerHTML += strHtml
+            } else if (scores[i]._db1zf === '3') {
+              document.getElementById('box3').innerHTML += strHtml
+            } else if (scores[i]._db1zf === '4') {
+              document.getElementById('box4').innerHTML += strHtml
             }
           }
         }
       }
 
-      xmlhttp.open(
-        'GET',
-        'https://spreadsheets.google.com/feeds/list/1gqQUBskHW8ng3vQpN_f622zH00qtSuFT4u4dLdVDULI/od6/public/values?alt=json',
-        true
-      )
-      xmlhttp.send()
+      renderScores()
     </script>
   </body>
 </html>
