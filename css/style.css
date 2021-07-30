@@ -2019,8 +2019,8 @@ p {
 }
 
 .bg-overlay {
-  background-color: rgba(60, 72, 88, 0.7);
-  position: absolute;
+  background-color: rgba(73, 57, 87, 0.3);
+  // position: absolute;
   top: 0;
   right: 0;
   left: 0;

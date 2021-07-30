@@ -184,10 +184,10 @@
       id="home"
     >
       <div class="container position-relative" style="z-index: 1">
-        <div class="container">
+        <div class="container bg-overlay">
           <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-              <h4 class="mt-0 mb-4 coming-soon text-success fw-bolder">
+              <h4 class="mt-4 mb-0 coming-soon text-light">
                 <span
                   class="typewrite"
                   data-period="2000"
@@ -1722,6 +1722,8 @@
     <script src="js/app.js"></script>
 
     <script type="text/javascript">
+      renderScores()
+
       async function getData() {
         let url =
           'https://spreadsheets.google.com/feeds/list/1gqQUBskHW8ng3vQpN_f622zH00qtSuFT4u4dLdVDULI/od6/public/values?alt=json'
@@ -1953,8 +1955,6 @@
           }
         }
       }
-
-      renderScores()
     </script>
   </body>
 </html>
