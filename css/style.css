@@ -5224,7 +5224,7 @@ p {
 }
 
 rain {
-  background-color: #6c78a9;
+  // background-color: #6c78a9;
   display: flex;
   align-items: center;
   justify-content: center;

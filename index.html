@@ -184,7 +184,7 @@
       id="home"
     >
       <div class="container position-relative" style="z-index: 1">
-        <div class="container bg-overlay">
+        <div id="rain" class="container bg-overlay d-none">
           <div class="rain">
             <svg
               class="rain__drop"
@@ -4334,6 +4334,9 @@
                 }).format(date)
 
               lastUpdated = false
+              if (scores[i]._ddv49 === '1') {
+                document.querySelector('#rain').classList.remove('d-none')
+              }
             }
             flag = ''
             if (typeof scores[i]._d9ney === 'undefined') {
