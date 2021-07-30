@@ -4987,11 +4987,11 @@ p {
   border: 0;
 }
 
-@media (max-width: 767px) {
-  #eventdown .count-down {
-    // width: 60px;
-  }
-}
+// @media (max-width: 767px) {
+//   #eventdown .count-down {
+//     // width: 60px;
+//   }
+// }
 
 #eventdown .count-down .count-number {
   line-height: 80px;
