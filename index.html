@@ -413,13 +413,13 @@
                     >
                       4
                     </th>
-                    <th
+                    <!-- <th
                       scope="col"
                       class="border-bottom text-center"
                       style="width: 5%"
                     >
                       5
-                    </th>
+                    </th> -->
                     <th
                       scope="col"
                       class="border-bottom text-center"
@@ -1801,7 +1801,8 @@
           'https://spreadsheets.google.com/feeds/list/1gqQUBskHW8ng3vQpN_f622zH00qtSuFT4u4dLdVDULI/od6/public/values?alt=json'
         try {
           let res = await fetch(url)
-          return await res.json()
+          if (!res.ok) throw new Error('Request failed. Try again later')
+          return res.json()
         } catch (error) {
           console.log(error)
         }
@@ -1834,6 +1835,7 @@
       }
       async function renderScores() {
         let scores = await formatJson()
+
         lastUpdated = true
         boxSeparator = `<th class="text-center">
                           <i class="mdi mdi-tennis-ball text-primary"></i>
@@ -1881,9 +1883,18 @@
                 </span>
                 `
             }
+
             col = 1
+            // get number of payer in a box
+            if (
+              typeof scores[i]._d415a !== 'undefined' &&
+              scores[i]._d415a !== '@'
+            ) {
+              numPlayers = scores[i]._d415a
+            }
 
             p1 = typeof scores[i]._cpzh4 === 'undefined' ? '' : scores[i]._cpzh4
+
             let cellP1 =
               p1 === '@' ? boxSeparator : `<td class="text-center">${p1}</td>`
             col += 1
@@ -1905,12 +1916,16 @@
               p4 === '@' ? boxSeparator : `<td class="text-center">${p4}</td>`
             col += 1
 
-            p5 = typeof scores[i]._ckd7g === 'undefined' ? '' : scores[i]._ckd7g
+            if (numPlayers > 4) {
+              p5 =
+                typeof scores[i]._ckd7g === 'undefined' ? '' : scores[i]._ckd7g
 
-            let cellP5 =
-              p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
+              cellP5 =
+                p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
+            } else {
+              cellP5 = ''
+            }
             col += 1
-
             // if (typeof scores[i]._clrrx  === 'undefined') {
             //   p6 = ''
             // } else {
