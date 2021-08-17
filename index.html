@@ -410,13 +410,13 @@
                     >
                       4
                     </th>
-                    <!-- <th
+                    <th
                       scope="col"
                       class="border-bottom text-center"
                       style="width: 5%"
                     >
                       5
-                    </th> -->
+                    </th>
                     <th
                       scope="col"
                       class="border-bottom text-center"
@@ -1788,251 +1788,103 @@
 
       async function getData() {
         let url =
-          'https://spreadsheets.google.com/feeds/list/1gqQUBskHW8ng3vQpN_f622zH00qtSuFT4u4dLdVDULI/od6/public/values?alt=json'
+          'https://script.google.com/macros/s/AKfycbwDLPrw7u30p_KUzxv0OOn02Gbi5-8m0MZDdg3t_q6uxSAmSowAg1IoOKR5gVOYtr213g/exec'
         try {
           let res = await fetch(url)
           if (!res.ok) throw new Error('Request failed. Try again later')
-          return res.json()
+          return await res.json()
         } catch (error) {
           console.log(error)
         }
       }
 
-      async function formatJson() {
-        let scores = await getData()
-        const data = []
+      async function renderScores() {
+        // let scores = await formatJson()
+        const scores = await getData()
 
-        const rows = scores.feed.entry
-
-        for (const row of rows) {
-          const formattedRow = {}
-
-          for (const key in row) {
-            if (key.startsWith('gsx$')) {
-              /* The actual row names from your spreadsheet
-               * are formatted like "gsx$title".
-               * Therefore, we need to find keys in this object
-               * that start with "gsx$", and then strip that
-               * out to get the actual row name
-               */
-              formattedRow[key.replace('gsx$', '')] = row[key].$t
-            }
+        const date = new Date(scores.main.lastUpdated)
+        document.getElementById('updated').innerHTML = new Intl.DateTimeFormat(
+          'en-GB',
+          {
+            dateStyle: 'medium',
+            timeStyle: 'long',
           }
-          data.push(formattedRow)
+        ).format(date)
+
+        if (scores.main.showBoxes == 1) {
+          document.querySelector('#scores').classList.remove('d-none')
+          document.querySelector('#comingsoon').classList.add('d-none')
         }
 
-        return data
-      }
-      async function renderScores() {
-        let scores = await formatJson()
-
-        lastUpdated = true
         boxSeparator = `<th class="text-center">
                           <i class="mdi mdi-tennis-ball text-primary"></i>
                         </th>
                         `
 
-        for (i = 0; i < scores.length; i++) {
-          let pNumber = scores[i]._cn6ca
+        for (i = 1; i < scores.data.length; i++) {
+          boxNumber = scores.data[i][0]
 
-          if (pNumber !== 'x' && pNumber !== '#') {
-            if (lastUpdated && typeof scores[i]._dcgjs !== 'undefined') {
-              const date = new Date(scores[i]._dcgjs)
-              document.getElementById('updated').innerHTML =
-                new Intl.DateTimeFormat('en-GB', {
-                  dateStyle: 'medium',
-                  timeStyle: 'long',
-                }).format(date)
+          numberPlayers =
+            String(scores.data[i][1]).length > 0
+              ? scores.data[i][1]
+              : numberPlayers
 
-              lastUpdated = false
-              if (scores[i]._ddv49 === '1') {
-                document.querySelector('#scores').classList.remove('d-none')
-                document.querySelector('#comingsoon').classList.add('d-none')
-              }
-            }
-            flag = ''
-            if (typeof scores[i]._d9ney === 'undefined') {
-              flag = ''
-            } else {
-              flag = `<span class="logo-light-mode">
-                <img src="images/${scores[i]._d9ney}_h.gif" class="me-1 l-light" height="13" width="21.5" alt="" />
+          playerNumber = scores.data[i][2]
+          totalPoints = scores.data[i][3]
+          playerRank = scores.data[i][4]
+
+          flag = `<span class="logo-light-mode">
+                <img src="images/${scores.data[i][5]}_h.gif" class="me-1 l-light" height="13" width="21.5" alt="" />
                 </span>
               `
-            }
 
-            let p = scores[i]._cokwr
-
-            if (
-              (scores[i]._cx0b9 === '1' || scores[i]._cx0b9 === '2') &&
-              scores[i]._cvlqs !== '0'
-            ) {
-              p = `
-                ${scores[i]._cokwr}
+          p = `
+                ${scores.data[i][6]}
                 <span class="badge even-short-badge rounded-pill bg-soft-success ms-1">
-                ${scores[i]._cx0b9}
+                ${playerRank}
                 </span>
                 `
-            }
 
-            col = 1
-            // get number of payer in a box
-            if (
-              typeof scores[i]._d415a !== 'undefined' &&
-              scores[i]._d415a !== '@'
-            ) {
-              numPlayers = scores[i]._d415a
-            }
+          p1 = scores.data[i][7]
+          let cellP1 =
+            p1 === '@' ? boxSeparator : `<td class="text-center">${p1}</td>`
 
-            p1 = typeof scores[i]._cpzh4 === 'undefined' ? '' : scores[i]._cpzh4
+          p2 = scores.data[i][8]
+          let cellP2 =
+            p2 === '@' ? boxSeparator : `<td class="text-center">${p2}</td>`
 
-            let cellP1 =
-              p1 === '@' ? boxSeparator : `<td class="text-center">${p1}</td>`
-            col += 1
+          p3 = scores.data[i][9]
+          let cellP3 =
+            p3 === '@' ? boxSeparator : `<td class="text-center">${p3}</td>`
 
-            p2 = typeof scores[i]._cre1l === 'undefined' ? '' : scores[i]._cre1l
-            let cellP2 =
-              p2 === '@' ? boxSeparator : `<td class="text-center">${p2}</td>`
-            col += 1
+          p4 = scores.data[i][10]
+          let cellP4 =
+            p4 === '@' ? boxSeparator : `<td class="text-center">${p4}</td>`
 
-            p3 = typeof scores[i]._chk2m === 'undefined' ? '' : scores[i]._chk2m
+          p5 = scores.data[i][11]
+          let cellP5 =
+            p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
 
-            let cellP3 =
-              p3 === '@' ? boxSeparator : `<td class="text-center">${p3}</td>`
-            col += 1
-
-            p4 = typeof scores[i]._ciyn3 === 'undefined' ? '' : scores[i]._ciyn3
-
-            let cellP4 =
-              p4 === '@' ? boxSeparator : `<td class="text-center">${p4}</td>`
-            col += 1
-
-            if (numPlayers > 4) {
-              p5 =
-                typeof scores[i]._ckd7g === 'undefined' ? '' : scores[i]._ckd7g
-
-              cellP5 =
-                p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
-            } else {
-              cellP5 = ''
-            }
-            col += 1
-            // if (typeof scores[i]._clrrx  === 'undefined') {
-            //   p6 = ''
-            // } else {
-            //   p6 = scores[i]._clrrx
-            // }
-
-            // let cellP6 =
-            //   i === col
-            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-            //       p6 +
-            //       '</th>'
-            //     : '<td class="text-center">' + p6 + '</td>'
-            // col += 1
-
-            // if (typeof scores[i]._cyevm  === 'undefined') {
-            //   p7 = ''
-            // } else {
-            //   p7 = scores[i]._cyevm
-            // }
-
-            // let cellP7 =
-            //   i === col
-            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-            //       p7 +
-            //       '</th>'
-            //     : '<td class="text-center">' + p7 + '</td>'
-            // col += 1
-
-            // if (typeof scores[i]._cztg3  === 'undefined') {
-            //   p8 = ''
-            // } else {
-            //   p8 = scores[i]._cztg3
-            // }
-
-            // let cellP8 =
-            //   i === col
-            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-            //       p8 +
-            //       '</th>'
-            //     : '<td class="text-center">' + p8 + '</td>'
-            // col += 1
-
-            // if (typeof scores[i]._d180g  === 'undefined') {
-            //   p9 = ''
-            // } else {
-            //   p9 = scores[i]._d180g
-            // }
-
-            // let cellP9 =
-            //   i === col
-            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-            //       p9 +
-            //       '</th>'
-            //     : '<td class="text-center">' + p9 + '</td>'
-            // col += 1
-
-            // if (typeof scores[i]._d2mkx  === 'undefined') {
-            //   p10 = ''
-            // } else {
-            //   p10 = scores[i]._d2mkx
-            // }
-
-            // let cellP10 =
-            //   i === col
-            //     ? '<th class="text-center"> <i class="mdi mdi-tennis-ball text-primary"></i>' +
-            //       p10 +
-            //       '</th>'
-            //     : '<td class="text-center">' + p10 + '</td>'
-            // col += 1
-
-            // if (typeof scores[i]._cssly  === 'undefined') {
-            //   p11 = ''
-            // } else {
-            //   p11 = scores[i]._cssly
-            // }
-
-            // let cellP11 =
-            //   i === col
-            //     ? '<td style="background: grey">' + p11 + '</td>'
-            //     : '<td class="text-center">' + p11 + '</td>'
-            // col += 1
-
-            // if (typeof scores[i]._cu76f  === 'undefined') {
-            //   p12 = ''
-            // } else {
-            //   p12 = scores[i]._cu76f
-            // }
-
-            // let cellP12 =
-            //   i === col
-            //     ? '<td style="background: grey">' + p12 + '</td>'
-            //     : '<td class="text-center">' + p12 + '</td>'
-            // col += 1
-
-            let total = scores[i]._cvlqs
-
-            strHtml = `
+          strHtml = `
               <tr>
-                <td class="text-center">${pNumber}</td>
+                <td class="text-center">${playerNumber}</td>
                 <td class="text-nowrap">${flag}${p}</td>
                 ${cellP1}
                 ${cellP2}
                 ${cellP3}
                 ${cellP4}
                 ${cellP5}
-                <td class="text-center">${total}</td>
+                <td class="text-center">${totalPoints}</td>
               </tr>`
 
-            if (scores[i]._db1zf === '1') {
-              document.getElementById('box1').innerHTML += strHtml
-            } else if (scores[i]._db1zf === '2') {
-              document.getElementById('box2').innerHTML += strHtml
-            } else if (scores[i]._db1zf === '3') {
-              document.getElementById('box3').innerHTML += strHtml
-            } else if (scores[i]._db1zf === '4') {
-              document.getElementById('box4').innerHTML += strHtml
-            }
+          if (boxNumber === 1) {
+            document.getElementById('box1').innerHTML += strHtml
+          } else if (boxNumber === 2) {
+            document.getElementById('box2').innerHTML += strHtml
+          } else if (boxNumber === 3) {
+            document.getElementById('box3').innerHTML += strHtml
+          } else if (boxNumber === 4) {
+            document.getElementById('box4').innerHTML += strHtml
           }
         }
       }
