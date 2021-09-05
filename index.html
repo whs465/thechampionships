@@ -287,7 +287,7 @@
     <!--end section-->
 
     <!-- Hero End -->
-    <section id="scores" class="section border-top d-none">
+    <section id="scores" class="section border-top">
       <div class="container">
         <div class="row justify-content-center features-absolute">
           <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
@@ -410,13 +410,13 @@
                     >
                       4
                     </th>
-                    <th
+                    <!-- <th
                       scope="col"
                       class="border-bottom text-center"
                       style="width: 5%"
                     >
                       5
-                    </th>
+                    </th> -->
                     <th
                       scope="col"
                       class="border-bottom text-center"
@@ -430,7 +430,7 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
+          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2 d-none">
             <div class="table-responsive bg-white shadow-md rounded-md">
               <table class="table mb-0 table-center align-middle caption-top">
                 <caption class="text-center bg-soft-success">
@@ -501,7 +501,7 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
+          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2 d-none">
             <div class="table-responsive bg-white shadow-md rounded-md">
               <table class="table mb-0 table-center align-middle caption-top">
                 <caption class="text-center bg-soft-success">
@@ -1821,7 +1821,7 @@
                         </th>
                         `
 
-        for (i = 1; i < scores.data.length; i++) {
+        for (i = 1; i < scores.data.length - 11; i++) {
           boxNumber = scores.data[i][0]
 
           numberPlayers =
@@ -1864,6 +1864,10 @@
           p5 = scores.data[i][11]
           let cellP5 =
             p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
+
+          if (numberPlayers === 4) {
+            cellP5 = ''
+          }
 
           strHtml = `
               <tr>
