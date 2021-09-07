@@ -410,13 +410,13 @@
                     >
                       4
                     </th>
-                    <!-- <th
+                    <th
                       scope="col"
                       class="border-bottom text-center"
                       style="width: 5%"
                     >
                       5
-                    </th> -->
+                    </th>
                     <th
                       scope="col"
                       class="border-bottom text-center"
@@ -1788,7 +1788,7 @@
 
       async function getData() {
         let url =
-          'https://script.google.com/macros/s/AKfycbwObvkjqjMxdrpnVtJb80dQDR-RIdAt12o9dtDz3Q/exec'
+          'https://script.google.com/macros/s/AKfycbznAozyCHrs2Z_hXvaqtc8RsmJKiaMTc_w-46R1YKcQxmnluyA5/exec'
         try {
           let res = await fetch(url)
           if (!res.ok) throw new Error('Request failed. Try again later')
@@ -1865,9 +1865,9 @@
           let cellP5 =
             p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
 
-          if (numberPlayers === 4) {
-            cellP5 = ''
-          }
+          // if (numberPlayers === 4) {
+          //   cellP5 = ''
+          // }
 
           strHtml = `
               <tr>
