@@ -1790,7 +1790,7 @@
         let url =
           'https://script.google.com/macros/s/AKfycbznAozyCHrs2Z_hXvaqtc8RsmJKiaMTc_w-46R1YKcQxmnluyA5/exec'
         try {
-          let res = await fetch(url)
+          let res = await fetch(url, { mode: 'no-cors' })
           if (!res.ok) throw new Error('Request failed. Try again later')
           return await res.json()
         } catch (error) {
