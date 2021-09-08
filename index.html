@@ -1788,7 +1788,7 @@
 
       async function getData() {
         let url =
-          'https://script.google.com/macros/s/AKfycbyyVMTubokRzsom3aJ9fbYDpT5BmHSoLrxzSFuhxbGq/exec'
+          'https://script.google.com/macros/s/AKfycbxzC0HqDbiZfc8b7GG54KiOBkauAHRJ5PMGPfrm2yjYy-dmpmAf-nIbE8F4Gb2qMDRyOw/exec'
         try {
           let res = await fetch(url)
           if (!res.ok) throw new Error('Request failed. Try again later')
@@ -1800,27 +1800,9 @@
 
       async function renderScores() {
         // let scores = await formatJson()
-        const scores1 = await getData()
-        console.log(scores1)
-        const scores = {
-          data: [
-            ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
-            [1, 5, 1, 0, 1, 'NED', 'Paul H', '@', '', '', '', ''],
-            [1, '', 2, 0, 1, 'GBR', 'Paul J', '', '@', '', '', ''],
-            [1, '', 3, 0, 1, 'NED', 'Max', '', '', '@', '', ''],
-            [1, '', 4, 0, 1, 'COL', 'William', '', '', '', '@', ''],
-            [1, '', 5, 0, 1, 'ESP', 'Ivan', '', '', '', '', '@'],
-            [2, 5, 1, 0, 1, 'GBR', 'Francis', '@', '', '', '', ''],
-            [2, '', 2, 0, 1, 'ITA', 'Riccardo', '', '@', '', '', ''],
-            [2, '', 3, 0, 1, 'ETH', 'Mickey', '', '', '@', '', ''],
-            [2, '', 4, 0, 1, 'NED', 'Janno', '', '', '', '@', ''],
-            [2, '', 5, 0, 1, 'ETH', 'Mesay', '', '', '', '', '@'],
-          ],
-          main: { lastUpdated: '2021-09-07T16:31:00.000Z', showBoxes: 1 },
-          error: false,
-        }
-
+        const scores = await getData()
         const date = new Date(scores.main.lastUpdated)
+
         document.getElementById('updated').innerHTML = new Intl.DateTimeFormat(
           'en-GB',
           {
