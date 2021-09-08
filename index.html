@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script
+    <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-BH03Y8J1X2"
     ></script>
@@ -14,7 +14,7 @@
       gtag('js', new Date())
 
       gtag('config', 'G-BH03Y8J1X2')
-    </script> -->
+    </script>
     <meta charset="utf-8" />
     <title>The Championships Addis Ababa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1789,18 +1789,19 @@
       async function getData() {
         let url =
           'https://script.google.com/macros/s/AKfycbyyVMTubokRzsom3aJ9fbYDpT5BmHSoLrxzSFuhxbGq/exec'
-        // try {
-        //   let res = await fetch(url, { mode: 'no-cors' })
-        //   if (!res.ok) throw new Error('Request failed. Try again later')
-        //   return await res.json()
-        // } catch (error) {
-        //   console.log(error)
-        // }
+        try {
+          let res = await fetch(url)
+          if (!res.ok) throw new Error('Request failed. Try again later')
+          return await res.json()
+        } catch (error) {
+          console.log(error)
+        }
       }
 
       async function renderScores() {
         // let scores = await formatJson()
-        // const scores = await getData()
+        const scores1 = await getData()
+        console.log(scores1)
         const scores = {
           data: [
             ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
