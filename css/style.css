@@ -1757,6 +1757,7 @@ button:not(:disabled) {
 .table-responsive .table th {
   vertical-align: middle;
   padding: 0.5rem 0.3rem;
+  font-size: 14px;
 }
 
 .table-responsive .table.table-nowrap th,
