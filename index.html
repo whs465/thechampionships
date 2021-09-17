@@ -1753,7 +1753,33 @@
 
       async function renderScores() {
         // let scores = await formatJson()
-        const scores = await getData()
+        // const scores = await getData()
+        const scores = {
+          data: [
+            ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5, 6],
+            [1, 6, 1, 5, 3, 'NED', 'Paul H', '@', '', '', 4, '', ''],
+            [1, '', 2, 5, 3, 'GBR', 'Paul J', '', '@', '', 4, '', ''],
+            [1, '', 3, 0, 5, 'NED', 'Max', '', '', '@', '', '', ''],
+            [1, '', 4, 29, 1, 'COL', 'William', 9, 9, '', '@', '', 4],
+            [1, '', 5, 0, 5, 'ESP', 'Ivan', '', '', '', '', '@', ''],
+            [1, '', 6, 12, 2, 'ETH', 'Aklog', '', '', '', 9, '', '@'],
+            [2, 5, 1, 0, 4, 'GBR', 'Francis', '@', '', '', '', ''],
+            [2, '', 2, 0, 4, 'ITA', 'Riccardo', '', '@', '', '', ''],
+            [2, '', 3, 12, 1, 'ETH', 'Mickey', '', '', '@', 9, ''],
+            [2, '', 4, 10, 3, 'NED', 'Janno', '', '', 4, '@', 4],
+            [2, '', 5, 12, 1, 'ETH', 'Mesay', '', '', '', 9, '@'],
+            [3, 5, 1, 12, 2, 'ETH', 'Jouhar', '@', 9, '', '', ''],
+            [3, '', 2, 19, 1, 'ITA', 'Alberto', 4, '@', 9, '', 1],
+            [3, '', 3, 0, 5, 'ETH', 'Amanuel', '', '', '@', '', ''],
+            [3, '', 4, 9, 4, 'ITA', 'Riccardo C', '', 8, '', '@', ''],
+            [3, '', 5, 12, 2, 'ITA', 'Gianfranco', '', 9, '', '', '@'],
+          ],
+          main: {
+            lastUpdated: '2021-09-17T15:00:00.000Z',
+            showBoxes: 1,
+          },
+          error: false,
+        }
 
         const date = new Date(scores.main.lastUpdated)
 
