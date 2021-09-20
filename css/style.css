@@ -96,10 +96,8 @@ h6,
   background-color: #2f55d4 !important;
 }
 
-.bg-soft-primary {
-  background-color: rgba(47, 85, 212, 0.1) !important;
-  border: 1px solid rgba(47, 85, 212, 0.1) !important;
-  color: #2f55d4 !important;
+.bg-soft-primary-table {
+  background-color: rgba(33, 33, 33, 0.04) !important;
 }
 
 .text-primary {

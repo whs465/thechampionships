@@ -1807,6 +1807,10 @@
                           <i class="mdi mdi-tennis-ball text-primary"></i>
                         </th>
                         `
+        const boxSeparatorBg = `<th class="text-center">
+                          <i class="mdi mdi-tennis-ball text-primary bg-soft-primary-table"></i>
+                        </th>
+                        `
 
         for (i = 1; i < scores.data.length; i++) {
           boxNumber = scores.data[i][0]
@@ -1834,7 +1838,9 @@
 
           p1 = scores.data[i][7]
           let cellP1 =
-            p1 === '@' ? boxSeparator : `<td class="text-center">${p1}</td>`
+            p1 === '@'
+              ? boxSeparatorBg
+              : `<td class="text-center bg-soft-primary-table">${p1}</td>`
 
           p2 = scores.data[i][8]
           let cellP2 =
@@ -1842,7 +1848,9 @@
 
           p3 = scores.data[i][9]
           let cellP3 =
-            p3 === '@' ? boxSeparator : `<td class="text-center">${p3}</td>`
+            p3 === '@'
+              ? boxSeparatorBg
+              : `<td class="text-center bg-soft-primary-table">${p3}</td>`
 
           p4 = scores.data[i][10]
           let cellP4 =
@@ -1850,7 +1858,9 @@
 
           p5 = scores.data[i][11]
           let cellP5 =
-            p5 === '@' ? boxSeparator : `<td class="text-center">${p5}</td>`
+            p5 === '@'
+              ? boxSeparatorBg
+              : `<td class="text-center bg-soft-primary-table">${p5}</td>`
 
           if (numberPlayers === 6) {
             p6 = scores.data[i][12]
