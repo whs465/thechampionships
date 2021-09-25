@@ -1486,20 +1486,21 @@
                       <div class="col-lg-6">
                         <div class="mb-3">
                           <label class="form-label"
-                            >Your Email
+                            >Your Mobile Number
                             <span class="text-danger">*</span></label
                           >
                           <div class="form-icon position-relative">
                             <i
-                              data-feather="mail"
+                              data-feather="phone"
                               class="fea icon-sm icons"
                             ></i>
                             <input
-                              name="email"
-                              id="email2"
-                              type="email"
+                              name="tel"
+                              id="tel2"
+                              pattern="(\+\d{1,3}[- ]?)?\d{10}"
+                              type="tel"
                               class="form-control ps-5"
-                              placeholder="Your email :"
+                              placeholder="Mobile Number :"
                               required
                             />
                           </div>
@@ -1519,7 +1520,7 @@
                               id="comments"
                               rows="4"
                               class="form-control ps-5"
-                              placeholder="Your Message & WhatsApp Number:"
+                              placeholder="Your Message :"
                               required
                             ></textarea>
                           </div>
