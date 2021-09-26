@@ -461,19 +461,18 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2 d-none">
+          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
             <div class="table-responsive bg-white shadow-md rounded-md">
               <table class="table mb-0 table-center align-middle caption-top">
                 <caption class="text-center bg-soft-success">
-                  <span class="fw-bold">Box 4</span>
+                  <span class="fw-bold">Players Joining in Round 2</span>
                 </caption>
-
                 <thead>
                   <tr>
                     <th
                       scope="col"
                       class="border-bottom text-center"
-                      style="width: 5%"
+                      style="width: 20%"
                     >
                       #
                     </th>
@@ -484,51 +483,40 @@
                     >
                       Name
                     </th>
-                    <th
-                      scope="col"
-                      class="border-bottom text-center"
-                      style="width: 5%"
-                    >
-                      1
-                    </th>
-                    <th
-                      scope="col"
-                      class="border-bottom text-center"
-                      style="width: 5%"
-                    >
-                      2
-                    </th>
-                    <th
-                      scope="col"
-                      class="border-bottom text-center"
-                      style="width: 5%"
-                    >
-                      3
-                    </th>
-                    <th
-                      scope="col"
-                      class="border-bottom text-center"
-                      style="width: 5%"
-                    >
-                      4
-                    </th>
-                    <th
-                      scope="col"
-                      class="border-bottom text-center"
-                      style="width: 5%"
-                    >
-                      5
-                    </th>
-                    <th
-                      scope="col"
-                      class="border-bottom text-center"
-                      style="width: 10%"
-                    >
-                      Pts
-                    </th>
                   </tr>
                 </thead>
-                <tbody id="box4"></tbody>
+                <tbody>
+                  <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-nowrap">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/ETH_h.gif"
+                          class="me-1 l-light"
+                          height="auto"
+                          width="21"
+                          alt=""
+                        />
+                      </span>
+                      Mig
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">2</td>
+                    <td class="text-nowrap">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/CZE_h.gif"
+                          class="me-1 l-light"
+                          height="auto"
+                          width="21"
+                          alt=""
+                        />
+                      </span>
+                      Tomas
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -1972,10 +1960,10 @@
           }
         ).format(date)
 
-        if (scores.main.showBoxes == 1) {
-          document.querySelector('#scores').classList.remove('d-none')
-          document.querySelector('#comingsoon').classList.add('d-none')
-        }
+        // if (scores.main.showBoxes == 1) {
+        //   document.querySelector('#scores').classList.remove('d-none')
+        //   document.querySelector('#comingsoon').classList.add('d-none')
+        // }
 
         const boxSeparator = `<th class="text-center">
                           <i class="mdi mdi-tennis-ball text-primary"></i>
