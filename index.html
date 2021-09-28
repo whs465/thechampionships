@@ -82,6 +82,14 @@
     <div class="modal fade" id="wishlist" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded shadow border-0">
+          <div class="modal-header border-bottom">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
           <div class="modal-body py-5">
             <div class="text-center">
               <div
@@ -90,7 +98,7 @@
                   d-flex
                   align-items-center
                   justify-content-center
-                  bg-soft-danger
+                  bg-soft-primary
                   rounded-circle
                   mx-auto
                 "
@@ -1966,9 +1974,9 @@
             document.getElementById('wishlist'),
             {}
           )
-          // document.onreadystatechange = function () {
-          //   myModal.show()
-          // }
+          document.onreadystatechange = function () {
+            myModal.show()
+          }
         }
       } else {
         // false for not mobile device
