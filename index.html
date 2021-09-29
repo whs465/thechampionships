@@ -1974,12 +1974,11 @@
             document.getElementById('wishlist'),
             {}
           )
-          if (window.matchMedia('(display-mode: standalone)').matches) {
-            console.log('This is running as standalone.')
-          } else
+          if (!window.matchMedia('(display-mode: standalone)').matches) {
             document.onreadystatechange = function () {
               myModal.show()
             }
+          }
         }
       } else {
         // false for not mobile device
