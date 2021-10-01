@@ -5285,19 +5285,3 @@ rain {
     transform: translateY(100vh);
   }
 }
-
-.tooltip.bs-tooltip-top .tooltip-arrow::before {
-  border-top-color: red;
-}
-
-.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
-  border-bottom-color: red;
-}
-
-.tooltip.bs-tooltip-start .tooltip-arrow::before {
-  border-left-color: red;
-}
-
-.tooltip.bs-tooltip-end .tooltip-arrow::before {
-  border-right-color: red;
-}
