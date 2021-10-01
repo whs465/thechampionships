@@ -586,6 +586,21 @@
                       Mario
                     </td>
                   </tr>
+                  <tr>
+                    <td class="text-center">4</td>
+                    <td class="text-nowrap">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/MOR_h.gif"
+                          class="me-1 l-light"
+                          height="auto"
+                          width="21"
+                          alt=""
+                        />
+                      </span>
+                      Hicham
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -2083,12 +2098,12 @@
               `
 
           p = `
-                ${scores.data[i][6]}
+              ${scores.data[i][6]}
                 <span class="badge even-short-badge rounded-pill bg-soft-success">
                 ${playerRank}
                 </span>
-                `
-
+              `
+          // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
           p1 = scores.data[i][7]
           let cellP1 =
             p1 === '@'
