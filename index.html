@@ -109,7 +109,13 @@
                 </h1>
               </div>
               <div class="mt-4">
-                <h5>You can add our Website to your Mobile Home Screen</h5>
+                <h5>
+                  You can add
+                  <span class="text-primary fw-bold"
+                    >The Championships&reg;</span
+                  >
+                  to your Mobile Home Screen
+                </h5>
                 <ul class="list-unstyled text-success">
                   <li class="text-muted px-3">
                     Tap the menu icon (3 dots in upper right-hand corner) and
@@ -1783,27 +1789,23 @@
     <script src="js/app.js"></script>
 
     <script type="text/javascript">
-      // if (
-      //   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      //     navigator.userAgent
-      //   )
-      // ) {
-      //   // true for mobile device
-      //   if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      //     var myModal = new bootstrap.Modal(
-      //       document.getElementById('wishlist'),
-      //       {}
-      //     )
-      //     if (!window.matchMedia('(display-mode: standalone)').matches) {
-      //       document.onreadystatechange = function () {
-      //         myModal.show()
-      //       }
-      //     }
-      //   }
-      // } else {
-      //   // false for not mobile device
-      //   console.log('not mobile device')
-      // }
+      if (/Android/i.test(navigator.userAgent)) {
+        // true for mobile device
+        if (navigator.userAgent.indexOf('Chrome') !== -1) {
+          var myModal = new bootstrap.Modal(
+            document.getElementById('wishlist'),
+            {}
+          )
+          if (!window.matchMedia('(display-mode: standalone)').matches) {
+            document.onreadystatechange = function () {
+              myModal.show()
+            }
+          }
+        }
+      } else {
+        // false for not mobile device
+        console.log('not android mobile device')
+      }
       renderScores()
 
       async function getData() {
