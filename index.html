@@ -485,6 +485,13 @@
                     <th
                       scope="col"
                       class="border-bottom text-center"
+                      style="width: 5%"
+                    >
+                      6
+                    </th>
+                    <th
+                      scope="col"
+                      class="border-bottom text-center"
                       style="width: 10%"
                     >
                       Pts
@@ -1858,23 +1865,23 @@
     <script src="js/app.js"></script>
 
     <script type="text/javascript">
-      // if (/Android/i.test(navigator.userAgent)) {
-      //   // true for mobile device
-      //   if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      //     var myModal = new bootstrap.Modal(
-      //       document.getElementById('wishlist'),
-      //       {}
-      //     )
-      //     if (!window.matchMedia('(display-mode: standalone)').matches) {
-      //       document.onreadystatechange = function () {
-      //         myModal.show()
-      //       }
-      //     }
-      //   }
-      // } else {
-      //   // false for not mobile device
-      //   console.log('not android mobile device')
-      // }
+      if (/Android/i.test(navigator.userAgent)) {
+        // true for mobile device
+        if (navigator.userAgent.indexOf('Chrome') !== -1) {
+          var myModal = new bootstrap.Modal(
+            document.getElementById('wishlist'),
+            {}
+          )
+          if (!window.matchMedia('(display-mode: standalone)').matches) {
+            document.onreadystatechange = function () {
+              myModal.show()
+            }
+          }
+        }
+      } else {
+        // false for not mobile device
+        console.log('not android mobile device')
+      }
       renderScores()
 
       async function getData() {
@@ -1891,35 +1898,36 @@
 
       async function renderScores() {
         // let scores = await formatJson()
-        const scores = await getData()
-        // const scores = {
-        //   data: [
-        //     ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
-        //     [1, 5, 1, 0, 1, 'ETH', 'Aklog', '@', '', '', '', ''],
-        //     [1, '', 2, 0, 1, 'COL', 'William', '', '@', '', '', ''],
-        //     [1, '', 3, 0, 1, 'GBR', 'Paul', '', '', '@', '', ''],
-        //     [1, '', 4, 0, 1, 'ETH', 'Mesay', '', '', '', '@', ''],
-        //     [1, '', 5, 0, 1, 'ITA', 'Riccardo', '', '', '', '', '@'],
-        //     [2, 5, 1, 0, 1, 'ESP', 'Ivan', '@', '', '', '', ''],
-        //     [2, '', 2, 0, 1, 'ETH', 'Mickey', '', '@', '', '', ''],
-        //     [2, '', 3, 0, 1, 'ITA', 'Gianfranco', '', '', '@', '', ''],
-        //     [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', ''],
-        //     [2, '', 5, 0, 1, 'NED', 'Janno', '', '', '', '', '@'],
-        //     [3, 5, 1, 0, 1, 'ITA', 'Alberto', '@', '', '', '', ''],
-        //     [3, '', 2, 0, 1, 'GBR', 'Francis', '', '@', '', '', ''],
-        //     [3, '', 3, 0, 1, 'DEN', 'Jesper', '', '', '@', '', ''],
-        //     [3, '', 4, 0, 1, 'ETH', 'Tibetu', '', '', '', '@', ''],
-        //     [3, '', 5, 0, 1, 'MOR', 'Hicham', '', '', '', '', '@'],
-        //     [4, 6, 1, 0, 1, 'ITA', 'Riccardo C', '@', '', '', '', '', ''],
-        //     [4, '', 2, 0, 1, 'ETH', 'Mig', '', '@', '', '', '', ''],
-        //     [4, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', ''],
-        //     [4, '', 4, 0, 1, 'LEB', 'Mario', '', '', '', '@', '', ''],
-        //     [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', ''],
-        //     [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@'],
-        //   ],
-        //   main: { lastUpdated: '2021-10-05T15:18:00.000Z', showBoxes: 0 },
-        //   error: false,
-        // }
+        // const scores = await getData()
+        const scores = {
+          data: [
+            ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
+            [1, 5, 1, 0, 1, 'ETH', 'Aklog', '@', '', '', '', ''],
+            [1, '', 2, 0, 1, 'COL', 'William ', '', '@', '', '', ''],
+            [1, '', 3, 0, 1, 'GBR', 'Paul', '', '', '@', '', ''],
+            [1, '', 4, 0, 1, 'ETH', 'Mesay', '', '', '', '@', ''],
+            [1, '', 5, 0, 1, 'ITA', 'Riccardo B', '', '', '', '', '@'],
+            [2, 5, 1, 0, 1, 'ESP', 'Ivan', '@', '', '', '', ''],
+            [2, '', 2, 0, 1, 'ETH', 'Mickey', '', '@', '', '', ''],
+            [2, '', 3, 0, 1, 'ITA', 'Gianfranco', '', '', '@', '', ''],
+            [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', ''],
+            [2, '', 5, 0, 1, 'NED', 'Janno', '', '', '', '', '@'],
+            [3, 6, 1, 0, 1, 'ITA', 'Alberto', '@', '', '', '', '', ''],
+            [3, '', 2, 0, 1, 'GBR', 'Francis', '', '@', '', '', '', ''],
+            [3, '', 3, 0, 1, 'DEN', 'Jesper', '', '', '@', '', '', ''],
+            [3, '', 4, 0, 1, 'ETH', 'Tibetu', '', '', '', '@', '', ''],
+            [3, '', 5, 0, 1, 'MOR', 'Hicham', '', '', '', '', '@', ''],
+            [3, '', 6, 0, 1, 'ETH', 'Bini', '', '', '', '', '', '@'],
+            [4, 6, 1, 0, 1, 'ITA', 'Riccardo C', '@', '', '', '', '', ''],
+            [4, '', 2, 0, 1, 'ETH', 'Mig', '', '@', '', '', '', ''],
+            [4, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', ''],
+            [4, '', 4, 0, 1, 'LEB', 'Mario', '', '', '', '@', '', ''],
+            [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', ''],
+            [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@'],
+          ],
+          main: { lastUpdated: '2021-10-06T13:29:00.000Z', showBoxes: 0 },
+          error: false,
+        }
 
         const date = new Date(scores.main.lastUpdated)
 
