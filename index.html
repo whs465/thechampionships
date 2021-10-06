@@ -210,49 +210,6 @@
     >
       <div class="container position-relative" style="z-index: 1">
         <div id="comingsoon" class="container bg-overlay d-none">
-          <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-              <h4 class="mt-4 mb-0 coming-soon text-light">
-                <span
-                  class="typewrite"
-                  data-period="2000"
-                  data-type='[ "Coming soon...", "When this rain stops...","After the fog clears...", "When the sun is back..."]'
-                >
-                  <span class="wrap"></span>
-                </span>
-              </h4>
-              <div class="title-heading">
-                <!-- <h4 class="text-success mb-3">12th September, 2021</h4> -->
-
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <div id="eventdown">
-                      <ul class="count-down list-unstyled text-success">
-                        <li
-                          id="days"
-                          class="count-number list-inline-item px-3"
-                        ></li>
-                        <li
-                          id="hours"
-                          class="count-number list-inline-item px-3"
-                        ></li>
-                        <li
-                          id="mins"
-                          class="count-number list-inline-item px-3"
-                        ></li>
-                        <li
-                          id="secs"
-                          class="count-number list-inline-item px-3"
-                        ></li>
-                        <li id="end" class="h1"></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--end col-->
-          </div>
           <!--end row-->
         </div>
         <!--end container-->
@@ -263,9 +220,43 @@
               <h1 class="heading text-primary text-shadow-title mt-0 mb-2">
                 Round 2-2021
               </h1>
-              <h5 class="text-muted mt-0 mb-5">
+              <h6 class="text-muted mt-0 mb-0">
                 Oct 5<sup>th</sup> to Nov 1<sup>st</sup>
-              </h5>
+              </h6>
+              <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                  <div class="title-heading">
+                    <!-- <h4 class="text-success mb-3">12th September, 2021</h4> -->
+
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <div id="eventdown">
+                          <ul class="count-down list-unstyled text-success">
+                            <li
+                              id="days"
+                              class="count-number list-inline-item px-1"
+                            ></li>
+                            <li
+                              id="hours"
+                              class="count-number list-inline-item px-1"
+                            ></li>
+                            <li
+                              id="mins"
+                              class="count-number list-inline-item px-1"
+                            ></li>
+                            <li
+                              id="secs"
+                              class="count-number list-inline-item px-1"
+                            ></li>
+                            <li id="end" class="h1"></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end col-->
+              </div>
               <img
                 src="images/wimbledon.png"
                 height="280"
@@ -1900,35 +1891,35 @@
 
       async function renderScores() {
         // let scores = await formatJson()
-        // const scores = await getData()
-        const scores = {
-          data: [
-            ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
-            [1, 5, 1, 0, 1, 'ETH', 'Aklog', '@', '', '', '', ''],
-            [1, '', 2, 0, 1, 'COL', 'William', '', '@', '', '', ''],
-            [1, '', 3, 0, 1, 'GBR', 'Paul', '', '', '@', '', ''],
-            [1, '', 4, 0, 1, 'ETH', 'Mesay', '', '', '', '@', ''],
-            [1, '', 5, 0, 1, 'ITA', 'Riccardo', '', '', '', '', '@'],
-            [2, 5, 1, 0, 1, 'ESP', 'Ivan', '@', '', '', '', ''],
-            [2, '', 2, 0, 1, 'ETH', 'Mickey', '', '@', '', '', ''],
-            [2, '', 3, 0, 1, 'ITA', 'Gianfranco', '', '', '@', '', ''],
-            [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', ''],
-            [2, '', 5, 0, 1, 'NED', 'Janno', '', '', '', '', '@'],
-            [3, 5, 1, 0, 1, 'ITA', 'Alberto', '@', '', '', '', ''],
-            [3, '', 2, 0, 1, 'GBR', 'Francis', '', '@', '', '', ''],
-            [3, '', 3, 0, 1, 'DEN', 'Jesper', '', '', '@', '', ''],
-            [3, '', 4, 0, 1, 'ETH', 'Tibetu', '', '', '', '@', ''],
-            [3, '', 5, 0, 1, 'MOR', 'Hicham', '', '', '', '', '@'],
-            [4, 6, 1, 0, 1, 'ITA', 'Riccardo C', '@', '', '', '', '', ''],
-            [4, '', 2, 0, 1, 'ETH', 'Mig', '', '@', '', '', '', ''],
-            [4, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', ''],
-            [4, '', 4, 0, 1, 'LEB', 'Mario', '', '', '', '@', '', ''],
-            [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', ''],
-            [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@'],
-          ],
-          main: { lastUpdated: '2021-10-05T15:18:00.000Z', showBoxes: 0 },
-          error: false,
-        }
+        const scores = await getData()
+        // const scores = {
+        //   data: [
+        //     ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
+        //     [1, 5, 1, 0, 1, 'ETH', 'Aklog', '@', '', '', '', ''],
+        //     [1, '', 2, 0, 1, 'COL', 'William', '', '@', '', '', ''],
+        //     [1, '', 3, 0, 1, 'GBR', 'Paul', '', '', '@', '', ''],
+        //     [1, '', 4, 0, 1, 'ETH', 'Mesay', '', '', '', '@', ''],
+        //     [1, '', 5, 0, 1, 'ITA', 'Riccardo', '', '', '', '', '@'],
+        //     [2, 5, 1, 0, 1, 'ESP', 'Ivan', '@', '', '', '', ''],
+        //     [2, '', 2, 0, 1, 'ETH', 'Mickey', '', '@', '', '', ''],
+        //     [2, '', 3, 0, 1, 'ITA', 'Gianfranco', '', '', '@', '', ''],
+        //     [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', ''],
+        //     [2, '', 5, 0, 1, 'NED', 'Janno', '', '', '', '', '@'],
+        //     [3, 5, 1, 0, 1, 'ITA', 'Alberto', '@', '', '', '', ''],
+        //     [3, '', 2, 0, 1, 'GBR', 'Francis', '', '@', '', '', ''],
+        //     [3, '', 3, 0, 1, 'DEN', 'Jesper', '', '', '@', '', ''],
+        //     [3, '', 4, 0, 1, 'ETH', 'Tibetu', '', '', '', '@', ''],
+        //     [3, '', 5, 0, 1, 'MOR', 'Hicham', '', '', '', '', '@'],
+        //     [4, 6, 1, 0, 1, 'ITA', 'Riccardo C', '@', '', '', '', '', ''],
+        //     [4, '', 2, 0, 1, 'ETH', 'Mig', '', '@', '', '', '', ''],
+        //     [4, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', ''],
+        //     [4, '', 4, 0, 1, 'LEB', 'Mario', '', '', '', '@', '', ''],
+        //     [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', ''],
+        //     [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@'],
+        //   ],
+        //   main: { lastUpdated: '2021-10-05T15:18:00.000Z', showBoxes: 0 },
+        //   error: false,
+        // }
 
         const date = new Date(scores.main.lastUpdated)
 
