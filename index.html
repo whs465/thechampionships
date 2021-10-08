@@ -1927,7 +1927,7 @@
         //     [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', '', 0],
         //     [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@', 0],
         //   ],
-        //   main: { lastUpdated: '2021-10-08T15:24:00.000Z', showRank: 1 },
+        //   main: { lastUpdated: '2021-10-08T17:30:00.000Z', showRank: 0 },
         //   error: false,
         // }
 
@@ -1964,7 +1964,7 @@
               : numberPlayers
 
           matchesPlayed =
-            parseFloat(scores.data[i][7 + numberPlayers] * 100).toFixed(1) + '%'
+            parseFloat(scores.data[i][7 + numberPlayers]).toFixed(1) + '%'
           playerNumber = scores.data[i][2]
           totalPoints = scores.data[i][3]
           playerRank = scores.data[i][4]
@@ -1976,8 +1976,8 @@
 
           p =
             scores.main.showRank == 1
-              ? `<a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="Position: ${playerRank}, Matches Played: ${matchesPlayed}">${scores.data[i][6]}</a>`
-              : `<a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="% Played: ${matchesPlayed}">${scores.data[i][6]}</a>`
+              ? `${scores.data[i][6]} <span class="badge even-short-badge rounded-pill bg-soft-success">${playerRank}</span>`
+              : `${scores.data[i][6]}`
           // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
           p1 = scores.data[i][7]
           let cellP1 =
