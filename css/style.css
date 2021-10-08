@@ -242,6 +242,10 @@ a.text-muted:focus {
   color: #75859b !important;
 }
 
+.bg-lightW {
+  background-color: #573886 !important;
+}
+
 .bg-light {
   background-color: #f8f9fc !important;
 }

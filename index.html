@@ -205,7 +205,7 @@
 
     <!-- Hero Start -->
     <section
-      class="bg-auth-home bg-light bg-animation-left crypto-home d-table w-100"
+      class="bg-auth-home bg-lightW bg-animation-left crypto-home d-table w-100"
       id="home"
     >
       <div class="container position-relative" style="z-index: 1">
@@ -1867,23 +1867,23 @@
     <script src="js/app.js"></script>
 
     <script type="text/javascript">
-      if (/Android/i.test(navigator.userAgent)) {
-        // true for mobile device
-        if (navigator.userAgent.indexOf('Chrome') !== -1) {
-          var myModal = new bootstrap.Modal(
-            document.getElementById('wishlist'),
-            {}
-          )
-          if (!window.matchMedia('(display-mode: standalone)').matches) {
-            document.onreadystatechange = function () {
-              myModal.show()
-            }
-          }
-        }
-      } else {
-        // false for not mobile device
-        console.log('not android mobile device')
-      }
+      // if (/Android/i.test(navigator.userAgent)) {
+      //   // true for mobile device
+      //   if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      //     var myModal = new bootstrap.Modal(
+      //       document.getElementById('wishlist'),
+      //       {}
+      //     )
+      //     if (!window.matchMedia('(display-mode: standalone)').matches) {
+      //       document.onreadystatechange = function () {
+      //         myModal.show()
+      //       }
+      //     }
+      //   }
+      // } else {
+      //   // false for not mobile device
+      //   console.log('not android mobile device')
+      // }
       renderScores()
 
       async function getData() {
