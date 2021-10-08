@@ -1888,7 +1888,7 @@
 
       async function getData() {
         let url =
-          'https://script.google.com/macros/s/AKfycbwPcZW_AC84LVnKgwSR8VI89VkDY_gAQX3plO-RQ1bJ2CR2WjtQglJsIbYDrp0OEGTqGQ/exec'
+          'https://script.google.com/macros/s/AKfycby-YHHVNkuIUwiaPdACUWQRYOiCm3gXSHZD7m5pD4AJMDOWCK0u5SYb3FKtepxUTD_JAQ/exec'
         try {
           let res = await fetch(url)
           if (!res.ok) throw new Error('Request failed. Try again later')
@@ -1900,36 +1900,36 @@
 
       async function renderScores() {
         // let scores = await formatJson()
-        // const scores = await getData()
-        const scores = {
-          data: [
-            ['', '', '#', 'Total', 'Rank', '', 'Name', 1, 2, 3, 4, 5],
-            [1, 5, 1, 0, 3, 'ETH', 'Aklog', '@', '', '', '', ''],
-            [1, '', 2, 0, 3, 'COL', 'William ', '', '@', '', '', ''],
-            [1, '', 3, 0, 3, 'GBR', 'Paul', '', '', '@', '', ''],
-            [1, '', 4, 12, 1, 'ETH', 'Mesay', '', '', '', '@', 9],
-            [1, '', 5, 8, 2, 'ITA', 'Riccardo B', '', '', '', 7, '@'],
-            [2, 5, 1, 0, 1, 'ESP', 'Ivan', '@', '', '', '', ''],
-            [2, '', 2, 0, 1, 'ETH', 'Mickey', '', '@', '', '', ''],
-            [2, '', 3, 0, 1, 'ITA', 'Gianfranco', '', '', '@', '', ''],
-            [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', ''],
-            [2, '', 5, 0, 1, 'NED', 'Janno', '', '', '', '', '@'],
-            [3, 6, 1, 0, 3, 'ITA', 'Alberto', '@', '', '', '', '', ''],
-            [3, '', 2, 2, 2, 'GBR', 'Francis', '', '@', '', 1, '', ''],
-            [3, '', 3, 0, 3, 'DEN', 'Jesper', '', '', '@', '', '', ''],
-            [3, '', 4, 12, 1, 'ETH', 'Tibetu', '', 9, '', '@', '', ''],
-            [3, '', 5, 0, 3, 'MOR', 'Hicham', '', '', '', '', '@', ''],
-            [3, '', 6, 0, 3, 'ETH', 'Bini', '', '', '', '', '', '@'],
-            [4, 6, 1, 0, 1, 'ITA', 'Riccardo C', '@', '', '', '', '', ''],
-            [4, '', 2, 0, 1, 'ETH', 'Mig', '', '@', '', '', '', ''],
-            [4, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', ''],
-            [4, '', 4, 0, 1, 'LEB', 'Mario', '', '', '', '@', '', ''],
-            [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', ''],
-            [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@'],
-          ],
-          main: { lastUpdated: '2021-10-08T06:05:00.000Z', showBoxes: 0 },
-          error: false,
-        }
+        const scores = await getData()
+
+        // const scores = {
+        //   data: [
+        //     [1, 5, 1, 0, 3, 'ETH', 'Aklog', '@', '', '', '', '', 0],
+        //     [1, '', 2, 0, 3, 'COL', 'William ', '', '@', '', '', '', 0],
+        //     [1, '', 3, 0, 3, 'GBR', 'Paul', '', '', '@', '', '', 0],
+        //     [1, '', 4, 12, 1, 'ETH', 'Mesay', '', '', '', '@', 9, 0.25],
+        //     [1, '', 5, 8, 2, 'ITA', 'Riccardo B', '', '', '', 7, '@', 0.25],
+        //     [2, 5, 1, 0, 1, 'ESP', 'Ivan', '@', '', '', '', '', 0],
+        //     [2, '', 2, 0, 1, 'ETH', 'Mickey', '', '@', '', '', '', 0],
+        //     [2, '', 3, 0, 1, 'ITA', 'Gianfranco', '', '', '@', '', '', 0],
+        //     [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', '', 0],
+        //     [2, '', 5, 0, 1, 'NED', 'Janno', '', '', '', '', '@', 0],
+        //     [3, 6, 1, 0, 3, 'ITA', 'Alberto', '@', '', '', '', '', '', 0],
+        //     [3, '', 2, 2, 2, 'GBR', 'Francis', '', '@', '', 1, '', '', 0.2],
+        //     [3, '', 3, 0, 3, 'DEN', 'Jesper', '', '', '@', '', '', '', 0],
+        //     [3, '', 4, 12, 1, 'ETH', 'Tibetu', '', 9, '', '@', '', '', 0.2],
+        //     [3, '', 5, 0, 3, 'MOR', 'Hicham', '', '', '', '', '@', '', 0],
+        //     [3, '', 6, 0, 3, 'ETH', 'Bini', '', '', '', '', '', '@', 0],
+        //     [4, 6, 1, 0, 1, 'ITA', 'Riccardo C', '@', '', '', '', '', '', 0],
+        //     [4, '', 2, 0, 1, 'ETH', 'Mig', '', '@', '', '', '', '', 0],
+        //     [4, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', '', 0],
+        //     [4, '', 4, 0, 1, 'LEB', 'Mario', '', '', '', '@', '', '', 0],
+        //     [4, '', 5, 0, 1, 'ETH', 'Abay', '', '', '', '', '@', '', 0],
+        //     [4, '', 6, 0, 1, 'BEL', 'Wouten', '', '', '', '', '', '@', 0],
+        //   ],
+        //   main: { lastUpdated: '2021-10-08T15:24:00.000Z', showRank: 1 },
+        //   error: false,
+        // }
 
         const date = new Date(scores.main.lastUpdated)
 
@@ -1955,7 +1955,7 @@
                         </th>
                         `
 
-        for (i = 1; i < scores.data.length; i++) {
+        for (i = 0; i < scores.data.length; i++) {
           boxNumber = scores.data[i][0]
 
           numberPlayers =
@@ -1963,6 +1963,8 @@
               ? scores.data[i][1]
               : numberPlayers
 
+          matchesPlayed =
+            parseFloat(scores.data[i][7 + numberPlayers] * 100).toFixed(1) + '%'
           playerNumber = scores.data[i][2]
           totalPoints = scores.data[i][3]
           playerRank = scores.data[i][4]
@@ -1973,9 +1975,9 @@
               `
 
           p =
-            scores.main.showBoxes == 1
-              ? `${scores.data[i][6]}<span class="badge even-short-badge rounded-pill bg-soft-success">${playerRank}</span>`
-              : `${scores.data[i][6]}`
+            scores.main.showRank == 1
+              ? `<a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="Position: ${playerRank}, Matches Played: ${matchesPlayed}">${scores.data[i][6]}</a>`
+              : `<a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="% Played: ${matchesPlayed}">${scores.data[i][6]}</a>`
           // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
           p1 = scores.data[i][7]
           let cellP1 =
