@@ -1608,14 +1608,14 @@ button:not(:disabled) {
 
 .accordion .accordion-item .accordion-button.collapsed {
   background-color: #ffffff;
-  color: #3c4858 !important;
+  color: #54008b !important;
   transition: all 0.5s;
 }
 
 .accordion .accordion-item .accordion-button.collapsed:before {
   top: 15px;
   transform: rotate(180deg);
-  color: #3c4858 !important;
+  color: #54008b !important;
 }
 
 .accordion .accordion-item .accordion-button:after {
