@@ -1973,10 +1973,17 @@
                 <img src="images/${scores.data[i][5]}_h.gif" class="me-0 l-light" height="auto" width="21" alt="" />
                 </span>
               `
+          let elimCriteria = scores.data[i][7 + numberPlayers]
 
           p =
             scores.main.showRank == 1
-              ? `${scores.data[i][6]} <span class="badge even-short-badge rounded-pill bg-soft-success">${playerRank}</span>`
+              ? elimCriteria < 0.5
+                ? `${
+                    scores.data[i][6]
+                  } <span class="badge even-short-badge rounded-pill bg-soft-danger">${
+                    parseFloat(elimCriteria * 100).toFixed() + '%'
+                  }</span>`
+                : `${scores.data[i][6]} <span class="badge even-short-badge rounded-pill bg-soft-success">${playerRank}</span>`
               : `${scores.data[i][6]}`
           // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
           p1 = scores.data[i][7]
