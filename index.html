@@ -286,7 +286,7 @@
     <!-- Hero End -->
     <section id="scores" class="section border-top">
       <div class="container">
-        <div class="row justify-content-center features-absolute">
+        <div class="row g-3 justify-content-center features-absolute">
           <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
             <div class="table-responsive bg-white shadow-md rounded-md">
               <table class="table mb-0 table-center align-middle caption-top">
@@ -639,6 +639,7 @@
                     >
                       6
                     </th>
+
                     <th
                       scope="col"
                       class="border-bottom text-center"
@@ -1946,7 +1947,7 @@
         // let scores = await formatJson()
         const scores = await getData()
 
-        // const scores = { }
+        // const scores = {}
 
         const date = new Date(scores.main.lastUpdated)
 
@@ -2035,6 +2036,16 @@
               p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
           }
 
+          if (numberPlayers === 7) {
+            p6 = scores.data[i][12]
+            cellP6 =
+              p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+
+            p7 = scores.data[i][13]
+            cellP7 =
+              p7 === '@' ? boxSeparator : `<td class="text-center">${p7}</td>`
+          }
+
           strHtml = `
               <tr>
                 <td class="text-center">${playerNumber}</td>
@@ -2045,6 +2056,7 @@
                 ${cellP4}
                 ${cellP5}
                 ${numberPlayers === 6 ? cellP6 : ''}
+                ${numberPlayers === 7 ? cellP6 + cellP7 : ''}
                 <td class="text-center">${totalPoints}</td>
               </tr>`
 
