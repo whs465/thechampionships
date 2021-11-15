@@ -307,6 +307,8 @@ try {
       const target = +counter_value.getAttribute('data-target')
       const count = +counter_value.innerText
 
+      console.log(target, count)
+
       // Lower inc to slow and higher to slow
       var inc = target / speed
 
