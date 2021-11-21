@@ -239,9 +239,7 @@ try {
 
       // Calculating the days, hours, minutes and seconds left
       var days = Math.floor(timeleft / (1000 * 60 * 60 * 24))
-      var hours = Math.floor(
-        (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      )
+      var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60))
       var seconds = Math.floor((timeleft % (1000 * 60)) / 1000)
 
@@ -297,6 +295,36 @@ try {
 //=========================================//
 /*/*            05) Data Counter           */
 //=========================================//
+// try {
+//   const counter = document.querySelectorAll('.counter-value')
+//   const speed = 2500 // The lower the slower
+
+//   counter.forEach((counter_value) => {
+//     const updateCount = () => {
+//       const target = +counter_value.getAttribute('data-target')
+//       const count = +counter_value.innerText
+
+//       // Lower inc to slow and higher to slow
+//       var inc = target / speed
+
+//       if (inc < 1) {
+//         inc = 1
+//       }
+
+//       // Check if target is reached
+//       if (count < target) {
+//         // Add inc to count and output in counter_value
+//         counter_value.innerText = (count + inc).toFixed(0)
+//         // Call function every ms
+//         setTimeout(updateCount, 1)
+//       } else {
+//         counter_value.innerText = target
+//       }
+//     }
+
+//     updateCount()
+//   })
+// } catch (err) {}
 
 //=========================================//
 /*/*            06) Datepicker js*/
@@ -473,8 +501,7 @@ try {
     // INJECT CSS
     var css = document.createElement('style')
     css.type = 'text/css'
-    css.innerHTML =
-      '.typewrite > .wrap { border-right: 0.08em solid transparent}'
+    css.innerHTML = '.typewrite > .wrap { border-right: 0.08em solid transparent}'
     document.body.appendChild(css)
   }
   window.onload(typewrite())
