@@ -1998,23 +1998,20 @@
     <script src="js/app.js"></script>
 
     <script type="text/javascript">
-      // if (/Android/i.test(navigator.userAgent)) {
-      //   // true for mobile device
-      //   if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      //     var myModal = new bootstrap.Modal(
-      //       document.getElementById('wishlist'),
-      //       {}
-      //     )
-      //     if (!window.matchMedia('(display-mode: standalone)').matches) {
-      //       document.onreadystatechange = function () {
-      //         myModal.show()
-      //       }
-      //     }
-      //   }
-      // } else {
-      //   // false for not mobile device
-      //   console.log('not android mobile device')
-      // }
+      if (/Android/i.test(navigator.userAgent)) {
+        // true for mobile device
+        if (navigator.userAgent.indexOf('Chrome') !== -1) {
+          var myModal = new bootstrap.Modal(document.getElementById('wishlist'), {})
+          if (!window.matchMedia('(display-mode: standalone)').matches) {
+            document.onreadystatechange = function () {
+              myModal.show()
+            }
+          }
+        }
+      } else {
+        // false for not mobile device
+        console.log('not android mobile device')
+      }
       renderScores()
 
       async function getData() {
@@ -2105,7 +2102,7 @@
 
           p =
             scores.main.showRank == 1
-              ? elimCriteria < 0.5
+              ? elimCriteria < 0 //Normally 0.5
                 ? `${
                     scores.data[i][6]
                   } <span class="badge even-short-badge rounded-pill bg-soft-danger">${
