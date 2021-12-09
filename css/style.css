@@ -5340,3 +5340,49 @@ rain {
     background-position: 500px 1000px, 200px 400px, -100px 300px;
   }
 }
+
+.cookie-popup {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 512px;
+  z-index: 5;
+}
+
+.cookie-popup .cookie-popup-actions button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 600;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+@media (max-width: 425px) {
+  .cookie-popup {
+    left: 12px;
+    right: 12px;
+  }
+}
+
+.cookie-popup-not-accepted {
+  display: block;
+  animation: cookie-popup-in 0.5s ease forwards;
+}
+
+.cookie-popup-accepted {
+  display: none !important;
+}
+
+@keyframes cookie-popup-in {
+  from {
+    bottom: -6.25rem;
+  }
+  to {
+    bottom: 1.25rem;
+  }
+}
