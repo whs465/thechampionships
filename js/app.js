@@ -22,6 +22,8 @@
 
 window.addEventListener('load', fn, false)
 
+renderScores()
+
 //  window.onload = function loader() {
 function fn() {
   // Preloader
@@ -130,10 +132,7 @@ if (document.getElementById('navigation')) {
 function windowScroll() {
   const navbar = document.getElementById('topnav')
   if (navbar != null) {
-    if (
-      document.body.scrollTop >= 50 ||
-      document.documentElement.scrollTop >= 50
-    ) {
+    if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
       navbar.classList.add('nav-sticky')
     } else {
       navbar.classList.remove('nav-sticky')
@@ -154,10 +153,7 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (mybutton != null) {
-    if (
-      document.body.scrollTop > 500 ||
-      document.documentElement.scrollTop > 500
-    ) {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
       mybutton.style.display = 'block'
     } else {
       mybutton.style.display = 'none'
@@ -172,9 +168,7 @@ function topFunction() {
 
 //ACtive Sidebar
 ;(function () {
-  var current = location.pathname.substring(
-    location.pathname.lastIndexOf('/') + 1
-  )
+  var current = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
   if (current === '') return
   var menuItems = document.querySelectorAll('.sidebar-nav a')
   for (var i = 0, len = menuItems.length; i < len; i++) {
@@ -328,3 +322,192 @@ geojson.features.forEach(function (marker) {
     )
     .addTo(map)
 })
+
+async function getData() {
+  let url =
+    'https://script.google.com/macros/s/AKfycbyHgD2ALWePCGlezRmvMe5QsPDGlwMNnWxZP-d1_SRIE7OliBVCbcI3Tf9L49ZacWPY_g/exec'
+  try {
+    let res = await fetch(url)
+    if (!res.ok) throw new Error('Request failed. Try again later')
+    return await res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function renderScores() {
+  // let scores = await formatJson()
+  const scores = await getData()
+
+  // const scores = { }
+
+  const date = new Date(scores.main.lastUpdated)
+
+  document.getElementById('updated').innerHTML = new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'medium',
+    timeStyle: 'long',
+  }).format(date)
+
+  // if (scores.main.showBoxes == 1) {
+  //   document.querySelector('#scores').classList.remove('d-none')
+  //   document.querySelector('#comingsoon').classList.add('d-none')
+  // }
+
+  const boxSeparator = `<th class="text-center">
+                          <i class="mdi mdi-tennis-ball text-primary"></i>
+                        </th>
+                        `
+  const boxSeparatorBg = `<th class="text-center bg-soft-primary-table">
+                          <i class="mdi mdi-tennis-ball text-primary "></i>
+                        </th>
+                        `
+
+  for (i = 0; i < scores.data.length; i++) {
+    boxNumber = scores.data[i][0]
+
+    numberPlayers =
+      String(scores.data[i][1]).length > 0 ? scores.data[i][1] : numberPlayers
+
+    matchesPlayed = parseFloat(scores.data[i][7 + numberPlayers]).toFixed(1) + '%'
+    playerNumber = scores.data[i][2]
+    totalPoints = scores.data[i][3]
+    playerRank = scores.data[i][4]
+
+    flag = `<span class="logo-light-mode">
+                <img src="images/${scores.data[i][5]}_h.gif" class="me-0 l-light" height="auto" width="21" alt="" />
+                </span>
+              `
+    let elimCriteria = scores.data[i][7 + numberPlayers]
+
+    p =
+      scores.main.showRank == 1
+        ? elimCriteria < 0.5 //Normally 0.5
+          ? `${
+              scores.data[i][6]
+            } <span class="badge even-short-badge rounded-pill bg-soft-danger">${
+              parseFloat(elimCriteria * 100).toFixed() + '%'
+            }</span>`
+          : `${scores.data[i][6]} <span class="badge even-short-badge rounded-pill bg-soft-success">${playerRank}</span>`
+        : `${scores.data[i][6]}`
+    // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
+    p1 = scores.data[i][7]
+    let cellP1 =
+      p1 === '@'
+        ? boxSeparatorBg
+        : `<td class="text-center bg-soft-primary-table">${p1}</td>`
+
+    p2 = scores.data[i][8]
+    let cellP2 = p2 === '@' ? boxSeparator : `<td class="text-center">${p2}</td>`
+
+    p3 = scores.data[i][9]
+    let cellP3 =
+      p3 === '@'
+        ? boxSeparatorBg
+        : `<td class="text-center bg-soft-primary-table">${p3}</td>`
+
+    p4 = scores.data[i][10]
+    let cellP4 = p4 === '@' ? boxSeparator : `<td class="text-center">${p4}</td>`
+
+    p5 = scores.data[i][11]
+    let cellP5 =
+      p5 === '@'
+        ? boxSeparatorBg
+        : `<td class="text-center bg-soft-primary-table">${p5}</td>`
+
+    if (numberPlayers === 6) {
+      p6 = scores.data[i][12]
+      cellP6 = p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+    }
+
+    if (numberPlayers === 7) {
+      p6 = scores.data[i][12]
+      cellP6 = p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+
+      p7 = scores.data[i][13]
+      cellP7 =
+        p7 === '@'
+          ? boxSeparatorBg
+          : `<td class="text-center bg-soft-primary-table">${p7}</td>`
+    }
+
+    if (numberPlayers === 8) {
+      p6 = scores.data[i][12]
+      cellP6 = p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+
+      p7 = scores.data[i][13]
+      cellP7 =
+        p7 === '@'
+          ? boxSeparatorBg
+          : `<td class="text-center bg-soft-primary-table">${p7}</td>`
+
+      p8 = scores.data[i][14]
+      cellP8 = p8 === '@' ? boxSeparator : `<td class="text-center">${p8}</td>`
+    }
+
+    strHtml = `
+              <tr>
+                <td class="text-center">${playerNumber}</td>
+                <td class="text-nowrap">${flag}${p}</td>
+                ${cellP1}
+                ${cellP2}
+                ${cellP3}
+                ${cellP4}
+                ${cellP5}
+                ${numberPlayers === 6 ? cellP6 : ''}
+                ${numberPlayers === 7 ? cellP6 + cellP7 : ''}
+                ${numberPlayers === 8 ? cellP6 + cellP7 + cellP8 : ''}
+                <td class="text-center">${totalPoints}</td>
+              </tr>`
+
+    if (boxNumber === 1) {
+      document.getElementById('box1').innerHTML += strHtml
+    } else if (boxNumber === 2) {
+      document.getElementById('box2').innerHTML += strHtml
+    } else if (boxNumber === 3) {
+      document.getElementById('box3').innerHTML += strHtml
+    } else if (boxNumber === 4) {
+      document.getElementById('box4').innerHTML += strHtml
+    } else if (boxNumber === 5) {
+      document.getElementById('box5').innerHTML += strHtml
+    }
+  }
+  document.getElementById('numCountries').innerText = scores.main.numCountries
+  document.getElementById('numPlayers').innerText = scores.main.numPlayers
+  document.getElementById('totMatches').innerText = scores.main.totMatches
+  document.getElementById('matchPlayed').innerText = parseFloat(
+    scores.main.matchPlayed
+  ).toFixed(0)
+
+  const counterElements = document.querySelectorAll('.counter-value')
+  const speed = 80 // the lower the slower
+
+  // Counters
+  function counter(target, start, stop) {
+    target.innerText = 0
+    const counterInterval = setInterval(() => {
+      const inc = Number(stop / speed)
+      start += inc
+      const valueConverted = (Math.round(start * 100) / 100).toFixed(0)
+      target.innerText = valueConverted
+      if (valueConverted === stop) {
+        clearInterval(counterInterval)
+      }
+    }, 30)
+  }
+
+  function obCallBack(entries) {
+    entries.forEach((entry) => {
+      const { target } = entry
+      const stopValue = target.innerText
+      const startValue = 0
+      if (!entry.isIntersecting) return
+      counter(target, startValue, stopValue)
+      counterObserver.unobserve(target)
+    })
+  }
+
+  const counterObserver = new IntersectionObserver(obCallBack, {
+    threshold: 1,
+  })
+  counterElements.forEach((counterElem) => counterObserver.observe(counterElem))
+}
