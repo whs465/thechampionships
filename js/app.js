@@ -348,9 +348,36 @@ async function getData() {
 
 async function renderScores() {
   // let scores = await formatJson()
-  const scores = await getData()
+  // const scores = await getData()
 
-  // const scores = { }
+  const scores = {
+    data: [
+      [1, 8, 1, 60, 1, 'ETH', 'Aklog ', '@', 9, 9, 9, '', '', 9, 9, 0.71],
+      [1, '', 2, 38, 4, 'ETH', 'Sami', 0, '@', 7, '', 4, '', 9, 9, 0.71],
+      [1, '', 3, 59, 2, 'ETH', 'Tibetu', 3, 9, '@', 4, 1, 9, 9, 9, 1],
+      [1, '', 4, 29, 6, 'MOR', 'Hicham', 4, '', 9, '@', '', '', 9, '', 0.43],
+      [1, '', 5, 48, 3, 'ETH', 'Abay ', '', 9, 9, '', '@', '', 9, 9, 0.57],
+      [1, '', 6, 8, 8, 'EGY', 'Mohamed', '', '', 7, '', '', '@', '', '', 0.14],
+      [1, '', 7, 24, 7, 'CZE', 'Pavel', 3, 3, 5, 2, 0, '', '@', 5, 0.86],
+      [1, '', 8, 38, 4, 'ETH', 'Mohammed', 6, 4, 8, '', 4, '', 9, '@', 0.71],
+      [2, 7, 1, 49, 2, 'ETH', 'Mickey', '@', 8, 7, '', 7, 9, 9, 0.83],
+      [2, '', 2, 48, 3, 'ETH', 'Nebiat', 9, '@', '', 9, '', 9, 9, 0.67],
+      [2, '', 3, 48, 3, 'ETH', 'Migo ', 9, '', '@', '', 9, 9, 9, 0.67],
+      [2, '', 4, 29, 5, 'KEN', 'Sharon', '', 2, '', '@', 1, 9, 9, 0.67],
+      [2, '', 5, 57, 1, 'ETH', 'Girum', 9, '', 8, 9, '@', 9, 9, 0.83],
+      [2, '', 6, 22, 7, 'ETH', 'Mahlet', 6, 1, 2, 2, 1, '@', 4, 1],
+      [2, '', 7, 28, 6, 'ETH', 'Fassika', 1, 1, 4, 4, 1, 9, '@', 1],
+    ],
+    main: {
+      totMatches: 14,
+      numPlayers: 15,
+      matchPlayed: 35,
+      numCountries: 5,
+      lastUpdated: '2021-12-30T08:44:00.000Z',
+      showRank: 1,
+    },
+    error: false,
+  }
 
   const date = new Date(scores.main.lastUpdated)
 
