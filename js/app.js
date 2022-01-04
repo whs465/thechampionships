@@ -242,6 +242,17 @@ var geojson = {
       type: 'Feature',
       geometry: {
         type: 'Point',
+        coordinates: [38.761022, 9.009386],
+      },
+      properties: {
+        title: 'Juventus Sport Club',
+        description: '<br>Coordinates: 9.009386, 38.761022',
+      },
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
         coordinates: [38.78984, 8.992436],
       },
       properties: {
@@ -375,19 +386,37 @@ async function renderScores() {
 
     flag = `<span class="logo-light-mode">
                 <img src="images/${scores.data[i][5]}_h.gif" class="me-0 l-light" height="auto" width="21" alt="" />
-                </span>
-              `
+            </span>`
+
     let elimCriteria = scores.data[i][7 + numberPlayers]
 
     p =
       scores.main.showRank == 1
         ? elimCriteria < 0.5 //Normally 0.5
-          ? `${
-              scores.data[i][6]
-            } <span class="badge even-short-badge rounded-pill bg-soft-danger">${
-              parseFloat(elimCriteria * 100).toFixed() + '%'
-            }</span>`
-          : `${scores.data[i][6]} <span class="badge even-short-badge rounded-pill bg-soft-success">${playerRank}</span>`
+          ? `${scores.data[i][6]}
+            <sup>
+              <span class="badge rounded-pill bg-soft-success">
+                ${playerRank}
+              </span>
+            </sup>
+            <div class="progress" style="height: 2px;">
+              <div class="progress-bar bg-success" role="progressbar" style="width:
+                  ${
+                    parseFloat(elimCriteria * 100).toFixed() + '%'
+                  };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>`
+          : `${scores.data[i][6]}
+              <sup>
+                <span class="badge rounded-pill bg-soft-success">${playerRank}</span>
+              </sup>
+              <div class="progress" style="height: 2px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width:
+                  ${
+                    parseFloat(elimCriteria * 100).toFixed() + '%'
+                  };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>`
         : `${scores.data[i][6]}`
     // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
     p1 = scores.data[i][7]

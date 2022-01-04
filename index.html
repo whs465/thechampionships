@@ -25,11 +25,14 @@
     <meta name="website" content="https://thechampionships.netlify.com" />
     <meta name="Version" content="v1.0.0" />
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- <link rel="manifest" href="site.webmanifest" /> -->
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -131,7 +134,7 @@
         <!-- Logo container-->
         <div>
           <a class="logo" href="#">
-            <img src="images/bg.png" height="28" class="logo-light-mode" alt="" />
+            <img src="images/log.png" height="52" class="logo-light-mode" alt="" />
           </a>
         </div>
 
@@ -193,7 +196,7 @@
       "
       id="home"
     >
-      <div class="snowfall"></div>
+      <!-- <div class="snowfall"></div> -->
       <div class="container position-relative" style="z-index: 1">
         <div id="comingsoon" class="container bg-overlay d-none">
           <!--end row-->
@@ -204,10 +207,8 @@
         <div class="row mt-0 justify-content-center">
           <div class="col-lg-10">
             <div class="mt-3 title-heading text-center">
-              <h1 class="heading text-primary text-shadow-title mt-0 mb-2">
-                Round 4-2021
-              </h1>
-              <h6 class="text-muted mt-0 mb-0">
+              <h1 class="heading text-secondary mt-0 mb-2">ROUND 4-2021</h1>
+              <h6 class="text-secondary mt-0 mb-0">
                 Dec 2<sup>nd</sup> to Dec 31<sup>st</sup>
               </h6>
               <div class="row justify-content-center">
@@ -218,7 +219,7 @@
                     <div class="row">
                       <div class="col-md-12 text-center">
                         <div id="eventdown">
-                          <ul class="count-down list-unstyled text-success">
+                          <ul class="count-down list-unstyled text-black">
                             <li
                               id="days"
                               class="count-number list-inline-item px-1"
@@ -244,7 +245,7 @@
                 </div>
                 <!--end col-->
               </div>
-              <div data-aos="flip-up">
+              <div>
                 <img
                   src="images/wimbledonxmas1.png"
                   height="280"
@@ -252,10 +253,11 @@
                   alt=""
                 />
               </div>
-              <h1 class="heading text-primary text-shadow-title mt-5 mb-3">
+              <h1 class="heading text-secondary mt-5 mb-3">
                 Serve it, Smash it, Win it, Love it.
               </h1>
-              <p class="para-desc mx-auto text-muted">
+              <hr class="line" />
+              <p class="para-desc mx-auto text-secondary">
                 Experience great competition, improve your health, develop your
                 game, schedule matches around busy schedules, and meet other tennis
                 players in Addis.
@@ -449,10 +451,6 @@
                 </thead>
                 <tbody id="box2"></tbody>
               </table>
-            </div>
-            <div class="mt-2 pt-2 text-center text-warning h6">
-              <i class="uil uil-asterisk"></i>Red badge shows % of matches played.
-              <span id="elimination"></span>
             </div>
           </div>
 
@@ -1016,7 +1014,7 @@
 
                 <div class="col-lg-4 d-none d-lg-block position-relative">
                   <img
-                    src="images/christmas-tree.png"
+                    src="images/roger.png"
                     class="img-fluid mx-auto d-block construction-img"
                     alt=""
                   />
@@ -1200,7 +1198,7 @@
             <!--end col-->
 
             <div class="col-lg-5 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
-              <img src="images/xmas.svg" alt="" />
+              <img src="images/paint.jpg" width="95%" alt="" />
             </div>
             <!--end col-->
           </div>
@@ -1938,14 +1936,13 @@
         <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
-            fill="#573886"
+            fill="#00503c"
           ></path>
         </svg>
       </div>
     </div>
 
     <footer class="footer">
-      <div class="snowfall"></div>
       <div class="container text-center">
         <div class="row align-items-center">
           <div class="col-sm-6">
@@ -1955,7 +1952,8 @@
                 <script>
                   document.write(new Date().getFullYear())
                 </script>
-                The Championships <br />Addis Ababa ❤️
+                <span class="text-primary fw-bold">The Championships&reg;</span>
+                <br />Addis Ababa ❤️
                 <img
                   src="images/ETH_h.gif"
                   class="l-light"

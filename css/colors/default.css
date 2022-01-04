@@ -1,15 +1,3 @@
-.bg-primary,
-.btn-primary,
-.btn-soft-primary:hover,
-.btn-soft-primary:focus,
-.btn-soft-primary:active,
-.btn-soft-primary.active,
-.btn-soft-primary.focus,
-.btn-outline-primary:hover,
-.btn-outline-primary:focus,
-.btn-outline-primary:active,
-.btn-outline-primary.active,
-.btn-outline-primary.focus,
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .pagination .page-item.active .page-link,
 .nav-pills .nav-link.active,
@@ -36,7 +24,22 @@
   .qs-squares
   .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover,
 .qs-datepicker-container .qs-squares .qs-square.qs-current {
-  background-color: #00521f !important;
+  background-color: #00503c !important;
+}
+
+.bg-primary,
+.btn-primary,
+.btn-soft-primary:hover,
+.btn-soft-primary:focus,
+.btn-soft-primary:active,
+.btn-soft-primary.active,
+.btn-soft-primary.focus,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.focus {
+  background-color: #00503c !important;
 }
 
 .text-primary,
@@ -97,7 +100,11 @@
 .accordion .accordion-button:not(.collapsed),
 .accordion .accordion-item .accordion-button:before,
 #navmenu-nav li.active a {
-  color: #00703c !important;
+  color: #c85a19 !important;
+}
+
+#topnav .navigation-menu > li > a {
+  color: #242424 !important;
 }
 
 .btn-primary,
@@ -132,7 +139,7 @@
 .event-schedule:hover,
 .container-filter li.active,
 .container-filter li:hover {
-  border-color: #2f55d4 !important;
+  border-color: #c85a19 !important;
 }
 
 .bg-soft-primary,
@@ -176,7 +183,7 @@
 .btn-outline-primary.active,
 .btn-outline-primary.focus,
 .btn-outline-primary:not(:disabled):not(.disabled):active {
-  box-shadow: 0 3px 5px 0 rgba(47, 85, 212, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(211, 96, 24, 0.3);
 }
 
 .alert-primary,
@@ -254,8 +261,8 @@ a.text-primary:focus {
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary.focus {
-  background-color: #573886 !important;
-  border-color: #573886 !important;
+  background-color: #c85a19 !important;
+  border-color: #c85a19 !important;
 }
 
 .ribbon.ribbon-primary span:before {

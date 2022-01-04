@@ -23,7 +23,8 @@
 /*********************************/
 /*         Variables             */
 /*===============================*/
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Livvic:wght@400;500;600;700&display=swap');
 /*********************************/
 /*         Bootstrap-custom      */
@@ -112,7 +113,7 @@ a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #5a6d90 !important;
+  color: #fff !important;
 }
 
 a.text-secondary:hover,
@@ -121,13 +122,13 @@ a.text-secondary:focus {
 }
 
 .bg-success {
-  background-color: #573886 !important;
+  background-color: #c85a19 !important;
 }
 
 .bg-soft-success {
   background-color: rgba(87, 56, 134, 0.1) !important;
   border: 1px solid rgba(87, 56, 134, 0.1) !important;
-  color: #573886 !important;
+  color: #00503c !important;
 }
 
 .text-success {
@@ -226,7 +227,7 @@ a.text-dark:focus {
 }
 
 .text-muted {
-  color: #8492a6 !important;
+  color: #504f4f !important;
 }
 
 a.text-muted:hover,
@@ -1600,14 +1601,14 @@ button:not(:disabled) {
 
 .accordion .accordion-item .accordion-button.collapsed {
   background-color: #ffffff;
-  color: #54008b !important;
+  color: #000000 !important;
   transition: all 0.5s;
 }
 
 .accordion .accordion-item .accordion-button.collapsed:before {
   top: 15px;
   transform: rotate(180deg);
-  color: #54008b !important;
+  color: #000000 !important;
 }
 
 .accordion .accordion-item .accordion-button:after {
@@ -1750,8 +1751,9 @@ button:not(:disabled) {
 .table-responsive .table td,
 .table-responsive .table th {
   vertical-align: middle;
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 0.3rem 0.3rem 0.3rem;
   font-size: 14px;
+  // font-family: 'Source Serif Pro', sans-serif;
 }
 
 .table-responsive .table.table-nowrap th,
@@ -1779,7 +1781,8 @@ button:not(:disabled) {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(100deg, #573886, #ffffff);
+  background-color: #c85a19;
+  background-image: linear-gradient(160deg, #c85a19 28%, #00503c 77%);
   z-index: 9999999;
 }
 
@@ -1957,10 +1960,10 @@ button:not(:disabled) {
 /*         General               */
 /*===============================*/
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   overflow-x: hidden !important;
   font-size: 15px;
-  color: #54008b;
+  color: #000000;
 }
 
 h1,
@@ -1975,7 +1978,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   font-weight: 500;
 }
@@ -2140,7 +2143,7 @@ p {
 }
 
 .mover {
-  animation: mover 1s infinite alternate;
+  animation: mover 3.5s infinite alternate;
 }
 
 @keyframes mover {
@@ -2148,7 +2151,7 @@ p {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(5px);
+    transform: translateY(12px);
   }
 }
 
@@ -2242,8 +2245,8 @@ p {
   left: 0;
   top: 0;
   z-index: 999;
-  background-color: transparent;
-  background-image: linear-gradient(#573886, #00521f, #00521f);
+  background-color: #fff;
+  // background-image: linear-gradient(#573886, #00521f, #00521f);
   border: 0;
   transition: all 0.5s ease;
 }
@@ -2267,8 +2270,19 @@ p {
   outline: none;
 }
 
-#topnav .has-submenu.active a {
-  color: #ffffff;
+#topnav .logo strong {
+  display: block;
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+#topnav .logo em {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#t opnav .has-submenu.active a {
+  color: #242424;
 }
 
 #topnav .has-submenu.active .submenu li.active > a {
@@ -2319,7 +2333,7 @@ p {
 #topnav .navbar-toggle span {
   height: 2px;
   width: 100%;
-  background-color: #fff;
+  background-color: #242424;
   display: block;
   margin-bottom: 5px;
   transition: transform 0.5s ease;
@@ -2409,7 +2423,7 @@ p {
   line-height: 24px;
   text-transform: uppercase;
   transition: all 0.5s;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -2714,7 +2728,7 @@ p {
 
 @media (max-width: 991px) {
   #topnav {
-    background-color: #00521f;
+    background-color: #fff;
     box-shadow: 0 0 3px rgba(60, 72, 88, 0.15);
     min-height: 74px;
   }
@@ -4970,6 +4984,7 @@ p {
 
 #countdown .count-down .count-number {
   font-size: 40px;
+  font-family: 'Source Serif Pro', sans-serif;
   line-height: 95px;
   border: 4px solid #dee2e6;
   height: 130px;
@@ -5130,10 +5145,10 @@ p {
 /*         Footer                */
 /*===============================*/
 .footer {
-  background: #573886;
+  background: #00503c;
   padding: 60px 0;
   position: relative;
-  color: #adb5bd;
+  color: #ffffff;
 }
 
 .footer .logo-footer {
@@ -5385,4 +5400,17 @@ rain {
   to {
     bottom: 1.25rem;
   }
+}
+
+.line {
+  margin: 12px auto;
+  width: 65%;
+  border-top: 2px solid #fff;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #000;
 }
