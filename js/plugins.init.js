@@ -230,7 +230,7 @@ try {
 try {
   if (document.getElementById('days')) {
     // The data/time we want to countdown to
-    var eventCountDown = new Date('2021-12-30T23:59:00').getTime()
+    var eventCountDown = new Date('2022-02-10T23:59:00').getTime()
 
     // Run myfunc every second
     var myfunc = setInterval(function () {
