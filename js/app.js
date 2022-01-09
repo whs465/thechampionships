@@ -1,28 +1,24 @@
-/* Template Name: Landrick - Saas & Software Landing Page Template
-   Author: Shreethemes
-   E-mail: support@shreethemes.in
-   Created: August 2019
-   Version: 3.2.0
-   Updated: April 2021
-   File Description: Main JS file of the template
-*/
-
-/*********************************/
-/*         INDEX                 */
-/*================================
- *     01.  Loader               *
- *     02.  Toggle Menus         *
- *     03.  Active Menu          *
- *     04.  Clickable Menu       *
- *     05.  Back to top          *
- *     06.  Feather icon         *
- *     06.  DD Menu              *
- *     06.  Active Sidebar Menu  *
- ================================*/
-
 window.addEventListener('load', fn, false)
 
+showModal()
 renderScores()
+
+function showModal() {
+  if (/Android/i.test(navigator.userAgent)) {
+    // true for mobile device
+    if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      var myModal = new bootstrap.Modal(document.getElementById('wishlist'), {})
+      if (!window.matchMedia('(display-mode: standalone)').matches) {
+        document.onreadystatechange = function () {
+          myModal.show()
+        }
+      }
+    }
+  } else {
+    // false for not mobile device
+    console.log('not android mobile device')
+  }
+}
 
 //  window.onload = function loader() {
 function fn() {
@@ -31,7 +27,7 @@ function fn() {
     setTimeout(() => {
       document.getElementById('preloader').style.visibility = 'hidden'
       document.getElementById('preloader').style.opacity = '0'
-    }, 350)
+    }, 250)
   }
   // Menus
   activateMenu()
@@ -235,7 +231,8 @@ var geojson = {
       },
       properties: {
         title: 'Hilton Hotel',
-        description: '4 clay courts.<br>Coordinates: 9.018302, 38.765493',
+        description:
+          '4 really dry clay courts. The most expensive fees in Addis! <br>Coordinates: 9.018302, 38.765493',
       },
     },
     {
