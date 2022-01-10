@@ -454,7 +454,14 @@ async function renderScores() {
                   };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>`
-        : `${scores.data[i][6]}`
+        : `${scores.data[i][6]}
+              <div class="progress" style="height: 2px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width:
+                  ${
+                    parseFloat(elimCriteria * 100).toFixed() + '%'
+                  };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>`
     // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
     p1 = scores.data[i][7]
     let cellP1 =
