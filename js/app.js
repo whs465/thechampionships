@@ -380,9 +380,9 @@ async function renderScores() {
       [5, '', 6, 0, 1, 'ETH', 'Bamlak', '', '', '', '', '', '@', 0],
     ],
     main: {
-      totMatches: 69,
+      totMatches: 67,
       numPlayers: 29,
-      matchPlayed: 1,
+      matchPlayed: 3,
       numCountries: 9,
       lastUpdated: '2022-01-13T07:57:00.000Z',
       showRank: 0,
