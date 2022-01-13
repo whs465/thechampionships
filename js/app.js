@@ -384,7 +384,7 @@ async function renderScores() {
       numPlayers: 29,
       matchPlayed: 3,
       numCountries: 9,
-      lastUpdated: '2022-01-13T07:57:00.000Z',
+      lastUpdated: '2022-01-13T11:12:00.000Z',
       showRank: 0,
     },
     error: false,
@@ -428,15 +428,20 @@ async function renderScores() {
 
     let elimCriteria = scores.data[i][7 + numberPlayers]
 
-    p =
+    rank =
       scores.main.showRank == 1
-        ? elimCriteria < 0.5 //Normally 0.5
-          ? `${scores.data[i][6]}
-            <sup>
+        ? `<sup>
               <span class="badge rounded-pill bg-soft-success">
                 ${playerRank}
               </span>
-            </sup>
+            </sup>`
+        : ``
+
+    p =
+      // scores.main.showRank == 1
+      elimCriteria < 0.5 //Normally 0.5
+        ? `${scores.data[i][6]}
+            ${rank}
             <div class="progress" style="height: 2px;">
               <div class="progress-bar bg-success" role="progressbar" style="width:
                   ${
@@ -444,10 +449,8 @@ async function renderScores() {
                   };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
               </div>
             </div>`
-          : `${scores.data[i][6]}
-              <sup>
-                <span class="badge rounded-pill bg-soft-success">${playerRank}</span>
-              </sup>
+        : `${scores.data[i][6]}
+              ${rank}
               <div class="progress" style="height: 2px;">
                 <div class="progress-bar bg-primary" role="progressbar" style="width:
                   ${
@@ -455,14 +458,6 @@ async function renderScores() {
                   };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>`
-        : `${scores.data[i][6]}
-              <div class="progress" style="height: 2px;">
-                <div class="progress-bar bg-primary" role="progressbar" style="width:
-                  ${
-                    parseFloat(elimCriteria * 100).toFixed() + '%'
-                  };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>`
     // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
     p1 = scores.data[i][7]
     let cellP1 =
