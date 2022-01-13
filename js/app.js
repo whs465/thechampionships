@@ -439,7 +439,7 @@ async function renderScores() {
 
     p =
       // scores.main.showRank == 1
-      elimCriteria < 0.5 //Normally 0.5
+      elimCriteria < 0.6 //Normally 0.5
         ? `${scores.data[i][6]}
             ${rank}
             <div class="progress" style="height: 2px;">
