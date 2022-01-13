@@ -354,12 +354,12 @@ async function renderScores() {
       [1, '', 3, 0, 1, 'ETH', 'Abay ', '', '', '@', '', '', 0],
       [1, '', 4, 0, 1, 'CZE', 'Tomas', '', '', '', '@', '', 0],
       [1, '', 5, 0, 1, 'COL', 'William', '', '', '', '', '@', 0],
-      [2, 6, 1, 0, 1, 'ETH', 'Sami O.', '@', '', '', '', '', '', 0],
-      [2, '', 2, 0, 1, 'ETH', 'Mohammed', '', '@', '', '', '', '', 0],
-      [2, '', 3, 0, 1, 'MOR', 'Hicham', '', '', '@', '', '', '', 0],
-      [2, '', 4, 0, 1, 'ETH', 'Jouhar', '', '', '', '@', '', '', 0],
-      [2, '', 5, 0, 1, 'ITA', 'Riccardo B.', '', '', '', '', '@', '', 0],
-      [2, '', 6, 0, 1, 'ETH', 'Seyoum', '', '', '', '', '', '@', 0],
+      [2, 6, 1, 24, 1, 'ETH', 'Sami O.', '@', 9, '', '', '', 9, 1],
+      [2, '', 2, 19, 2, 'ETH', 'Mohammed', 6, '@', '', '', '', 9, 1],
+      [2, '', 3, 0, 4, 'MOR', 'Hicham', '', '', '@', '', '', '', 0],
+      [2, '', 4, 0, 4, 'ETH', 'Jouhar', '', '', '', '@', '', '', 0],
+      [2, '', 5, 0, 4, 'ITA', 'Riccardo B.', '', '', '', '', '@', '', 0],
+      [2, '', 6, 9, 3, 'ETH', 'Seyoum', 4, 3, '', '', '', '@', 1],
       [3, 6, 1, 0, 1, 'ETH', 'Chenbu', '@', '', '', '', '', '', 0],
       [3, '', 2, 0, 1, 'ETH', 'Mesay', '', '@', '', '', '', '', 0],
       [3, '', 3, 0, 1, 'EGY', 'Mohamed', '', '', '@', '', '', '', 0],
@@ -380,11 +380,11 @@ async function renderScores() {
       [5, '', 6, 0, 1, 'ETH', 'Bamlak', '', '', '', '', '', '@', 0],
     ],
     main: {
-      totMatches: 70,
+      totMatches: 69,
       numPlayers: 29,
-      matchPlayed: 0,
+      matchPlayed: 1,
       numCountries: 9,
-      lastUpdated: '2022-01-12T10:40:00.000Z',
+      lastUpdated: '2022-01-13T07:57:00.000Z',
       showRank: 0,
     },
     error: false,
@@ -457,7 +457,7 @@ async function renderScores() {
               </div>`
         : `${scores.data[i][6]}
               <div class="progress" style="height: 2px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width:
+                <div class="progress-bar bg-primary" role="progressbar" style="width:
                   ${
                     parseFloat(elimCriteria * 100).toFixed() + '%'
                   };" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
