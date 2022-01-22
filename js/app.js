@@ -422,6 +422,7 @@ async function renderScores() {
     playerNumber = scores.data[i][2]
     totalPoints = scores.data[i][3]
     playerRank = scores.data[i][4]
+    playerOut = scores.data[i][6] === 'Hicham' ? `class="text-black-50"` : ``
 
     flag = `<span class="logo-light-mode">
                 <img src="images/${scores.data[i][5]}_h.gif" class="me-0 l-light" height="auto" width="21" alt="" />
@@ -515,7 +516,7 @@ async function renderScores() {
     }
 
     strHtml = `
-              <tr>
+              <tr ${playerOut}>
                 <td class="text-center">${playerNumber}</td>
                 <td class="text-nowrap">${flag}${p}</td>
                 ${cellP1}
