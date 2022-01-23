@@ -305,6 +305,18 @@ var geojson = {
           '3 courts in good condition.<br>Coordinates: 8.996280, 38.779015',
       },
     },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [38.72907175631836, 9.009951302869334],
+      },
+      properties: {
+        title: "Defence Force Officer's Club",
+        description:
+          '4 courts in good condition.<br>Coordinates: 9.009951, 38.729071',
+      },
+    },
   ],
 }
 // add markers to map
