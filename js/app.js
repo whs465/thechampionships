@@ -205,7 +205,7 @@ var map = new mapboxgl.Map({
   container: 'mapid', // container id
   style: 'mapbox://styles/whs465/ckr1wbjam84eq17mc4tpw4heh', // style URL
   center: [38.779015, 8.99628], // starting position [lng, lat]
-  zoom: 12, // starting zoom
+  zoom: 11, // starting zoom
 })
 
 var geojson = {
