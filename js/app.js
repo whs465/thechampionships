@@ -451,7 +451,7 @@ async function renderScores() {
               </span>
             </sup>`
     rank =
-      scores.main.showRank == 1
+      scores.main.showRank == 0
         ? totalPoints == 0
           ? ''
           : `${rankAux}`
