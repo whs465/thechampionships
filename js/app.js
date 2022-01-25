@@ -445,14 +445,17 @@ async function renderScores() {
 
     let elimCriteria = scores.data[i][7 + numberPlayers]
 
-    rank =
-      scores.main.showRank == 1
-        ? `<sup>
+    rankAux = `<sup>
               <span class="badge rounded-pill bg-soft-success">
                 ${playerRank}
               </span>
             </sup>`
-        : ``
+    rank =
+      scores.main.showRank == 1
+        ? totalPoints == 0
+          ? ''
+          : `${rankAux}`
+        : `${rankAux}`
 
     p =
       // scores.main.showRank == 1
