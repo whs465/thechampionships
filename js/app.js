@@ -357,6 +357,12 @@ async function getData() {
 
 async function renderScores() {
   // let scores = await formatJson()
+  let matchesPlayedBox1
+  let matchesPlayedBox2
+  let matchesPlayedBox3
+  let matchesPlayedBox4
+  let matchesPlayedBox5
+
   const scores = await getData()
 
   // const scores = {
@@ -428,7 +434,28 @@ async function renderScores() {
     boxNumber = scores.data[i][0]
 
     numberPlayers =
-      String(scores.data[i][1]).length > 0 ? scores.data[i][1] : numberPlayers
+      String(scores.data[i][1]).length > 0 && scores.data[i][2] === 1
+        ? scores.data[i][1]
+        : numberPlayers
+
+    if (String(scores.data[i][1]).length > 0 && scores.data[i][2] === 2)
+      switch (scores.data[i][0]) {
+        case 1:
+          matchesPlayedBox1 = scores.data[i][1]
+          break
+        case 2:
+          matchesPlayedBox2 = scores.data[i][1]
+          break
+        case 3:
+          matchesPlayedBox3 = scores.data[i][1]
+          break
+        case 4:
+          matchesPlayedBox4 = scores.data[i][1]
+          break
+        case 5:
+          matchesPlayedBox5 = scores.data[i][1]
+          break
+      }
 
     matchesPlayed = parseFloat(scores.data[i][7 + numberPlayers]).toFixed(1) + '%'
     playerNumber = scores.data[i][2]
@@ -555,6 +582,105 @@ async function renderScores() {
       document.getElementById('box5').innerHTML += strHtml
     }
   }
+
+  let options = {
+    series: [
+      {
+        name: 'Actual',
+
+        data: [
+          {
+            x: 'Box 1',
+            y: matchesPlayedBox1,
+            goals: [
+              {
+                name: 'Expected',
+                value: 15,
+                strokeWidth: 5,
+                strokeHeight: 10,
+                strokeColor: '#c85a19',
+              },
+            ],
+          },
+          {
+            x: 'Box 2',
+            y: matchesPlayedBox2,
+            goals: [
+              {
+                name: 'Expected',
+                value: 15,
+                strokeWidth: 5,
+                strokeHeight: 10,
+                strokeColor: '#c85a19',
+              },
+            ],
+          },
+          {
+            x: 'Box 3',
+            y: matchesPlayedBox3,
+            goals: [
+              {
+                name: 'Expected',
+                value: 15,
+                strokeWidth: 5,
+                strokeHeight: 10,
+                strokeColor: '#c85a19',
+              },
+            ],
+          },
+          {
+            x: 'Box 4',
+            y: matchesPlayedBox4,
+            goals: [
+              {
+                name: 'Expected',
+                value: 15,
+                strokeWidth: 5,
+                strokeHeight: 10,
+                strokeColor: '#c85a19',
+              },
+            ],
+          },
+          {
+            x: 'Box 5',
+            y: matchesPlayedBox5,
+            goals: [
+              {
+                name: 'Expected',
+                value: 15,
+                strokeWidth: 5,
+                strokeHeight: 10,
+                strokeColor: '#c85a19',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    chart: {
+      height: 350,
+      type: 'bar',
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+      },
+    },
+    colors: ['#00503c', '#c85a19'],
+    legend: {
+      show: true,
+      showForSingleSeries: true,
+      customLegendItems: ['Actual', 'Expected'],
+      markers: {
+        fillColors: ['#00503c', '#c85a19'],
+      },
+    },
+  }
+
+  var chart = new ApexCharts(document.querySelector('#dashboard'), options)
+
+  chart.render()
+
   document.getElementById('numCountries').innerText = scores.main.numCountries
   document.getElementById('numPlayers').innerText = scores.main.numPlayers
   document.getElementById('totMatches').innerText = scores.main.totMatches
