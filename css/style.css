@@ -1795,7 +1795,7 @@ button:not(:disabled) {
 }
 
 #preloader #status .spinner {
-  width: 120px;
+  width: 150px;
   position: relative;
   margin: 100px auto;
 }
