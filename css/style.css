@@ -1801,7 +1801,7 @@ button:not(:disabled) {
 }
 
 #preloader #status .spinner {
-  animation-delay: -1.5s;
+  animation-delay: -2s;
 }
 
 .social-icon li a {
