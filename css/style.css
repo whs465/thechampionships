@@ -3337,7 +3337,7 @@ p {
   height: 64px;
   border-radius: 6px;
   transform: rotate(33.75deg);
-  background: linear-gradient(45deg, transparent, rgba(47, 85, 212, 0.1));
+  background: linear-gradient(45deg, transparent, rgba(0, 80, 60, 0.1));
 }
 
 .features.feature-clean .icons i {
@@ -3360,7 +3360,7 @@ p {
 }
 
 .features:hover .image:before {
-  background: rgba(47, 85, 212, 0.1);
+  background: rgba(0, 80, 60, 0.1);
   animation: spinner-border 5s linear infinite !important;
 }
 
