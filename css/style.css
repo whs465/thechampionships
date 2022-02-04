@@ -1800,10 +1800,6 @@ button:not(:disabled) {
   margin: 100px auto;
 }
 
-#preloader #status .spinner {
-  animation-delay: -2s;
-}
-
 .social-icon li a {
   color: #3c4858;
   border: 1px solid #3c4858;

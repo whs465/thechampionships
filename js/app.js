@@ -27,7 +27,7 @@ function fn() {
     setTimeout(() => {
       document.getElementById('preloader').style.visibility = 'hidden'
       document.getElementById('preloader').style.opacity = '0'
-    }, 250)
+    }, 600)
   }
   // Menus
   activateMenu()
