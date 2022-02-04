@@ -126,8 +126,8 @@ a.text-secondary:focus {
 }
 
 .bg-soft-success {
-  background-color: rgba(87, 56, 134, 0.1) !important;
-  border: 1px solid rgba(87, 56, 134, 0.1) !important;
+  background-color: rgba(200, 90, 25, 0.1) !important;
+  border: 1px solid rgba(200, 90, 25, 0.1) !important;
   color: #00503c !important;
 }
 
