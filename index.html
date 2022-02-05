@@ -118,7 +118,29 @@
       </div>
     </div>
     <!-- Wishlist Popup End -->
-
+    <!-- qrcode Popup Start -->
+    <div class="modal fade" id="ebirrqrcode" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded shadow border-0">
+          <div class="modal-body py-5">
+            <div class="text-center">
+              <img
+                src="images/ebirrqrcode.png"
+                class="avatar avatar-medium shadow"
+                alt=""
+              />
+              <div class="mt-4">
+                <h4>251930004901</h4>
+                <p class="text-muted">
+                  Please verify the info befre making the transaction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- qrcode Popup End -->
     <!-- Navbar STart -->
     <header id="topnav" class="defaultscroll sticky">
       <div class="container">
@@ -1836,12 +1858,16 @@
                     alt=""
                 /></a>
               </li>
-              <li class="list-inline-item">
+              <li
+                class="list-inline-item"
+                data-bs-toggle="modal"
+                data-bs-target="#ebirrqrcode"
+              >
                 <a href="javascript:void(0)"
                   ><img
-                    src="images/rolex.png"
+                    src="images/ebirr.png"
                     class="avatar avatar-ex-sm"
-                    title="Habesha Beer"
+                    title="Ebirr"
                     alt=""
                 /></a>
               </li>
@@ -1854,6 +1880,7 @@
       <!--end container-->
     </footer>
     <!--end footer-->
+
     <div class="cookie-popup bg-white shadow rounded py-3 px-4 d-none">
       <p class="text-muted mb-0">
         🛎️ Only <strong>30 spots</strong> available for round 6-2022. If you are a
