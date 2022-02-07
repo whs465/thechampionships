@@ -462,7 +462,7 @@ async function renderScores() {
     totalPoints = scores.data[i][3]
     playerRank = scores.data[i][4]
     playerOut =
-      scores.data[i][6] === 'Hicham'
+      scores.data[i][6] === 'Mohamed'
         ? `class="text-black-50  text-decoration-line-through"`
         : ``
 
@@ -554,7 +554,24 @@ async function renderScores() {
       p8 = scores.data[i][14]
       cellP8 = p8 === '@' ? boxSeparator : `<td class="text-center">${p8}</td>`
     }
+    strHtml2 = `                  <tr>
+                    <td class="text-center">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
 
+                    <td class="text-center">1</td>
+                    <td class="text-nowrap"> ${flag} ${scores.data[i][6]} </td>
+                  </tr>
+`
+    console.log(strHtml2)
     strHtml = `
               <tr ${playerOut}>
                 <td class="text-center">${playerNumber}</td>
