@@ -126,7 +126,7 @@
             <div class="text-center">
               <img
                 src="images/ebirrqrcode.png"
-                class="avatar avatar-ex-large shadow"
+                class="avatar avatar-ex-large"
                 alt=""
               />
               <div class="mt-4">
@@ -144,6 +144,34 @@
       </div>
     </div>
     <!-- qrcode Popup End -->
+
+    <!-- bank of oromia Popup Start -->
+    <div class="modal fade" id="bankoforomia" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded shadow border-0">
+          <div class="modal-body py-5">
+            <div class="text-center">
+              <img
+                src="images/coopbank.svg"
+                class="avatar avatar-ex-large"
+                alt=""
+              />
+              <div class="mt-4">
+                <h4>Ebirr: 251930004901</h4>
+                <p class="text-muted">
+                  <span class="text-primary fw-bold">Important:</span> In the
+                  description of the transaction add your <strong>name</strong> and
+                  <strong>send</strong> a private message to the Box Master to
+                  confirm.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bank of oromia Popup End -->
+
     <!-- Navbar STart -->
     <header id="topnav" class="defaultscroll sticky">
       <div class="container">
@@ -706,13 +734,18 @@
                       scope="col"
                       class="border-bottom text-center"
                       style="width: 20%"
+                    ></th>
+                    <th
+                      scope="col"
+                      class="border-bottom text-center"
+                      style="width: 20%"
                     >
                       #
                     </th>
                     <th
                       scope="col"
                       class="border-bottom text-center"
-                      style="width: 30%"
+                      style="width: 60%"
                     >
                       Name
                     </th>
@@ -720,6 +753,18 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <td class="text-center">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
+
                     <td class="text-center">1</td>
                     <td class="text-nowrap">
                       <span class="logo-light-mode">
@@ -735,6 +780,18 @@
                     </td>
                   </tr>
                   <tr>
+                    <td class="text-center p-0">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
+
                     <td class="text-center">2</td>
                     <td class="text-nowrap">
                       <span class="logo-light-mode">
@@ -750,6 +807,17 @@
                     </td>
                   </tr>
                   <tr>
+                    <td class="text-center">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
                     <td class="text-center">3</td>
                     <td class="text-nowrap">
                       <span class="logo-light-mode">
@@ -765,6 +833,18 @@
                     </td>
                   </tr>
                   <tr>
+                    <td class="text-center">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
+
                     <td class="text-center">4</td>
                     <td class="text-nowrap">
                       <span class="logo-light-mode">
@@ -780,6 +860,18 @@
                     </td>
                   </tr>
                   <tr>
+                    <td class="text-center">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
+
                     <td class="text-center">5</td>
                     <td class="text-nowrap">
                       <span class="logo-light-mode">
@@ -795,6 +887,18 @@
                     </td>
                   </tr>
                   <tr>
+                    <td class="text-center">
+                      <span class="logo-light-mode">
+                        <img
+                          src="images/uncheck.png"
+                          class="me-0 l-light"
+                          height="auto"
+                          width="18"
+                          alt=""
+                        />
+                      </span>
+                    </td>
+
                     <td class="text-center">6</td>
                     <td class="text-nowrap">
                       <span class="logo-light-mode">
@@ -1875,13 +1979,16 @@
                     alt=""
                 /></a>
               </li>
-
-              <li class="list-inline-item">
+              <li
+                class="list-inline-item"
+                data-bs-toggle="modal"
+                data-bs-target="#bankoforomia"
+              >
                 <a href="javascript:void(0)"
                   ><img
-                    src="images/babo.svg"
+                    src="images/coopbank.svg"
                     class="avatar avatar-ex-sm"
-                    title="Habesha Beer"
+                    title="Bank of Oromia"
                     alt=""
                 /></a>
               </li>
@@ -1889,9 +1996,9 @@
               <li class="list-inline-item">
                 <a href="javascript:void(0)"
                   ><img
-                    src="images/ibm-logo-small.png"
+                    src="images/babo.svg"
                     class="avatar avatar-ex-sm"
-                    title="IBM"
+                    title="Habesha Beer"
                     alt=""
                 /></a>
               </li>
