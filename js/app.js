@@ -583,6 +583,55 @@ async function renderScores() {
     }
   }
 
+  let matchPlayed = parseInt(scores.main.matchPlayed)
+  let totMatches = parseInt(scores.main.totMatches)
+
+  let totalMachesPlayedPercent = parseFloat(
+    (matchPlayed / (matchPlayed + totMatches)) * 100
+  ).toFixed(1)
+
+  console.log(matchPlayed, totMatches, totalMachesPlayedPercent)
+  let options1 = {
+    series: [totalMachesPlayedPercent],
+    chart: {
+      height: 350,
+      type: 'radialBar',
+      offsetY: -10,
+    },
+    plotOptions: {
+      radialBar: {
+        startAngle: -135,
+        endAngle: 135,
+        dataLabels: {
+          name: {
+            fontSize: '16px',
+            color: '#00503c',
+            offsetY: 120,
+          },
+          value: {
+            offsetY: 76,
+            fontSize: '22px',
+            color: '#00503c',
+            formatter: function (val) {
+              return val + '%'
+            },
+          },
+        },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      colors: ['#c85a19'],
+    },
+    stroke: {
+      dashArray: 4,
+    },
+    labels: [''],
+  }
+
+  var chart = new ApexCharts(document.querySelector('#matchesplayed'), options1)
+  chart.render()
+
   let options = {
     series: [
       {

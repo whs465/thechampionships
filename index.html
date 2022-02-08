@@ -322,15 +322,26 @@
       <div class="container">
         <div class="row g-3 justify-content-center features-absolute">
           <!-- <div class="row"> -->
-          <div class="col-xl-8 col-lg-7 mt-4">
+          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
             <div class="card shadow-md rounded-md border-0 p-4 pb-0">
               <div class="d-flex justify-content-between">
-                <span class="fw-bold">Matches Played</span>
+                <span class="fw-bold">Matches Played per Box</span>
               </div>
               <div id="dashboard" class="apex-chart"></div>
               <!-- </div> -->
             </div>
           </div>
+
+          <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
+            <div class="card shadow-md rounded-md border-0 p-4 pb-0">
+              <div class="d-flex justify-content-between">
+                <span class="fw-bold">Total Matches Played</span>
+              </div>
+              <div id="matchesplayed" class="apex-chart"></div>
+              <!-- </div> -->
+            </div>
+          </div>
+
           <!--end col-->
 
           <div class="col-lg-6 col-md-12 col-12 mt-4 pt-2">
@@ -840,7 +851,7 @@
                     <td class="text-center">
                       <span class="logo-light-mode">
                         <img
-                          src="images/uncheck.png"
+                          src="images/check.png"
                           class="me-0 l-light"
                           height="auto"
                           width="18"
