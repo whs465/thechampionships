@@ -583,93 +583,6 @@ async function renderScores() {
     }
   }
 
-  let matchPlayed = parseInt(scores.main.matchPlayed)
-  let totMatches = parseInt(scores.main.totMatches)
-
-  let totalMachesPlayedPercent = parseFloat(
-    (matchPlayed / (matchPlayed + totMatches)) * 100
-  ).toFixed(1)
-
-  console.log(matchPlayed, totMatches, totalMachesPlayedPercent)
-  let options1 = {
-    series: [totalMachesPlayedPercent],
-    chart: {
-      height: 380,
-      type: 'radialBar',
-      offsetY: -10,
-    },
-    plotOptions: {
-      radialBar: {
-        startAngle: -135,
-        endAngle: 135,
-        dataLabels: {
-          name: {
-            fontSize: '16px',
-            color: '#00503c',
-            offsetY: 120,
-          },
-          value: {
-            offsetY: 76,
-            fontSize: '22px',
-            color: '#00503c',
-            formatter: function (val) {
-              return val + '%'
-            },
-          },
-        },
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.7,
-        opacityTo: 0.9,
-
-        colorStops: [
-          {
-            offset: 0,
-            color: '#c85a19',
-            opacity: 1,
-          },
-          {
-            offset: 20,
-            color: '#c85a19',
-            opacity: 0.8,
-          },
-          {
-            offset: 40,
-            color: '#c85a19',
-            opacity: 0.6,
-          },
-
-          {
-            offset: 60,
-            color: '#c85a19',
-            opacity: 0.4,
-          },
-          {
-            offset: 80,
-            color: '#c85a19',
-            opacity: 0.2,
-          },
-          {
-            offset: 100,
-            color: '#c85a19',
-            opacity: 0.1,
-          },
-        ],
-      },
-    },
-    stroke: {
-      dashArray: 4,
-    },
-    labels: [''],
-  }
-
-  var chart = new ApexCharts(document.querySelector('#matchesplayed'), options1)
-  chart.render()
-
   let options = {
     series: [
       {
@@ -747,6 +660,19 @@ async function renderScores() {
     chart: {
       height: 350,
       type: 'bar',
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+          enabled: true,
+          delay: 150,
+        },
+        dynamicAnimation: {
+          enabled: true,
+          speed: 350,
+        },
+      },
     },
     plotOptions: {
       bar: {
@@ -765,7 +691,105 @@ async function renderScores() {
   }
 
   var chart = new ApexCharts(document.querySelector('#dashboard'), options)
+  chart.render()
 
+  let matchPlayed = parseInt(scores.main.matchPlayed)
+  let totMatches = parseInt(scores.main.totMatches)
+
+  let totalMachesPlayedPercent = parseFloat(
+    (matchPlayed / (matchPlayed + totMatches)) * 100
+  ).toFixed(1)
+
+  let options1 = {
+    series: [totalMachesPlayedPercent],
+    chart: {
+      height: 380,
+      type: 'radialBar',
+      offsetY: -10,
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+          enabled: true,
+          delay: 150,
+        },
+        dynamicAnimation: {
+          enabled: true,
+          speed: 350,
+        },
+      },
+    },
+    plotOptions: {
+      radialBar: {
+        startAngle: -135,
+        endAngle: 135,
+        dataLabels: {
+          name: {
+            fontSize: '16px',
+            color: '#00503c',
+            offsetY: 120,
+          },
+          value: {
+            offsetY: 76,
+            fontSize: '22px',
+            color: '#00503c',
+            formatter: function (val) {
+              return val + '%'
+            },
+          },
+        },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.7,
+        opacityTo: 0.9,
+
+        colorStops: [
+          {
+            offset: 0,
+            color: '#c85a19',
+            opacity: 1,
+          },
+          {
+            offset: 20,
+            color: '#c85a19',
+            opacity: 0.8,
+          },
+          {
+            offset: 40,
+            color: '#c85a19',
+            opacity: 0.6,
+          },
+
+          {
+            offset: 60,
+            color: '#c85a19',
+            opacity: 0.4,
+          },
+          {
+            offset: 80,
+            color: '#c85a19',
+            opacity: 0.2,
+          },
+          {
+            offset: 100,
+            color: '#c85a19',
+            opacity: 0.1,
+          },
+        ],
+      },
+    },
+    stroke: {
+      dashArray: 4,
+    },
+    labels: [''],
+  }
+
+  var chart = new ApexCharts(document.querySelector('#matchesplayed'), options1)
   chart.render()
 
   document.getElementById('numCountries').innerText = scores.main.numCountries
