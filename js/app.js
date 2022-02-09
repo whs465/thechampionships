@@ -594,7 +594,7 @@ async function renderScores() {
   let options1 = {
     series: [totalMachesPlayedPercent],
     chart: {
-      height: 420,
+      height: 380,
       type: 'radialBar',
       offsetY: -10,
     },
@@ -625,32 +625,38 @@ async function renderScores() {
         shadeIntensity: 1,
         opacityFrom: 0.7,
         opacityTo: 0.9,
+
         colorStops: [
           {
             offset: 0,
-            color: '#00503c',
-            opacity: 0.1,
+            color: '#c85a19',
+            opacity: 1,
           },
           {
             offset: 20,
-            color: '#00503c',
-            opacity: 0.5,
+            color: '#c85a19',
+            opacity: 0.8,
           },
           {
-            offset: 30,
-            color: '#00503c',
-            opacity: 1,
+            offset: 40,
+            color: '#c85a19',
+            opacity: 0.6,
           },
 
           {
             offset: 60,
             color: '#c85a19',
-            opacity: 0.5,
+            opacity: 0.4,
+          },
+          {
+            offset: 80,
+            color: '#c85a19',
+            opacity: 0.2,
           },
           {
             offset: 100,
             color: '#c85a19',
-            opacity: 1,
+            opacity: 0.1,
           },
         ],
       },
