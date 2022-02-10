@@ -4971,7 +4971,7 @@ p {
 
 @media (max-width: 767px) {
   #eventdown .count-down {
-    width: 60px;
+    // width: 60px;
   }
 }
 
