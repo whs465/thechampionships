@@ -5,9 +5,21 @@ renderScores()
 
 function showModal() {
   if (/Android/i.test(navigator.userAgent)) {
-    // true for mobile device
+    // true for android mobile device
     if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      var myModal = new bootstrap.Modal(document.getElementById('wishlist'), {})
+      var myModal = new bootstrap.Modal(
+        document.getElementById('AndroidAddHome'),
+        {}
+      )
+      if (!window.matchMedia('(display-mode: standalone)').matches) {
+        document.onreadystatechange = function () {
+          myModal.show()
+        }
+      }
+    }
+  } else if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
+    if (navigator.userAgent.indexOf('Safari') !== -1) {
+      var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
       if (!window.matchMedia('(display-mode: standalone)').matches) {
         document.onreadystatechange = function () {
           myModal.show()
@@ -15,8 +27,7 @@ function showModal() {
       }
     }
   } else {
-    // false for not mobile device
-    console.log('not android mobile device')
+    // console.log('other mobile device')
   }
 }
 
@@ -386,26 +397,27 @@ async function renderScores() {
       [3, '', 4, 0, 1, 'ITA', 'Gianfranco', '', '', '', '@', '', '', 0],
       [3, '', 5, 0, 1, 'ETH', 'Mickey', '', '', '', '', '@', '', 0],
       [3, '', 6, 0, 1, 'ETH', 'Mesfin', '', '', '', '', '', '@', 0],
-      [4, 6, 1, 0, 1, 'ITA', 'Riccardo R.', '@', '', '', '', '', '', 0],
-      [4, 0, 2, 0, 1, 'ETH', 'Girum', '', '@', '', '', '', '', 0],
-      [4, '', 3, 0, 1, 'NED', 'Janno', '', '', '@', '', '', '', 0],
-      [4, '', 4, 0, 1, 'CZE', 'Pavel', '', '', '', '@', '', '', 0],
-      [4, '', 5, 0, 1, 'ETH', 'Sami M.', '', '', '', '', '@', '', 0],
-      [4, '', 6, 0, 1, 'ETH', 'Anteneh', '', '', '', '', '', '@', 0],
+      [4, 7, 1, 0, 1, 'ITA', 'Riccardo R.', '@', '', '', '', '', '', '', 0],
+      [4, 0, 2, 0, 1, 'ETH', 'Girum', '', '@', '', '', '', '', '', 0],
+      [4, '', 3, 0, 1, 'NED', 'Janno', '', '', '@', '', '', '', '', 0],
+      [4, '', 4, 0, 1, 'CZE', 'Pavel', '', '', '', '@', '', '', '', 0],
+      [4, '', 5, 0, 1, 'ETH', 'Sami M.', '', '', '', '', '@', '', '', 0],
+      [4, '', 6, 0, 1, 'ETH', 'Anteneh', '', '', '', '', '', '@', '', 0],
+      [4, '', 7, 0, 1, 'ETH', 'Migo', '', '', '', '', '', '', '@', 0],
       [5, 7, 1, 0, 1, 'LTU', 'Marius', '@', '', '', '', '', '', '', 0],
       [5, 0, 2, 0, 1, 'KEN', 'Sharon', '', '@', '', '', '', '', '', 0],
       [5, '', 3, 0, 1, 'ETH', 'Konjit', '', '', '@', '', '', '', '', 0],
       [5, '', 4, 0, 1, 'ETH', 'Mahlet', '', '', '', '@', '', '', '', 0],
       [5, '', 5, 0, 1, 'ETH', 'Fassika', '', '', '', '', '@', '', '', 0],
-      [5, '', 6, 0, 1, 'ETH', 'Haimanot', '', '', '', '', '', '@', '', 0],
-      [5, '', 7, 0, 1, 'ETH', 'Migo', '', '', '', '', '', '', '@', 0],
+      [5, '', 6, 0, 1, 'ETH', 'Luladay', '', '', '', '', '', '@', '', 0],
+      [5, '', 7, 0, 1, 'ETH', 'Haimanot', '', '', '', '', '', '', '@', 0],
     ],
     main: {
-      totMatches: 87,
-      numPlayers: 32,
+      totMatches: 93,
+      numPlayers: 33,
       matchPlayed: 0,
       numCountries: 9,
-      lastUpdated: '2022-02-10T18:39:00.000Z',
+      lastUpdated: '2022-02-11T09:27:00.000Z',
       showRank: 0,
     },
     error: false,

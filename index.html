@@ -68,8 +68,55 @@
     </div>
     <!-- Loader -->
 
-    <!-- Wishlist Popup Start -->
-    <div class="modal fade" id="wishlist" tabindex="-1" aria-hidden="true">
+    <!-- Add to Home IOS Start -->
+    <div class="modal fade" id="IOSAddHome" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded shadow border-0">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body py-4">
+            <div class="text-center">
+              <div
+                class="icon d-flex align-items-center justify-content-center bg-soft-primary rounded-circle mx-auto"
+                style="height: 65px; width: 65px"
+              >
+                <h1 class="mb-0">
+                  <i class="uil uil-megaphone align-middle"></i>
+                </h1>
+              </div>
+              <div class="mt-4">
+                <h5>
+                  You can add
+                  <span class="text-primary fw-bold">The Championships&reg;</span>
+                  to your iPhone's home screen.
+                </h5>
+                <ul class="list-unstyled text-success">
+                  <li class="text-muted px-3">
+                    Tap <i class="uil uil-upload"></i> and Add to home screen.
+                  </li>
+                </ul>
+                <p class="text-muted text-primary">
+                  Adding to Home screen is a feature available in modern browsers
+                  that allows a user to add a shortcut to their Home screen
+                  representing their favorite website so they can subsequently
+                  access it with a single tap.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add to Home IOS End -->
+
+    <!-- Add to Home Android Start -->
+    <div class="modal fade" id="AndroidAddHome" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded shadow border-0">
           <div class="modal-header">
@@ -98,12 +145,7 @@
                 </h5>
                 <ul class="list-unstyled text-success">
                   <li class="text-muted px-3">
-                    Tap the menu icon (3 dots in upper right-hand corner) and tap
-                    Add to home screen.
-                  </li>
-                  <li class="text-muted px-3">
-                    You’ll be able to enter a name for the shortcut and then Chrome
-                    will add it to your home screen.
+                    Tap <i class="uil uil-ellipsis-v"></i> and Add to home screen.
                   </li>
                 </ul>
                 <p class="text-muted text-primary">
@@ -118,7 +160,7 @@
         </div>
       </div>
     </div>
-    <!-- Wishlist Popup End -->
+    <!-- Add to Home Android End -->
 
     <!-- cbe Popup Start -->
     <div class="modal fade" id="cbe" tabindex="-1" aria-hidden="true">
@@ -673,6 +715,13 @@
                       style="width: 5%"
                     >
                       6
+                    </th>
+                    <th
+                      scope="col"
+                      class="border-bottom text-center"
+                      style="width: 5%"
+                    >
+                      7
                     </th>
 
                     <th
