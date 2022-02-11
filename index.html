@@ -67,6 +67,7 @@
       </div>
     </div>
     <!-- Loader -->
+
     <!-- Wishlist Popup Start -->
     <div class="modal fade" id="wishlist" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -118,6 +119,30 @@
       </div>
     </div>
     <!-- Wishlist Popup End -->
+
+    <!-- cbe Popup Start -->
+    <div class="modal fade" id="cbe" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded shadow border-0">
+          <div class="modal-body py-5">
+            <div class="text-center">
+              <img src="images/CBE_SA.png" class="avatar avatar-ex-large" alt="" />
+              <div class="mt-4">
+                <h4>Commercial Bank of Ethiopia</h4>
+                <h5>Girum Bekele Yeshewawork 1000296818597</h5>
+                <p class="text-muted">
+                  <span class="text-primary fw-bold">Important:</span> Please send a
+                  photo of the slip in a private message to the Box Master to
+                  confirm.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cbe Popup End -->
+
     <!-- qrcode Popup Start -->
     <div class="modal fade" id="ebirrqrcode" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -1885,12 +1910,16 @@
                 /></a>
               </li>
 
-              <li class="list-inline-item">
+              <li
+                class="list-inline-item"
+                data-bs-toggle="modal"
+                data-bs-target="#cbe"
+              >
                 <a href="javascript:void(0)"
                   ><img
-                    src="images/babo.svg"
+                    src="images/CBE_SA.png"
                     class="avatar avatar-ex-sm"
-                    title="Habesha Beer"
+                    title="Commercial Bank of Ethiopia"
                     alt=""
                 /></a>
               </li>
@@ -1916,9 +1945,8 @@
 
     <div class="cookie-popup bg-white shadow rounded py-3 px-4 d-none">
       <p class="text-muted mb-0">
-        🛎️ Only <strong>30 spots</strong> available for round 6-2022. If you are a
-        <strong>regular player</strong> (at least 60% matches played in any round)
-        and want to play, please contact the Box Master.
+        🛎️ Plan your matches in advanced and try to play them as quick as you can.
+        We got very busy players but that is the spirit of the Championchips
       </p>
       <div class="cookie-popup-actions text-end">
         <button><i class="uil uil-times text-dark fs-4"></i></button>
