@@ -3730,7 +3730,7 @@ p {
 
 .tns-nav button {
   border-radius: 3px;
-  background: rgba(47, 85, 212, 0.5) !important;
+  background: rgba(241, 116, 37, 0.5) !important;
   transition: all 0.5s ease;
   border: none;
   margin: 0 5px;
@@ -3738,7 +3738,7 @@ p {
 }
 
 .tns-nav button.tns-nav-active {
-  background: #2f55d4 !important;
+  background: #f17425 !important;
   transform: rotate(45deg);
 }
 
