@@ -356,7 +356,7 @@ geojson.features.forEach(function (marker) {
 
 async function getData() {
   let url =
-    'https://script.google.com/macros/s/AKfycbyHgD2ALWePCGlezRmvMe5QsPDGlwMNnWxZP-d1_SRIE7OliBVCbcI3Tf9L49ZacWPY_g/exec'
+    'https://script.google.com/macros/s/AKfycbzFQSiNr5V85NjOC7Ya49BXkWZJ96KeUzvWyIDxVrbO3SxAfzU_Bg0DpVxCM2LLoe1jbw/exec'
   try {
     let res = await fetch(url)
     if (!res.ok) throw new Error('Request failed. Try again later')
@@ -374,56 +374,58 @@ async function renderScores() {
   let matchesPlayedBox4
   let matchesPlayedBox5
 
-  // const scores = await getData()
+  let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  const scores = {
-    data: [
-      [1, 7, 1, 0, 3, 'ETH', 'Henok 👑', '@', '', '', '', '', '', '', 0],
-      [1, 1, 2, 0, 3, 'ETH', 'Abay ', '', '@', '', '', '', '', '', 0],
-      [1, '', 3, 12, 1, 'CZE', 'Tomas', '', '', '@', '', 9, '', '', 1],
-      [1, '', 4, 0, 3, 'ETH', 'Aklog', '', '', '', '@', '', '', '', 0],
-      [1, '', 5, 7, 2, 'ETH', 'Sami O.', '', '', 6, '', '@', '', '', 1],
-      [1, '', 6, 0, 3, 'ETH', 'Mohammed', '', '', '', '', '', '@', '', 0],
-      [1, '', 7, 0, 3, 'COL', 'William', '', '', '', '', '', '', '@', 0],
-      [2, 7, 1, 0, 1, 'ETH', 'Tibebu', '@', '', '', '', '', '', '', 0],
-      [2, 0, 2, 0, 1, 'ITA', 'Riccardo B.', '', '@', '', '', '', '', '', 0],
-      [2, '', 3, 0, 1, 'ETH', 'Seyoum', '', '', '@', '', '', '', '', 0],
-      [2, '', 4, 0, 1, 'ETH', 'Girma', '', '', '', '@', '', '', '', 0],
-      [2, '', 5, 0, 1, 'ETH', 'Solomon', '', '', '', '', '@', '', '', 0],
-      [2, '', 6, 0, 1, 'MOR', 'Hicham', '', '', '', '', '', '@', '', 0],
-      [2, '', 7, 0, 1, 'GBR', 'Paul', '', '', '', '', '', '', '@', 0],
-      [3, 7, 1, 0, 3, 'ETH', 'Jouhar', '@', '', '', '', '', '', '', 0],
-      [3, 1, 2, 0, 3, 'ETH', 'Mesay', '', '@', '', '', '', '', '', 0],
-      [3, '', 3, 9, 2, 'ETH', 'Workafes', '', '', '@', '', '', 8, '', 1],
-      [3, '', 4, 0, 3, 'ITA', 'Gianfranco', '', '', '', '@', '', '', '', 0],
-      [3, '', 5, 0, 3, 'ETH', 'Mickey', '', '', '', '', '@', '', '', 0],
-      [3, '', 6, 12, 1, 'ETH', 'Girum', '', '', 9, '', '', '@', '', 1],
-      [3, '', 7, 0, 3, 'ETH', 'Mesfin', '', '', '', '', '', '', '@', 0],
-      [4, 7, 1, 12, 1, 'ITA', 'Riccardo R.', '@', '', 9, '', '', '', '', 1],
-      [4, 1, 2, 0, 3, 'LTU', 'Marius', '', '@', '', '', '', '', '', 0],
-      [4, '', 3, 8, 2, 'NED', 'Janno', 7, '', '@', '', '', '', '', 1],
-      [4, '', 4, 0, 3, 'CZE', 'Pavel', '', '', '', '@', '', '', '', 0],
-      [4, '', 5, 0, 3, 'ETH', 'Sami M.', '', '', '', '', '@', '', '', 0],
-      [4, '', 6, 0, 3, 'ETH', 'Anteneh', '', '', '', '', '', '@', '', 0],
-      [4, '', 7, 0, 3, 'ETH', 'Migo', '', '', '', '', '', '', '@', 0],
-      [5, 7, 1, 0, 1, 'ETH', 'Hallelujah', '@', '', '', '', '', '', '', 0],
-      [5, 0, 2, 0, 1, 'KEN', 'Sharon', '', '@', '', '', '', '', '', 0],
-      [5, '', 3, 0, 1, 'ETH', 'Konjit', '', '', '@', '', '', '', '', 0],
-      [5, '', 4, 0, 1, 'ETH', 'Mahlet', '', '', '', '@', '', '', '', 0],
-      [5, '', 5, 0, 1, 'ETH', 'Fassika', '', '', '', '', '@', '', '', 0],
-      [5, '', 6, 0, 1, 'ETH', 'Luladay', '', '', '', '', '', '@', '', 0],
-      [5, '', 7, 0, 1, 'ETH', 'Haimanot', '', '', '', '', '', '', '@', 0],
-    ],
-    main: {
-      totMatches: 102,
-      numPlayers: 35,
-      matchPlayed: 3,
-      numCountries: 9,
-      lastUpdated: '2022-02-13T11:32:00.000Z',
-      showRank: 0,
-    },
-    error: false,
-  }
+  const scores = await getData()
+
+  // const scores = {
+  //   data: [
+  //     [1, 7, 1, 0, 3, 'ETH', 'Henok 👑', '@', '', '', '', '', '', '', 0],
+  //     [1, 1, 2, 0, 3, 'ETH', 'Abay ', '', '@', '', '', '', '', '', 0],
+  //     [1, '', 3, 12, 1, 'CZE', 'Tomas', '', '', '@', '', 9, '', '', 1],
+  //     [1, '', 4, 0, 3, 'ETH', 'Aklog', '', '', '', '@', '', '', '', 0],
+  //     [1, '', 5, 7, 2, 'ETH', 'Sami O.', '', '', 6, '', '@', '', '', 1],
+  //     [1, '', 6, 0, 3, 'ETH', 'Mohammed', '', '', '', '', '', '@', '', 0],
+  //     [1, '', 7, 0, 3, 'COL', 'William', '', '', '', '', '', '', '@', 0],
+  //     [2, 7, 1, 0, 1, 'ETH', 'Tibebu', '@', '', '', '', '', '', '', 0],
+  //     [2, 0, 2, 0, 1, 'ITA', 'Riccardo B.', '', '@', '', '', '', '', '', 0],
+  //     [2, '', 3, 0, 1, 'ETH', 'Seyoum', '', '', '@', '', '', '', '', 0],
+  //     [2, '', 4, 0, 1, 'ETH', 'Girma', '', '', '', '@', '', '', '', 0],
+  //     [2, '', 5, 0, 1, 'ETH', 'Solomon', '', '', '', '', '@', '', '', 0],
+  //     [2, '', 6, 0, 1, 'MOR', 'Hicham', '', '', '', '', '', '@', '', 0],
+  //     [2, '', 7, 0, 1, 'GBR', 'Paul', '', '', '', '', '', '', '@', 0],
+  //     [3, 7, 1, 0, 3, 'ETH', 'Jouhar', '@', '', '', '', '', '', '', 0],
+  //     [3, 1, 2, 0, 3, 'ETH', 'Mesay', '', '@', '', '', '', '', '', 0],
+  //     [3, '', 3, 9, 2, 'ETH', 'Workafes', '', '', '@', '', '', 8, '', 1],
+  //     [3, '', 4, 0, 3, 'ITA', 'Gianfranco', '', '', '', '@', '', '', '', 0],
+  //     [3, '', 5, 0, 3, 'ETH', 'Mickey', '', '', '', '', '@', '', '', 0],
+  //     [3, '', 6, 12, 1, 'ETH', 'Girum', '', '', 9, '', '', '@', '', 1],
+  //     [3, '', 7, 0, 3, 'ETH', 'Mesfin', '', '', '', '', '', '', '@', 0],
+  //     [4, 7, 1, 12, 1, 'ITA', 'Riccardo R.', '@', '', 9, '', '', '', '', 1],
+  //     [4, 1, 2, 0, 2, 'LTU', 'Marius', '', '@', '', '', '', '', '', 0],
+  //     [4, '', 3, 8, '#N/A', 'NED', 'Janno', 7, '', '@', '', '', '', '', 1],
+  //     [4, '', 4, 0, 2, 'CZE', 'Pavel', '', '', '', '@', '', '', '', 0],
+  //     [4, '', 5, 0, 2, 'ETH', 'Sami M.', '', '', '', '', '@', '', '', 0],
+  //     [4, '', 6, 0, 2, 'ETH', 'Anteneh', '', '', '', '', '', '@', '', 0],
+  //     [4, '', 7, 0, 2, 'ETH', 'Migo', '', '', '', '', '', '', '@', 0],
+  //     [5, 7, 1, 0, 1, 'ETH', 'Hallelujah', '@', '', '', '', '', '', '', 0],
+  //     [5, 0, 2, 0, 1, 'KEN', 'Sharon', '', '@', '', '', '', '', '', 0],
+  //     [5, '', 3, 0, 1, 'ETH', 'Konjit', '', '', '@', '', '', '', '', 0],
+  //     [5, '', 4, 0, 1, 'ETH', 'Mahlet', '', '', '', '@', '', '', '', 0],
+  //     [5, '', 5, 0, 1, 'ETH', 'Fassika', '', '', '', '', '@', '', '', 0],
+  //     [5, '', 6, 0, 1, 'ETH', 'Luladay', '', '', '', '', '', '@', '', 0],
+  //     [5, '', 7, 0, 1, 'ETH', 'Haimanot', '', '', '', '', '', '', '@', 0],
+  //   ],
+  //   main: {
+  //     totMatches: 102,
+  //     numPlayers: 35,
+  //     matchPlayed: 3,
+  //     numCountries: 9,
+  //     lastUpdated: '2022-02-13T17:30:00.000Z',
+  //     showRank: 0,
+  //   },
+  //   error: false,
+  // }
 
   const date = new Date(scores.main.lastUpdated)
 
@@ -477,6 +479,11 @@ async function renderScores() {
     playerNumber = scores.data[i][2]
     totalPoints = scores.data[i][3]
     playerRank = scores.data[i][4]
+    if (playerRank === '#N/A') {
+      totalPoints = 0
+      playerRank = ''
+    }
+
     playerOut =
       scores.data[i][6] === 'Mohamed'
         ? `class="text-black-50  text-decoration-line-through"`
@@ -518,57 +525,97 @@ async function renderScores() {
               </div>`
     // <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="${playerRank}">${scores.data[i][6]}</a>
     p1 = scores.data[i][7]
-    let cellP1 =
+    cellP1 =
       p1 === '@'
         ? boxSeparatorBg
+        : playerRank === ''
+        ? `<td class="text-center bg-soft-primary-table"></td>`
         : `<td class="text-center bg-soft-primary-table">${p1}</td>`
 
     p2 = scores.data[i][8]
-    let cellP2 = p2 === '@' ? boxSeparator : `<td class="text-center">${p2}</td>`
+    cellP2 =
+      p2 === '@'
+        ? boxSeparator
+        : playerRank === ''
+        ? `<td class="text-center"></td>`
+        : `<td class="text-center">${p2}</td>`
 
     p3 = scores.data[i][9]
-    let cellP3 =
+    cellP3 =
       p3 === '@'
         ? boxSeparatorBg
+        : playerRank === ''
+        ? `<td class="text-center bg-soft-primary-table"></td>`
         : `<td class="text-center bg-soft-primary-table">${p3}</td>`
 
     p4 = scores.data[i][10]
-    let cellP4 = p4 === '@' ? boxSeparator : `<td class="text-center">${p4}</td>`
+    cellP4 =
+      p4 === '@'
+        ? boxSeparator
+        : playerRank === ''
+        ? `<td class="text-center"></td>`
+        : `<td class="text-center">${p4}</td>`
 
     p5 = scores.data[i][11]
-    let cellP5 =
+    cellP5 =
       p5 === '@'
         ? boxSeparatorBg
+        : playerRank === ''
+        ? `<td class="text-center bg-soft-primary-table"></td>`
         : `<td class="text-center bg-soft-primary-table">${p5}</td>`
 
     if (numberPlayers === 6) {
       p6 = scores.data[i][12]
-      cellP6 = p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+      cellP6 =
+        p6 === '@'
+          ? boxSeparator
+          : playerRank === ''
+          ? `<td class="text-center"></td>`
+          : `<td class="text-center">${p6}</td>`
     }
 
     if (numberPlayers === 7) {
       p6 = scores.data[i][12]
-      cellP6 = p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+      cellP6 =
+        p6 === '@'
+          ? boxSeparator
+          : playerRank === ''
+          ? `<td class="text-center"></td>`
+          : `<td class="text-center">${p6}</td>`
 
       p7 = scores.data[i][13]
       cellP7 =
         p7 === '@'
           ? boxSeparatorBg
+          : playerRank === ''
+          ? `<td class="text-center bg-soft-primary-table"></td>`
           : `<td class="text-center bg-soft-primary-table">${p7}</td>`
     }
 
     if (numberPlayers === 8) {
       p6 = scores.data[i][12]
-      cellP6 = p6 === '@' ? boxSeparator : `<td class="text-center">${p6}</td>`
+      cellP6 =
+        p6 === '@'
+          ? boxSeparator
+          : playerRank === ''
+          ? `<td class="text-center"></td>`
+          : `<td class="text-center">${p6}</td>`
 
       p7 = scores.data[i][13]
       cellP7 =
         p7 === '@'
           ? boxSeparatorBg
+          : playerRank === ''
+          ? `<td class="text-center bg-soft-primary-table"></td>`
           : `<td class="text-center bg-soft-primary-table">${p7}</td>`
 
       p8 = scores.data[i][14]
-      cellP8 = p8 === '@' ? boxSeparator : `<td class="text-center">${p8}</td>`
+      cellP8 =
+        p8 === '@'
+          ? boxSeparator
+          : playerRank === ''
+          ? `<td class="text-center"></td>`
+          : `<td class="text-center">${p8}</td>`
     }
 
     strHtml = `
