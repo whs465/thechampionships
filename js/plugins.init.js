@@ -32,7 +32,7 @@ if (document.getElementsByClassName('tiny-single-item').length > 0) {
     rewind: true,
     autoplay: true,
     autoplayButtonOutput: false,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 5000,
     navPosition: 'bottom',
     speed: 400,
     gutter: 16,
