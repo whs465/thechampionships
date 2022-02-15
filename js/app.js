@@ -747,7 +747,7 @@ async function renderScores() {
         opacity: 0.3,
         blur: 4,
         left: 0,
-        top: -3,
+        top: -2,
       },
     },
     plotOptions: {
