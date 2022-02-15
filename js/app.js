@@ -860,7 +860,10 @@ async function renderScores() {
       },
     },
     stroke: {
-      dashArray: 2,
+      curve: 'smooth',
+      lineCap: 'butt',
+      width: 2,
+      dashArray: 0,
     },
     labels: [''],
   }
