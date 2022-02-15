@@ -787,6 +787,19 @@ async function renderScores() {
       radialBar: {
         startAngle: -135,
         endAngle: 135,
+        track: {
+          background: '#00503c',
+          opacity: 0.1,
+          strokeWidth: '67%',
+          margin: 0, // margin is in pixels
+          dropShadow: {
+            enabled: true,
+            top: -3,
+            left: 0,
+            blur: 4,
+            opacity: 0.35,
+          },
+        },
         dataLabels: {
           name: {
             fontSize: '16px',
@@ -847,7 +860,7 @@ async function renderScores() {
       },
     },
     stroke: {
-      dashArray: 4,
+      dashArray: 2,
     },
     labels: [''],
   }
