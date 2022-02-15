@@ -721,6 +721,12 @@ async function renderScores() {
       },
     ],
     chart: {
+      toolbar: {
+        show: false,
+        tools: {
+          download: false,
+        },
+      },
       height: 350,
       type: 'bar',
       animations: {
@@ -735,6 +741,13 @@ async function renderScores() {
           enabled: true,
           speed: 350,
         },
+      },
+      dropShadow: {
+        enabled: true,
+        opacity: 0.3,
+        blur: 4,
+        left: 0,
+        top: -3,
       },
     },
     plotOptions: {
@@ -769,6 +782,7 @@ async function renderScores() {
       height: 380,
       type: 'radialBar',
       offsetY: -10,
+
       animations: {
         enabled: true,
         easing: 'easeinout',
