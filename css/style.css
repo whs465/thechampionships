@@ -4962,6 +4962,8 @@ p {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
 }
 
 #countdown .count-down .count-number {

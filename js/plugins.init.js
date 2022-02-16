@@ -239,9 +239,13 @@ try {
 
       // Calculating the days, hours, minutes and seconds left
       var days = Math.floor(timeleft / (1000 * 60 * 60 * 24))
+      days = days < 10 ? '0' + days : days
       var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      hours = hours < 10 ? '0' + hours : hours
       var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60))
+      minutes = minutes < 10 ? '0' + minutes : minutes
       var seconds = Math.floor((timeleft % (1000 * 60)) / 1000)
+      seconds = seconds < 10 ? '0' + seconds : seconds
 
       // Result is output to the specific element
       document.getElementById('days').innerHTML =
