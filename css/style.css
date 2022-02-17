@@ -286,6 +286,15 @@ a.text-blue:focus {
   color: #284bc1 !important;
 }
 
+.text-palid {
+  color: #d7c9c1 !important;
+}
+
+a.text-palid:hover,
+a.text-palid:focus {
+  color: #d8c4b9 !important;
+}
+
 .bg-footer {
   background-color: #202942 !important;
 }
