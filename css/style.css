@@ -287,12 +287,12 @@ a.text-blue:focus {
 }
 
 .text-palid {
-  color: #d7c9c1 !important;
+  color: #dad0ca !important;
 }
 
 a.text-palid:hover,
 a.text-palid:focus {
-  color: #d8c4b9 !important;
+  color: #d8cac2 !important;
 }
 
 .bg-footer {
