@@ -480,9 +480,9 @@ async function renderScores() {
     playerNumber = scores.data[i][2]
     totalPoints = scores.data[i][3]
     playerRank = scores.data[i][4]
+    htmlPoints = `<td class="text-center">${totalPoints}</td>`
     if (playerRank === '') {
-      totalPoints = 0
-      playerRank = ''
+      htmlPoints = `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
     }
 
     playerOut =
@@ -530,7 +530,7 @@ async function renderScores() {
       p1 === '@'
         ? boxSeparatorBg
         : playerRank === ''
-        ? `<td class="text-center bg-soft-primary-table"></td>`
+        ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-cancel text-black "></i></td>`
         : `<td class="text-center bg-soft-primary-table">${p1}</td>`
 
     p2 = scores.data[i][8]
@@ -538,7 +538,7 @@ async function renderScores() {
       p2 === '@'
         ? boxSeparator
         : playerRank === ''
-        ? `<td class="text-center"></td>`
+        ? `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
         : `<td class="text-center">${p2}</td>`
 
     p3 = scores.data[i][9]
@@ -546,7 +546,7 @@ async function renderScores() {
       p3 === '@'
         ? boxSeparatorBg
         : playerRank === ''
-        ? `<td class="text-center bg-soft-primary-table"></td>`
+        ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-cancel text-black "></i></td>`
         : `<td class="text-center bg-soft-primary-table">${p3}</td>`
 
     p4 = scores.data[i][10]
@@ -554,7 +554,7 @@ async function renderScores() {
       p4 === '@'
         ? boxSeparator
         : playerRank === ''
-        ? `<td class="text-center"></td>`
+        ? `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
         : `<td class="text-center">${p4}</td>`
 
     p5 = scores.data[i][11]
@@ -562,7 +562,7 @@ async function renderScores() {
       p5 === '@'
         ? boxSeparatorBg
         : playerRank === ''
-        ? `<td class="text-center bg-soft-primary-table"></td>`
+        ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-cancel text-black "></i></td>`
         : `<td class="text-center bg-soft-primary-table">${p5}</td>`
 
     if (numberPlayers === 6) {
@@ -571,7 +571,7 @@ async function renderScores() {
         p6 === '@'
           ? boxSeparator
           : playerRank === ''
-          ? `<td class="text-center"></td>`
+          ? `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
           : `<td class="text-center">${p6}</td>`
     }
 
@@ -581,7 +581,7 @@ async function renderScores() {
         p6 === '@'
           ? boxSeparator
           : playerRank === ''
-          ? `<td class="text-center"></td>`
+          ? `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
           : `<td class="text-center">${p6}</td>`
 
       p7 = scores.data[i][13]
@@ -589,7 +589,7 @@ async function renderScores() {
         p7 === '@'
           ? boxSeparatorBg
           : playerRank === ''
-          ? `<td class="text-center bg-soft-primary-table"></td>`
+          ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-cancel text-black "></i></td>`
           : `<td class="text-center bg-soft-primary-table">${p7}</td>`
     }
 
@@ -599,7 +599,7 @@ async function renderScores() {
         p6 === '@'
           ? boxSeparator
           : playerRank === ''
-          ? `<td class="text-center"></td>`
+          ? `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
           : `<td class="text-center">${p6}</td>`
 
       p7 = scores.data[i][13]
@@ -607,7 +607,7 @@ async function renderScores() {
         p7 === '@'
           ? boxSeparatorBg
           : playerRank === ''
-          ? `<td class="text-center bg-soft-primary-table"></td>`
+          ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-cancel text-black "></i></td>`
           : `<td class="text-center bg-soft-primary-table">${p7}</td>`
 
       p8 = scores.data[i][14]
@@ -615,7 +615,7 @@ async function renderScores() {
         p8 === '@'
           ? boxSeparator
           : playerRank === ''
-          ? `<td class="text-center"></td>`
+          ? `<td class="text-center"><i class="mdi mdi-cancel text-black "></i></td>`
           : `<td class="text-center">${p8}</td>`
     }
 
@@ -631,7 +631,7 @@ async function renderScores() {
                 ${numberPlayers === 6 ? cellP6 : ''}
                 ${numberPlayers === 7 ? cellP6 + cellP7 : ''}
                 ${numberPlayers === 8 ? cellP6 + cellP7 + cellP8 : ''}
-                <td class="text-center">${totalPoints}</td>
+                ${htmlPoints}
               </tr>`
 
     if (boxNumber === 1) {
