@@ -287,12 +287,12 @@ a.text-blue:focus {
 }
 
 .text-palid {
-  color: #dad0ca !important;
+  color: rgba(200, 90, 25, 0.15) !important;
 }
 
 a.text-palid:hover,
 a.text-palid:focus {
-  color: #d8cac2 !important;
+  color: rgba(200, 90, 25, 0.3) !important;
 }
 
 .bg-footer {
