@@ -529,7 +529,7 @@ async function renderScores() {
     cellP1 =
       p1 === '@'
         ? boxSeparatorBg
-        : playerRank === ''
+        : playerRank === '' && p1 != ''
         ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-lock text-palid"></i></td>`
         : `<td class="text-center bg-soft-primary-table">${p1}</td>`
 
@@ -537,7 +537,7 @@ async function renderScores() {
     cellP2 =
       p2 === '@'
         ? boxSeparator
-        : playerRank === ''
+        : playerRank === '' && p2 != ''
         ? `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
         : `<td class="text-center">${p2}</td>`
 
@@ -545,7 +545,7 @@ async function renderScores() {
     cellP3 =
       p3 === '@'
         ? boxSeparatorBg
-        : playerRank === ''
+        : playerRank === '' && p3 != ''
         ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-lock text-palid"></i></td>`
         : `<td class="text-center bg-soft-primary-table">${p3}</td>`
 
@@ -553,7 +553,7 @@ async function renderScores() {
     cellP4 =
       p4 === '@'
         ? boxSeparator
-        : playerRank === ''
+        : playerRank === '' && p4 != ''
         ? `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
         : `<td class="text-center">${p4}</td>`
 
@@ -561,7 +561,7 @@ async function renderScores() {
     cellP5 =
       p5 === '@'
         ? boxSeparatorBg
-        : playerRank === ''
+        : playerRank === '' && p5 != ''
         ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-lock text-palid"></i></td>`
         : `<td class="text-center bg-soft-primary-table">${p5}</td>`
 
@@ -570,7 +570,7 @@ async function renderScores() {
       cellP6 =
         p6 === '@'
           ? boxSeparator
-          : playerRank === ''
+          : playerRank === '' && p6 != ''
           ? `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
           : `<td class="text-center">${p6}</td>`
     }
@@ -580,7 +580,7 @@ async function renderScores() {
       cellP6 =
         p6 === '@'
           ? boxSeparator
-          : playerRank === ''
+          : playerRank === '' && p6 != ''
           ? `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
           : `<td class="text-center">${p6}</td>`
 
@@ -588,7 +588,7 @@ async function renderScores() {
       cellP7 =
         p7 === '@'
           ? boxSeparatorBg
-          : playerRank === ''
+          : playerRank === '' && p7 != ''
           ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-lock text-palid"></i></td>`
           : `<td class="text-center bg-soft-primary-table">${p7}</td>`
     }
@@ -598,7 +598,7 @@ async function renderScores() {
       cellP6 =
         p6 === '@'
           ? boxSeparator
-          : playerRank === ''
+          : playerRank === '' && p6 != ''
           ? `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
           : `<td class="text-center">${p6}</td>`
 
@@ -606,7 +606,7 @@ async function renderScores() {
       cellP7 =
         p7 === '@'
           ? boxSeparatorBg
-          : playerRank === ''
+          : playerRank === '' && p7 != ''
           ? `<td class="text-center bg-soft-primary-table"><i class="mdi mdi-lock text-palid"></i></td>`
           : `<td class="text-center bg-soft-primary-table">${p7}</td>`
 
@@ -614,7 +614,7 @@ async function renderScores() {
       cellP8 =
         p8 === '@'
           ? boxSeparator
-          : playerRank === ''
+          : playerRank === '' && p8 != ''
           ? `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
           : `<td class="text-center">${p8}</td>`
     }
