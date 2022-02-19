@@ -1,6 +1,6 @@
 window.addEventListener('load', fn, false)
 
-// showModal()
+showModal()
 renderScores()
 
 function showModal() {
