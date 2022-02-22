@@ -501,7 +501,12 @@ async function renderScores() {
                 ${playerRank}
               </span>
             </sup>`
-    rank = scores.main.showRank == 1 ? (totalPoints == 0 ? '' : `${rankAux}`) : ``
+    rank =
+      scores.main.showRank == 1
+        ? totalPoints == 0 || playerRank == ''
+          ? ''
+          : `${rankAux}`
+        : ``
 
     p =
       // scores.main.showRank == 1
