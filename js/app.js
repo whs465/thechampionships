@@ -486,7 +486,7 @@ async function renderScores() {
     }
 
     playerOut =
-      scores.data[i][6] === 'Mickey'
+      scores.data[i][6] === 'Mickey' || scores.data[i][6] === 'Sami M.'
         ? `class="text-black-50  text-decoration-line-through"`
         : ``
 
