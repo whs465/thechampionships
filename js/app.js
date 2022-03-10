@@ -8,11 +8,11 @@ function showModal() {
   document.getElementById('license'),
   {}
   )
-  if (!window.matchMedia('(display-mode: standalone)').matches) {
+  
     document.onreadystatechange = function () {
       myModal.show()
     }
-  }
+  
 
   // if (/Android/i.test(navigator.userAgent)) {
   //   // true for android mobile device
