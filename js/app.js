@@ -1,35 +1,46 @@
 window.addEventListener('load', fn, false)
 
-// showModal()
+showModal()
 renderScores()
 
 function showModal() {
-  if (/Android/i.test(navigator.userAgent)) {
-    // true for android mobile device
-    if (navigator.userAgent.indexOf('Chrome') !== -1) {
-      var myModal = new bootstrap.Modal(
-        document.getElementById('AndroidAddHome'),
-        {}
-      )
-      if (!window.matchMedia('(display-mode: standalone)').matches) {
-        document.onreadystatechange = function () {
-          myModal.show()
-        }
-      }
+  var myModal = new bootstrap.Modal(
+  document.getElementById('license'),
+  {}
+  )
+  if (!window.matchMedia('(display-mode: standalone)').matches) {
+    document.onreadystatechange = function () {
+      myModal.show()
     }
-  } else if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
-    if (navigator.userAgent.indexOf('Safari') !== -1) {
-      var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
-      if (!window.matchMedia('(display-mode: standalone)').matches) {
-        document.onreadystatechange = function () {
-          myModal.show()
-        }
-      }
-    }
-  } else {
-    // console.log('other mobile device')
   }
+
+  // if (/Android/i.test(navigator.userAgent)) {
+  //   // true for android mobile device
+  //   if (navigator.userAgent.indexOf('Chrome') !== -1) {
+  //     var myModal = new bootstrap.Modal(
+  //       document.getElementById('AndroidAddHome'),
+  //       {}
+  //     )
+  //     if (!window.matchMedia('(display-mode: standalone)').matches) {
+  //       document.onreadystatechange = function () {
+  //         myModal.show()
+  //       }
+  //     }
+  //   }
+  // } else if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
+  //   if (navigator.userAgent.indexOf('Safari') !== -1) {
+  //     var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
+  //     if (!window.matchMedia('(display-mode: standalone)').matches) {
+  //       document.onreadystatechange = function () {
+  //         myModal.show()
+  //       }
+  //     }
+  //   }
+  // } else {
+  //   // console.log('other mobile device')
+  // }
 }
+
 
 //  window.onload = function loader() {
 function fn() {
