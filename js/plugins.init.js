@@ -260,11 +260,15 @@ try {
       // Display the message when countdown is over
       if (timeleft < 0) {
         clearInterval(myfunc)
-        document.getElementById('days').innerHTML = ''
-        document.getElementById('hours').innerHTML = ''
-        document.getElementById('mins').innerHTML = ''
-        document.getElementById('secs').innerHTML = ''
-        document.getElementById('end').innerHTML = '00:00:00:00'
+        document.getElementById('days').innerHTML =
+          "00<p class='count-head'>Days</p> "
+        document.getElementById('hours').innerHTML =
+          "00<p class='count-head'>Hours</p> "
+        document.getElementById('mins').innerHTML =
+          "00<p class='count-head'>Mins</p> "
+        document.getElementById('secs').innerHTML =
+          "00<p class='count-head'>Secs</p> "
+        // document.getElementById('end').innerHTML = '00:00:00:00'
       }
     }, 1000)
   }
