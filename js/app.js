@@ -4,15 +4,11 @@ showModal()
 renderScores()
 
 function showModal() {
-  var myModal = new bootstrap.Modal(
-  document.getElementById('license'),
-  {}
-  )
-  
-    document.onreadystatechange = function () {
-      myModal.show()
-    }
-  
+  var myModal = new bootstrap.Modal(document.getElementById('license'), {})
+
+  document.onreadystatechange = function () {
+    myModal.show()
+  }
 
   // if (/Android/i.test(navigator.userAgent)) {
   //   // true for android mobile device
@@ -40,7 +36,6 @@ function showModal() {
   //   // console.log('other mobile device')
   // }
 }
-
 
 //  window.onload = function loader() {
 function fn() {
@@ -796,7 +791,7 @@ async function renderScores() {
   let options1 = {
     series: [totalMachesPlayedPercent],
     chart: {
-      height: 380,
+      height: 420,
       type: 'radialBar',
       offsetY: -10,
 
