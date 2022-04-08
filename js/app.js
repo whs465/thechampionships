@@ -386,12 +386,12 @@ async function renderScores() {
 
   const scores = {
     data: [
-      [1, 6, 1, 0, 1, 'ETH', 'Henok ', '@', '', '', '', '', '', 0],
-      [1, 0, 2, 0, 1, 'ETH', 'Aklog', '', '@', '', '', '', '', 0],
-      [1, '', 3, 0, 1, 'CZE', 'Tomas', '', '', '@', '', '', '', 0],
-      [1, '', 4, 0, 1, 'ETH', 'Sami O.', '', '', '', '@', '', '', 0],
-      [1, '', 5, 0, 1, 'COL', 'William', '', '', '', '', '@', '', 0],
-      [1, '', 6, 0, 1, 'ETH', 'Tibebu', '', '', '', '', '', '@', 0],
+      [1, 6, 1, 0, 3, 'ETH', 'Henok ', '@', '', '', '', '', '', 0],
+      [1, 1, 2, 0, 3, 'ETH', 'Aklog', '', '@', '', '', '', '', 0],
+      [1, '', 3, 4, 2, 'CZE', 'Tomas', '', '', '@', '', 3, '', 1],
+      [1, '', 4, 0, 3, 'ETH', 'Sami O.', '', '', '', '@', '', '', 0],
+      [1, '', 5, 12, 1, 'COL', 'William', '', '', 9, '', '@', '', 1],
+      [1, '', 6, 0, 3, 'ETH', 'Tibebu', '', '', '', '', '', '@', 0],
       [2, 6, 1, 0, 1, 'ITA', 'Riccardo', '@', '', '', '', '', '', 0],
       [2, 0, 2, 0, 1, 'ETH', 'Mohammed', '', '@', '', '', '', '', 0],
       [2, '', 3, 0, 1, 'ETH', 'Abay ', '', '', '@', '', '', '', 0],
@@ -421,11 +421,11 @@ async function renderScores() {
       [5, '', 7, 0, 1, 'JPN', 'Chiku', '', '', '', '', '', '', '@', 0],
     ],
     main: {
-      totMatches: 93,
+      totMatches: 92,
       numPlayers: 33,
-      matchPlayed: 0,
+      matchPlayed: 1,
       numCountries: 12,
-      lastUpdated: '2022-04-06T06:19:00.000Z',
+      lastUpdated: '2022-04-08T06:59:00.000Z',
       showRank: 0,
     },
     error: false,
@@ -667,7 +667,7 @@ async function renderScores() {
             goals: [
               {
                 name: 'Expected',
-                value: 21,
+                value: 15,
                 strokeWidth: 5,
                 strokeHeight: 10,
                 strokeColor: '#c85a19',
@@ -680,7 +680,7 @@ async function renderScores() {
             goals: [
               {
                 name: 'Expected',
-                value: 21,
+                value: 15,
                 strokeWidth: 5,
                 strokeHeight: 10,
                 strokeColor: '#c85a19',
@@ -706,7 +706,7 @@ async function renderScores() {
             goals: [
               {
                 name: 'Expected',
-                value: 28,
+                value: 21,
                 strokeWidth: 5,
                 strokeHeight: 10,
                 strokeColor: '#c85a19',
