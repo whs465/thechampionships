@@ -1,14 +1,15 @@
 window.addEventListener('load', fn, false)
 
-// showModal()
+showModal()
 renderScores()
 
 function showModal() {
-  var myModal = new bootstrap.Modal(document.getElementById('license'), {})
-
-  document.onreadystatechange = function () {
-    myModal.show()
-  }
+  // Beginning Licence
+  // var myModal = new bootstrap.Modal(document.getElementById('license'), {})
+  // document.onreadystatechange = function () {
+  //   myModal.show()
+  // }
+  // End Licence
 
   // if (/Android/i.test(navigator.userAgent)) {
   //   // true for android mobile device
@@ -23,16 +24,18 @@ function showModal() {
   //       }
   //     }
   //   }
-  // } else if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
-  //   if (navigator.userAgent.indexOf('Safari') !== -1) {
-  //     var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
-  //     if (!window.matchMedia('(display-mode: standalone)').matches) {
-  //       document.onreadystatechange = function () {
-  //         myModal.show()
-  //       }
-  //     }
-  //   }
-  // } else {
+  // } else
+  if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
+    if (navigator.userAgent.indexOf('Safari') !== -1) {
+      var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
+      if (!window.matchMedia('(display-mode: standalone)').matches) {
+        document.onreadystatechange = function () {
+          myModal.show()
+        }
+      }
+    }
+  }
+  // else {
   //   // console.log('other mobile device')
   // }
 }
