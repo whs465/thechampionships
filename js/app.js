@@ -722,7 +722,7 @@ async function renderScores() {
             goals: [
               {
                 name: 'Expected',
-                value: 28,
+                value: 21,
                 strokeWidth: 5,
                 strokeHeight: 10,
                 strokeColor: '#c85a19',
