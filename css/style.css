@@ -1774,6 +1774,15 @@ button:not(:disabled) {
   // font-family: 'Source Serif Pro', sans-serif;
 }
 
+.table-responsive .table th {
+  background: rgb(0, 80, 60);
+  background: radial-gradient(
+    circle,
+    rgba(0, 80, 60, 0) 0%,
+    rgba(200, 90, 25, 0.04) 100%
+  );
+}
+
 .table-responsive .table.table-nowrap th,
 .table-responsive .table.table-nowrap td {
   white-space: nowrap;
