@@ -2014,8 +2014,8 @@ p {
 .bg-overlay {
   // background-color: rgba(73, 57, 87, 0.3);
   // position: absolute;
-  background-color: rgba(73, 57, 87, 0.15);
-  backdrop-filter: blur(5px);
+  background-color: rgba(222, 110, 24, 0.15);
+  backdrop-filter: blur(2px);
   top: 0;
   right: 0;
   left: 0;
