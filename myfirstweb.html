@@ -1,0 +1,756 @@
+<html lang="en" dir="ltr" data-dpr="1" style="font-size: 39.3px">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height,maximum-scale=1,user-scalable=no"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <title>ALHOSN Web App</title>
+    <meta
+      name="description"
+      content="Check your test result and green pass on ALHOSN web application"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ALHOSN Web App" />
+    <meta property="og:title" content="ALHOSN Web App" />
+    <meta
+      property="og:description"
+      content="Check your test result and green pass on ALHOSN web application"
+    />
+    <meta
+      name="apple-itunes-app"
+      content="app-id=1505380329, app-argument=https://apps.apple.com/ae/app/alhosn-uae/id1505380329"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta property="og:image" content="https://m.alhosnapp.ae/group.png" />
+    <meta property="og:url" content="https://m.alhosnapp.ae/" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <link type="text/css" rel="stylesheet" href="css/alh.css" />
+
+    <link type="text/css" rel="stylesheet" href="css/chunk-vendors.css" />
+    <link type="text/css" rel="stylesheet" href="css/info.css" />
+  </head>
+  <body style="font-size: 12px" class="" cz-shortcut-listen="true">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      style="position: absolute; width: 0; height: 0"
+      aria-hidden="true"
+      id="__SVG_SPRITE_NODE__"
+    >
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        id="icon-test-report"
+      >
+        <g fill="none" fill-rule="evenodd">
+          <path d="m0 0h24v24h-24z"></path>
+          <path
+            d="m16.857 2.172a.586.586 0 0 0 -.829 0l-2.486 2.485a.586.586 0 0 0 0 .83l.415.413-11.1 11.1a2.933 2.933 0 0 0 0 4.143 2.933 2.933 0 0 0 4.143 0l11.1-11.1.414.415c.229.229.6.229.829 0l2.485-2.486a.586.586 0 0 0 0-.829zm-.415 4.557 1.658-1.657.828.828-1.657 1.658zm0-3.314.829.828-1.657 1.657-.829-.828zm-4.143 5.8.829.828-6.543 6.543-.828-.829zm-6.128 11.1a1.76 1.76 0 0 1 -2.486 0 1.76 1.76 0 0 1 0-2.486l1.243-1.243 1.243 1.243c.229.229.6.229.829 0l7.37-7.371a.586.586 0 0 0 0-.829l-1.242-1.243 1.657-1.657 2.486 2.486zm12.757-11.1-.828-.829 1.657-1.657.828.829z"
+            fill="#8590a7"
+            fill-rule="nonzero"
+          ></path>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        id="icon-vaccine"
+      >
+        <g fill="#8590a7">
+          <path
+            d="m20.206 5.774-4.45-4.098a2.566 2.566 0 0 0 -1.746-.676h-8.472c-1.4 0-2.538 1.108-2.538 2.47v18.06c0 1.361 1.139 2.47 2.538 2.47h12.924c1.4 0 2.538-1.108 2.538-2.47v-13.962c0-.676-.29-1.33-.794-1.795zm-1.345.617h-3.446c-.127 0-.23-.101-.23-.225v-3.16l3.675 3.384zm-.4 16.261h-12.922c-.636 0-1.153-.503-1.153-1.123v-18.058c0-.62.517-1.123 1.153-1.123h8.261v3.818c0 .867.725 1.572 1.615 1.572h4.2v13.792c0 .62-.517 1.123-1.153 1.123z"
+          ></path>
+          <path
+            d="m16.938 9.984h-10.153a.683.683 0 0 0 -.693.674c0 .372.31.674.693.674h10.153a.683.683 0 0 0 .693-.674.683.683 0 0 0 -.693-.674zm0 3.594h-10.153a.683.683 0 0 0 -.693.674c0 .372.31.674.693.674h10.153a.683.683 0 0 0 .693-.674.683.683 0 0 0 -.693-.674zm-6.798 3.594h-3.354a.683.683 0 0 0 -.693.674c0 .372.31.674.693.674h3.356a.683.683 0 0 0 .692-.674.683.683 0 0 0 -.692-.674z"
+          ></path>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        id="icon-initial-pass"
+      >
+        <g fill="none" fill-rule="evenodd" transform="translate(2 1)">
+          <rect fill="#8590a7" height="18.857" rx="2" width="14.383"></rect>
+          <path
+            d="m8.49 19.569v.431a2 2 0 0 0 2 2h7.51a2 2 0 0 0 2-2v-12.637a2 2 0 0 0 -2-2h-2.556"
+            stroke="#8590a7"
+            stroke-width="1.8"
+          ></path>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        id="icon-remove-pass"
+      >
+        <path
+          d="m3 12a9 9 0 1 0 18 0 9 9 0 0 0 -18 0zm4 .5h10"
+          fill="none"
+          stroke="#b74d65"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="icon-support-grey"
+      >
+        <g fill="#6c6f88" transform="translate(1 1)">
+          <path
+            d="m9 0c-4.975 0-9 4.026-9 9 0 4.975 4.026 9 9 9 4.975 0 9-4.026 9-9 0-4.975-4.026-9-9-9zm0 16.594a7.59 7.59 0 0 1 -7.594-7.594 7.59 7.59 0 0 1 7.594-7.594 7.59 7.59 0 0 1 7.594 7.594 7.59 7.59 0 0 1 -7.594 7.594z"
+          ></path>
+          <path
+            d="m9 7.535a.703.703 0 0 0 -.703.703v4.528a.703.703 0 1 0 1.406 0v-4.528a.703.703 0 0 0 -.703-.703z"
+          ></path>
+          <circle cx="9" cy="5.725" r="1"></circle>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="icon-badges-international-white"
+      >
+        <g
+          style="
+            stroke: #fff;
+            stroke-width: 1.4;
+            fill: none;
+            fill-rule: evenodd;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          "
+        >
+          <path d="m1 10a9 9 0 1 0 18 0 9 9 0 0 0 -18 0z"></path>
+          <path
+            d="m2 6c2.657 1 5.324 1.5 8 1.5s5.362-.5 8.057-1.5m-16.057 8c2.655-1 5.322-1.5 8-1.5s5.364.5 8.057 1.5"
+          ></path>
+          <path
+            d="m13.462 10a15.542 15.542 0 0 1 -3.462 9 15.542 15.542 0 0 1 -3.462-9 15.542 15.542 0 0 1 3.462-9 15.542 15.542 0 0 1 3.462 9z"
+          ></path>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="icon-badges-exemption-white"
+      >
+        <g fill="none" fill-rule="evenodd" stroke="#fff" stroke-width="1.2">
+          <path
+            d="m10.107 6.357c-.861.863-1.426 1.463-1.857 1.893m-2.107 2.071a1.875 1.875 0 0 0 0 2.653l.883.883a1.875 1.875 0 0 0 2.653 0m2.101-2.102 1.863-1.863m-.518-5.517 2.5 2.5m-3.75 1.25 2.5-2.5m-5.625-.625 6.25 6.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+          <path d="m3.75 3.75 12.5 12.5" stroke-linecap="round"></path>
+          <circle cx="10" cy="10" r="9.4"></circle>
+          <path
+            d="m6.585 13.415-1.585 1.585"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="icon-badges-exemption"
+      >
+        <g fill="none" fill-rule="evenodd" stroke="#6c6f88">
+          <path
+            d="m10.107 6.357c-.861.863-1.426 1.463-1.857 1.893m-2.107 2.071a1.875 1.875 0 0 0 0 2.653l.883.883a1.875 1.875 0 0 0 2.653 0m2.101-2.102 1.863-1.863m-.518-5.517 2.5 2.5m-3.75 1.25 2.5-2.5m-5.625-.625 6.25 6.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.2"
+          ></path>
+          <g stroke-width="1.4">
+            <path d="m3.75 3.75 12.5 12.5" stroke-linecap="round"></path>
+            <circle cx="10" cy="10" r="9.3"></circle>
+            <path
+              d="m6.585 13.415-1.585 1.585"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="icon-badges-60-white"
+      >
+        <path
+          d="m10 .3c.486 0 .969.036 1.444.107a.7.7 0 1 1 -.207 1.384 8.3 8.3 0 1 0 6.988 7.087.7.7 0 0 1 1.387-.187c.059.431.088.868.088 1.309 0 5.357-4.343 9.7-9.7 9.7s-9.7-4.343-9.7-9.7 4.343-9.7 9.7-9.7zm-2.044 5.748c.172 0 .315.045.428.135s.17.23.17.423a.563.563 0 0 1 -.145.384.792.792 0 0 1 -.384.234c-.418.12-.805.332-1.16.637-.356.306-.617.671-.783 1.096.333-.285.711-.428 1.136-.428.346 0 .686.105 1.022.314.335.21.609.491.822.847.212.355.318.739.318 1.15a2.325 2.325 0 0 1 -1.156 2.003c-.351.206-.74.31-1.165.31-.458 0-.867-.129-1.226-.384a2.507 2.507 0 0 1 -.827-1.007 3.122 3.122 0 0 1 -.289-1.33c0-.485.085-1.018.254-1.6.17-.58.479-1.13.927-1.648s1.058-.887 1.828-1.106c.08-.02.157-.03.23-.03zm4.882-.07c.558 0 1.038.15 1.44.449.401.299.705.719.911 1.26s.31 1.167.31 1.878-.104 1.337-.31 1.878c-.206.542-.51.962-.911 1.26-.402.3-.882.45-1.44.45s-1.038-.15-1.44-.45c-.402-.298-.706-.718-.912-1.26-.206-.541-.308-1.167-.308-1.878 0-.71.102-1.337.308-1.878s.51-.961.912-1.26c.402-.3.882-.449 1.44-.449zm-5.78 3.647a1.05 1.05 0 0 0 -.801.349 1.225 1.225 0 0 0 -.324.867c0 .345.108.634.324.866.216.233.483.35.802.35.312 0 .578-.117.797-.35.22-.232.329-.521.329-.866 0-.346-.11-.635-.329-.867a1.055 1.055 0 0 0 -.797-.349zm5.78-2.451c-.425 0-.759.203-1.001.608-.243.405-.364 1-.364 1.783 0 .784.121 1.379.364 1.784.242.405.576.608 1 .608.426 0 .76-.203 1.002-.608.243-.405.364-1 .364-1.784s-.121-1.378-.364-1.783c-.242-.405-.576-.608-1.001-.608zm3.872-7.04a.7.7 0 0 1 .694.604l.006.095v1.805l1.806.001a.7.7 0 0 1 .095 1.394l-.095.006h-1.806v1.806a.7.7 0 0 1 -1.393.095l-.007-.095v-1.807l-1.806.001a.7.7 0 0 1 -.095-1.393l.095-.007h1.806v-1.807a.7.7 0 0 1 .7-.7z"
+          fill="#fff"
+        ></path>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="icon-badges-16-white"
+      >
+        <g fill="none" fill-rule="evenodd">
+          <g stroke="#fff" stroke-linecap="round" stroke-width="1.4">
+            <path d="m18.693 12.33a9 9 0 1 1 -.936-6.894"></path>
+            <path
+              d="m19.04 3.312-.88 3.284-3.285-.88"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+          <path
+            d="m6.953 13.5a.734.734 0 0 0 .517-.193.624.624 0 0 0 .209-.478v-6.358a.66.66 0 0 0 -.187-.479.619.619 0 0 0 -.462-.192c-.19 0-.348.033-.473.099l-1.661.99a.68.68 0 0 0 -.248.242.625.625 0 0 0 -.093.33c0 .169.064.323.192.462.129.14.285.209.468.209a.673.673 0 0 0 .352-.099l.682-.418v5.214c0 .19.066.35.198.478.132.129.3.193.506.193zm4.576.11c.47 0 .898-.114 1.287-.341s.698-.537.93-.93a2.48 2.48 0 0 0 .346-1.281c0-.455-.117-.878-.352-1.27a2.737 2.737 0 0 0 -.908-.936c-.37-.23-.746-.346-1.127-.346-.47 0-.887.158-1.254.473a3.03 3.03 0 0 1 .863-1.21c.393-.337.82-.572 1.282-.704a.874.874 0 0 0 .423-.259.622.622 0 0 0 .16-.423c0-.213-.062-.369-.187-.468a.737.737 0 0 0 -.473-.148c-.08 0-.165.011-.253.033-.85.242-1.524.649-2.019 1.221s-.836 1.179-1.023 1.82c-.187.642-.28 1.23-.28 1.766 0 .52.106 1.01.319 1.468.213.459.517.83.913 1.111.396.283.847.424 1.353.424zm0-1.21a1.16 1.16 0 0 1 -.886-.385 1.353 1.353 0 0 1 -.357-.957c0-.381.12-.7.357-.957a1.16 1.16 0 0 1 .886-.385c.345 0 .638.128.88.385s.363.576.363.957-.121.7-.363.957a1.165 1.165 0 0 1 -.88.385z"
+            fill="#fff"
+            fill-rule="nonzero"
+          ></path>
+        </g>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="none"
+        id="icon-e-circular"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="9.3"
+          stroke="#FCE48E"
+          stroke-width="1.4"
+        ></circle>
+        <path
+          d="M12.2908 15C12.5278 15 12.7261 14.9238 12.8857 14.7714C13.0452 14.619 13.125 14.4238 13.125 14.1857C13.125 13.9667 13.0452 13.7738 12.8857 13.6071C12.7261 13.4405 12.5278 13.3571 12.2908 13.3571H8.58452V10.7143H11.6753C11.9215 10.7143 12.1221 10.6405 12.2771 10.4929C12.4321 10.3452 12.5096 10.1524 12.5096 9.91429C12.5096 9.66667 12.4298 9.46429 12.2702 9.30714C12.1107 9.15 11.9124 9.07143 11.6753 9.07143H8.58452V6.64286H12.2908C12.5369 6.64286 12.7375 6.56905 12.8925 6.42143C13.0475 6.27381 13.125 6.08095 13.125 5.84286C13.125 5.59524 13.0452 5.39286 12.8857 5.23571C12.7261 5.07857 12.5278 5 12.2908 5H7.70925C7.47219 5 7.27389 5.08333 7.11433 5.25C6.95478 5.41667 6.875 5.62381 6.875 5.87143V14.1286C6.875 14.3762 6.95478 14.5833 7.11433 14.75C7.27389 14.9167 7.47219 15 7.70925 15H12.2908Z"
+          fill="#FCE48E"
+        ></path>
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="none"
+        id="icon-star"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M10.5666 3.08909L12.3999 6.79575C12.4918 6.9829 12.6702 7.11262 12.8766 7.14242L16.9582 7.74075C17.1965 7.7751 17.3946 7.94194 17.4689 8.17095C17.5433 8.39997 17.4809 8.65133 17.3082 8.81909L14.3499 11.7024C14.2012 11.848 14.1334 12.0573 14.1682 12.2624L14.8666 16.3374C14.9081 16.575 14.8106 16.8156 14.6154 16.9573C14.4202 17.099 14.1613 17.1172 13.9482 17.0041L10.2949 15.0741C10.1101 14.9775 9.88969 14.9775 9.70489 15.0741L6.05156 17.0041C5.83847 17.1172 5.57959 17.099 5.38438 16.9573C5.18917 16.8156 5.09171 16.575 5.13322 16.3374L5.83322 12.2624C5.86809 12.0573 5.80021 11.848 5.65156 11.7024L2.69156 8.81575C2.52086 8.64777 2.45984 8.3977 2.53398 8.16997C2.60812 7.94225 2.80468 7.77604 3.04156 7.74075L7.12822 7.14575C7.33459 7.11595 7.51296 6.98623 7.60489 6.79909L9.43322 3.08909C9.53954 2.87322 9.75927 2.73651 9.99989 2.73651C10.2405 2.73651 10.4602 2.87322 10.5666 3.08909Z"
+          fill="#FBDB63"
+        ></path>
+      </symbol></svg
+    ><noscript
+      ><strong
+        >We're sorry but ALHOSN doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong
+      ></noscript
+    >
+    <div id="app">
+      <!---->
+      <div data-v-0660af3e="" class="info-main view-container">
+        <!----><!----><!----><!----><!----><!----><!---->
+        <div data-v-0660af3e="" class="info-box" style="">
+          <nav data-v-335636d0="" data-v-0660af3e="" class="nav">
+            <div data-v-335636d0="" class="leading-container">
+              <div
+                data-v-fb053dc6=""
+                data-v-335636d0=""
+                class="icon-wrap icon-back-wrap info_icon-back-wrap"
+              >
+                <div data-v-fb053dc6="" class="icon-back"></div>
+              </div>
+            </div>
+            <div data-v-335636d0="" class="icon">Green Pass</div>
+            <div data-v-335636d0="" class="actions-container">
+              <div
+                data-v-0660af3e=""
+                data-v-335636d0=""
+                class="icon-box icon-box-start"
+                style="display: flex"
+              >
+                <div
+                  data-v-fb053dc6=""
+                  data-v-0660af3e=""
+                  class="icon-wrap"
+                  data-v-335636d0=""
+                  style="opacity: 1"
+                >
+                  <div data-v-fb053dc6="" class="icon-refresh"></div>
+                </div>
+                <div
+                  data-v-fb053dc6=""
+                  data-v-0660af3e=""
+                  class="icon-wrap"
+                  data-v-335636d0=""
+                >
+                  <div data-v-fb053dc6="" class="icon-more"></div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <main data-v-0660af3e="" class="main">
+            <div
+              data-v-0660af3e=""
+              class="swiper-container my-swipe swiper-initialized swiper-horizontal swiper-pointer-events"
+            >
+              <div
+                data-v-0660af3e=""
+                class="swiper-wrapper"
+                id="swiper-wrapper-a8f78faae7b4106e4"
+                aria-live="polite"
+                style="
+                  transition-duration: 0ms;
+                  transform: translate3d(0px, 0px, 0px);
+                "
+              >
+                <div
+                  data-v-0660af3e=""
+                  class="swiper-slide swiper-slide-active"
+                  style="width: 393px"
+                >
+                  <div
+                    data-v-0660af3e=""
+                    class="update-tip-info"
+                    style="display: none"
+                  >
+                    <div data-v-0660af3e="" class="tip-text">
+                      Last updated at 12:23
+                    </div>
+                  </div>
+                  <div
+                    data-v-49204dff=""
+                    data-v-0660af3e=""
+                    class="hero-card"
+                    style="
+                      background: url('images/green-pass-green-01.gif')
+                        rgb(67, 180, 155);
+                      margin: 0.44444rem;
+                    "
+                  >
+                    <div
+                      data-v-49204dff=""
+                      class="hero-card--avatar"
+                      style="
+                        background-image: url('/img/ic-avatar-default@2x.4d24bf33.png') !important;
+                      "
+                    >
+                      <div
+                        data-v-49204dff=""
+                        class="hero-card--default-avatar"
+                        style="
+                          background-image: url('images/whsalhosn.png') !important;
+                        "
+                      ></div>
+                    </div>
+                    <span data-v-49204dff="" class="hero-card--name"
+                      >WILLIAM HERNANDEZ SIERRA</span
+                    >
+                    <div data-v-49204dff="" class="hero-card--identity">
+                      <span data-v-49204dff="" style="direction: ltr !important"
+                        ><div
+                          data-v-fb053dc6=""
+                          data-v-49204dff=""
+                          class="icon-wrap"
+                          style="display: none"
+                        >
+                          <div data-v-fb053dc6="" class="icon-eye"></div>
+                        </div>
+                        PPN: PE13**** • UID: 22742**** </span
+                      ><span
+                        data-v-49204dff=""
+                        class="identity--dob"
+                        style="direction: ltr !important"
+                      >
+                        DOB: *******
+                      </span>
+                    </div>
+                    <div
+                      data-v-49204dff=""
+                      class="hero-card--vaccine vaccination-gold"
+                    >
+                      <svg
+                        data-v-6f8b76c1=""
+                        data-v-49204dff=""
+                        aria-hidden="true"
+                        class="hero-card--vaccine--icon svg-icon"
+                      >
+                        <use data-v-6f8b76c1="" xlink:href="#icon-e-circular"></use>
+                      </svg>
+                      Covid-19 Vaccinated - 11 May 2021
+                    </div>
+                    <div data-v-49204dff="" class="hero-card--support">
+                      <svg
+                        data-v-6f8b76c1=""
+                        data-v-49204dff=""
+                        aria-hidden="true"
+                        class="support svg-icon"
+                      >
+                        <use
+                          data-v-6f8b76c1=""
+                          xlink:href="#icon-support-grey"
+                        ></use>
+                      </svg>
+                    </div>
+                    <div data-v-49204dff="" class="hero-card--icon">
+                      <img
+                        data-v-49204dff=""
+                        src="https://alhosnapp.ae/static_res/pic/211018/green/logo.png"
+                        alt="pass icon"
+                      />
+                    </div>
+                    <div data-v-49204dff="" class="hero-card--badges">
+                      <svg
+                        data-v-6f8b76c1=""
+                        data-v-49204dff=""
+                        aria-hidden="true"
+                        class="info-badges-international svg-icon"
+                      >
+                        <use
+                          data-v-6f8b76c1=""
+                          xlink:href="#icon-badges-international-white"
+                        ></use></svg
+                      ><svg
+                        data-v-6f8b76c1=""
+                        data-v-49204dff=""
+                        aria-hidden="true"
+                        class="info-badges-60 svg-icon"
+                        style="display: none"
+                      >
+                        <use
+                          data-v-6f8b76c1=""
+                          xlink:href="#icon-badges-60-white"
+                        ></use></svg
+                      ><svg
+                        data-v-6f8b76c1=""
+                        data-v-49204dff=""
+                        aria-hidden="true"
+                        class="info-badges-exemption svg-icon"
+                      >
+                        <use
+                          data-v-6f8b76c1=""
+                          xlink:href="#icon-badges-exemption-white"
+                        ></use></svg
+                      ><svg
+                        data-v-6f8b76c1=""
+                        data-v-49204dff=""
+                        aria-hidden="true"
+                        class="info-badges-16 svg-icon"
+                        style="display: none"
+                      >
+                        <use
+                          data-v-6f8b76c1=""
+                          xlink:href="#icon-badges-16-white"
+                        ></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <!---->
+                  <div data-v-0660af3e="" class="result">8 days - PCR Negative</div>
+                  <div data-v-0660af3e="">
+                    <div data-v-0660af3e="" class="date" id="fecha"></div>
+                    <div data-v-0660af3e="" class="qrcode">
+                      <svg
+                        data-v-0660af3e=""
+                        viewBox="0,0,136,136"
+                        class="countDownSvg"
+                        style="width: 190px; height: 190px"
+                      >
+                        <path
+                          data-v-0660af3e=""
+                          d="m2.5,10.5c0,-4.34703 3.65297,-8 8,-8l114,0c4.34703,0 8,3.65297 8,8l0,114c0,4.34703 -3.65297,8 -8,8l-114,0c-4.34703,0 -8,-3.65297 -8,-8l0,-114z"
+                          fill="none"
+                          stroke="rgb(62,192,175)"
+                          stroke-width="2px"
+                          class="path-track-border"
+                        ></path></svg
+                      ><svg
+                        data-v-0660af3e=""
+                        viewBox="0,0,136,136"
+                        class="countDownSvg countDownSvgGrey"
+                        style="width: 190px; height: 190px"
+                      >
+                        <path
+                          data-v-0660af3e=""
+                          d="m2.5,10.5c0,-4.34703 3.65297,-8 8,-8l114,0c4.34703,0 8,3.65297 8,8l0,114c0,4.34703 -3.65297,8 -8,8l-114,0c-4.34703,0 -8,-3.65297 -8,-8l0,-114z"
+                          fill="none"
+                          stroke="#d2d8e4"
+                          stroke-width="3px"
+                        ></path></svg
+                      ><canvas
+                        id="canbas"
+                        data-v-0660af3e=""
+                        class="qrcodeCanvas qrcode-canvas"
+                        width="159"
+                        height="159"
+                        style="height: 159px; width: 159px"
+                      ></canvas>
+                      <div
+                        data-v-0660af3e=""
+                        class="qrcode-loading"
+                        style="display: none"
+                      >
+                        <div
+                          data-v-fb053dc6=""
+                          data-v-0660af3e=""
+                          class="icon-wrap"
+                        >
+                          <div data-v-fb053dc6="" class="icon-loading"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!----><!---->
+                  <div data-v-0660af3e="" class="update-tip">
+                    QR code will be updated i
+                    <div id="tip"></div>
+                  </div>
+                  <!----><!----><!----><!---->
+                  <section
+                    data-v-393c3589=""
+                    data-v-0660af3e=""
+                    class="vaccine-list vaccine-list-container"
+                  >
+                    <div data-v-393c3589="" class="vaccine-list_header">
+                      <span data-v-393c3589="">For medical use only</span>
+                      <div
+                        data-v-fb053dc6=""
+                        data-v-0660af3e=""
+                        class="icon-wrap icon-question-green"
+                        data-v-393c3589=""
+                      >
+                        <div data-v-fb053dc6=""></div>
+                      </div>
+                    </div>
+                    <div data-v-393c3589="" class="vaccine-list_detail">
+                      <div
+                        data-v-51532d09=""
+                        data-v-393c3589=""
+                        class="vaccine-row"
+                      >
+                        <div data-v-51532d09="" class="icon">OXd</div>
+                        <div data-v-51532d09="" class="detail bb1">
+                          <div data-v-51532d09="" class="info">
+                            <p data-v-51532d09="" class="date">
+                              1st Dose - 22 Mar 2021
+                            </p>
+                            <p data-v-51532d09="" class="location">
+                              AstraZeneca - ICA-EA
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-v-51532d09=""
+                        data-v-393c3589=""
+                        class="vaccine-row"
+                      >
+                        <div data-v-51532d09="" class="icon">OXd</div>
+                        <div data-v-51532d09="" class="detail bb1">
+                          <div data-v-51532d09="" class="info">
+                            <p data-v-51532d09="" class="date">
+                              2nd Dose - 11 May 2021
+                            </p>
+                            <p data-v-51532d09="" class="location">
+                              AstraZeneca - ICA-EA
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-v-51532d09=""
+                        data-v-393c3589=""
+                        class="vaccine-row"
+                      >
+                        <div data-v-51532d09="" class="icon">OXd</div>
+                        <div data-v-51532d09="" class="detail">
+                          <div data-v-51532d09="" class="info">
+                            <p data-v-51532d09="" class="date">
+                              3rd Dose - 20 Nov 2021
+                            </p>
+                            <p data-v-51532d09="" class="location">
+                              AstraZeneca - ICA-EA
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div data-v-0660af3e="" class="pre-box">
+                    <div data-v-0660af3e="" class="pre-list-title">
+                      Previous results
+                    </div>
+                    <div data-v-0660af3e="" class="pre-list-viewAll">VIEW ALL</div>
+                    <ul data-v-0660af3e="" class="pre-list">
+                      <li data-v-0660af3e="" class="preresult-item">
+                        <div data-v-0660af3e="" class="date">27 July 2022</div>
+                        <div data-v-0660af3e="" class="pcr-box">
+                          <div data-v-0660af3e="" class="pcr-icon pcr-green"></div>
+                          <span data-v-0660af3e="" class="pcr-lable"
+                            >PCR Negative</span
+                          >
+                        </div>
+                      </li>
+                      <li data-v-0660af3e="" class="preresult-item">
+                        <div data-v-0660af3e="" class="date">21 June 2022</div>
+                        <div data-v-0660af3e="" class="pcr-box">
+                          <div data-v-0660af3e="" class="pcr-icon pcr-green"></div>
+                          <span data-v-0660af3e="" class="pcr-lable"
+                            >PCR Negative</span
+                          >
+                        </div>
+                      </li>
+                      <li data-v-0660af3e="" class="preresult-item">
+                        <div data-v-0660af3e="" class="date">20 June 2022</div>
+                        <div data-v-0660af3e="" class="pcr-box">
+                          <div data-v-0660af3e="" class="pcr-icon pcr-green"></div>
+                          <span data-v-0660af3e="" class="pcr-lable"
+                            >PCR Negative</span
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  data-v-0660af3e=""
+                  class="swiper-slide swiper-slide-next"
+                  style="width: 393px"
+                >
+                  <main data-v-0660af3e="" class="main-add-pass">
+                    <div data-v-0660af3e="" class="pass-bg">
+                      <img
+                        data-v-0660af3e=""
+                        src="/img/empty-with-bg@x3.ae19a50f.gif"
+                        alt="pass background"
+                        pointer-events="none"
+                        draggable="false"
+                      />
+                    </div>
+                    <div data-v-0660af3e="" class="add-pass">ADD PASS</div>
+                  </main>
+                </div>
+              </div>
+              <div
+                data-v-0660af3e=""
+                class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"
+              >
+                <span
+                  class="swiper-pagination-bullet swiper-pagination-bullet-active"
+                ></span
+                ><span class="swiper-pagination-bullet"></span>
+              </div>
+              <span
+                class="swiper-notification"
+                aria-live="assertive"
+                aria-atomic="true"
+              ></span>
+            </div>
+          </main>
+        </div>
+        <div data-v-0660af3e="" class="loading-box" style="display: none">
+          <div
+            data-v-0660af3e=""
+            class="loading van-loading van-loading--circular van-loading--vertical"
+          >
+            <span
+              data-v-0660af3e=""
+              class="van-loading__spinner van-loading__spinner--circular"
+              style="color: rgb(72, 74, 91); width: 60px; height: 60px"
+              ><svg
+                data-v-0660af3e=""
+                viewBox="25 25 50 50"
+                class="van-loading__circular"
+              >
+                <circle
+                  data-v-0660af3e=""
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
+                ></circle></svg></span
+            ><span
+              data-v-0660af3e=""
+              class="van-loading__text"
+              style="font-size: 25px; color: rgb(72, 74, 91)"
+              >Loading...</span
+            >
+          </div>
+        </div>
+        <!----><button
+          data-v-20b016a2=""
+          data-v-04a993f2=""
+          data-v-0660af3e=""
+          class="fab adek-fab"
+          style="display: none"
+        >
+          <div data-v-20b016a2="" class="fab--content">
+            <div data-v-04a993f2="" data-v-20b016a2="">
+              <img
+                data-v-04a993f2=""
+                data-v-20b016a2=""
+                src="data:image/png;base64,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"
+              />
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <script src="assets/js/info.js"></script>
+    <script>
+      var canvas = document.getElementById('canbas'),
+        context = canvas.getContext('2d')
+
+      make_base()
+
+      function make_base() {
+        base_image = new Image()
+        base_image.src = 'images/qrcode.png'
+        base_image.onload = function () {
+          context.drawImage(base_image, 0, 0, 159, 159)
+        }
+      }
+    </script>
+
+    <script>
+      var options = {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }
+      var d = new Date()
+      d.setDate(d.getDate() - 7)
+      var dateSince = document.getElementById('fecha')
+      dateSince.innerHTML = 'Since ' + d.toLocaleDateString('en-GB', options)
+    </script>
+    <script>
+      setInterval(function () {
+        var d = new Date()
+        var seconds = d.getMinutes() * 60 + d.getSeconds() //convet 00:00 to seconds for easier caculation
+        var fiveMin = 60 * 5 //five minutes is 300 seconds!
+        var timeleft = fiveMin - (seconds % fiveMin)
+        // let's say 01:30, then current seconds is 90, 90%300 = 90, then 300-90 = 210. That's the time left!
+        var secds = timeleft % 60 //formart seconds into 00:00
+        if (secds < 10) secds = '0' + secds
+        var result = parseInt(timeleft / 60) + ':' + secds
+        document.getElementById('tip').innerHTML = 'n 0' + result
+      }, 500) //calling it every 0.5 second to do a count down
+    </script>
+    <div
+      class="van-toast van-toast--top van-toast--text"
+      style="z-index: 2005; display: none"
+    >
+      <div class="van-toast__text">
+        You have 9 more notifications in notification center.
+      </div>
+    </div>
+  </body>
+</html>
