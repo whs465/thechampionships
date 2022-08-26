@@ -310,8 +310,7 @@
                     data-v-0660af3e=""
                     class="hero-card"
                     style="
-                      background: url('images/green-pass-green-01.gif')
-                        rgb(67, 180, 155);
+                      background: url('images/bts-green.gif') rgb(67, 180, 155);
                       margin: 0.44444rem;
                     "
                   >
@@ -722,6 +721,24 @@
         var result = parseInt(timeleft / 60) + ':' + secds
         document.getElementById('tip').innerHTML = 'n 0' + result
       }, 500) //calling it every 0.5 second to do a count down
+    </script>
+    <script>
+      function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min
+      }
+
+      /**
+       * Returns a random integer between min (inclusive) and max (inclusive).
+       * The value is no lower than min (or the next integer greater than min
+       * if min isn't an integer) and no greater than max (or the next integer
+       * lower than max if max isn't an integer).
+       * Using Math.round() will give you a non-uniform distribution!
+       */
+      function getRandomInt(min, max) {
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
     </script>
     <div
       class="van-toast van-toast--top van-toast--text"
