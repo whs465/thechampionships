@@ -24,7 +24,7 @@
   .qs-squares
   .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover,
 .qs-datepicker-container .qs-squares .qs-square.qs-current {
-  background-color: #00503c !important;
+  background-color: #336699 !important;
 }
 
 .bg-primary,
@@ -39,7 +39,7 @@
 .btn-outline-primary:active,
 .btn-outline-primary.active,
 .btn-outline-primary.focus {
-  background-color: #00503c !important;
+  background-color: #336699 !important;
 }
 
 .text-primary,
@@ -100,7 +100,7 @@
 .accordion .accordion-button:not(.collapsed),
 .accordion .accordion-item .accordion-button:before,
 #navmenu-nav li.active a {
-  color: #c85a19 !important;
+  color: #993300 !important;
 }
 
 #topnav .navigation-menu > li > a {
@@ -139,7 +139,7 @@
 .event-schedule:hover,
 .container-filter li.active,
 .container-filter li:hover {
-  border-color: #c85a19 !important;
+  border-color: #993300 !important;
 }
 
 .bg-soft-primary,
@@ -261,8 +261,8 @@ a.text-primary:focus {
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary.focus {
-  background-color: #c85a19 !important;
-  border-color: #c85a19 !important;
+  background-color: #993300 !important;
+  border-color: #993300 !important;
 }
 
 .ribbon.ribbon-primary span:before {
