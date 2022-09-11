@@ -255,7 +255,7 @@ a.text-muted:focus {
 
 .text-yellow {
   color: #c6ed2c !important;
-  text-shadow: 0 0 10px #98a859;
+  text-shadow: 0 0 4px #98a859;
 }
 
 .text-light {
