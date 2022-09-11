@@ -27,6 +27,9 @@
   background-color: #336699 !important;
 }
 
+.title {
+  color: #993300;
+}
 .bg-primary,
 .btn-primary,
 .btn-soft-primary:hover,
@@ -99,6 +102,7 @@
 .team .name:hover,
 .accordion .accordion-button:not(.collapsed),
 .accordion .accordion-item .accordion-button:before,
+.accordion .accordion-item .accordion-button.collapsed,
 #navmenu-nav li.active a {
   color: #0f3759 !important;
 }
@@ -160,6 +164,10 @@
 .bg-soft-primary,
 .btn-soft-primary {
   border: 1px solid rgba(0, 80, 60, 0.1) !important;
+}
+
+.bg-soft-success {
+  background-color: rgba(51, 102, 153, 0.1) !important;
 }
 
 .app-feature-shape-right:after,
