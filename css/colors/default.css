@@ -100,7 +100,7 @@
 .accordion .accordion-button:not(.collapsed),
 .accordion .accordion-item .accordion-button:before,
 #navmenu-nav li.active a {
-  color: #993300 !important;
+  color: #0f3759 !important;
 }
 
 #topnav .navigation-menu > li > a {
