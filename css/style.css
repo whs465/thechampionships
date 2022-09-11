@@ -151,11 +151,11 @@ a.text-success:focus {
 .bg-soft-warning {
   background-color: rgba(241, 116, 37, 0.1) !important;
   border: 1px solid rgba(241, 116, 37, 0.1) !important;
-  color: #f17425 !important;
+  color: #993300 !important;
 }
 
 .text-warning {
-  color: #f17425 !important;
+  color: #993300 !important;
 }
 
 a.text-warning:hover,
@@ -255,7 +255,7 @@ a.text-muted:focus {
 
 .text-yellow {
   color: #c6ed2c !important;
-  text-shadow: 0 0 4px #993300;
+  text-shadow: 0 0 4px #339966;
 }
 
 .text-light {
