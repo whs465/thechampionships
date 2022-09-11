@@ -402,11 +402,11 @@ async function renderScores() {
   // }
 
   const boxSeparator = `<th class="text-center">
-                          <i class="mdi mdi-tennis-ball text-primary"></i>
+                          <i class="mdi mdi-tennis-ball text-yellow"></i>
                         </th>
                         `
   const boxSeparatorBg = `<th class="text-center bg-soft-primary-table">
-                          <i class="mdi mdi-tennis-ball text-primary "></i>
+                          <i class="mdi mdi-tennis-ball text-yellow "></i>
                         </th>
                         `
 
