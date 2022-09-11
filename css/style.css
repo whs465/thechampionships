@@ -2059,9 +2059,9 @@ p {
 }
 
 .text-shadow-title {
-  text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 4px 0 rgba(255, 255, 255, 0.1),
-    0 -2px 0 #ffffff, 1px 1px #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff,
-    -1px 1px 0 #ffffff;
+  text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 3px 0 rgba(255, 255, 255, 0.1),
+    0 -1px 0 #ffffff, 1px 1px #c6ed2c, -1px -1px 0 #c6ed2c, 1px -1px 0 #ffffff,
+    -1px 1px 0 #c6ed2c;
 }
 
 .para-desc {
