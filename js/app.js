@@ -424,10 +424,10 @@ async function renderScores() {
     ],
     main: {
       totMatches: 20,
-      numPlayers: 9,
+      numPlayers: 10,
       matchPlayed: 0,
-      numCountries: 5,
-      lastUpdated: '2022-12-15T13:55:00.000Z',
+      numCountries: 6,
+      lastUpdated: '2022-12-15T14:03:00.000Z',
       showRank: 0,
     },
     error: false,
