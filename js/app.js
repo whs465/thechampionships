@@ -426,7 +426,7 @@ async function renderScores() {
       totMatches: 20,
       numPlayers: 10,
       matchPlayed: 0,
-      numCountries: 6,
+      numCountries: 7,
       lastUpdated: '2022-12-15T14:03:00.000Z',
       showRank: 0,
     },
