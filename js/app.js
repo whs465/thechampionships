@@ -389,11 +389,11 @@ async function renderScores() {
 
   const scores = {
     data: [
-      [1, 5, 1, 0, 1, 'IRL', 'Bruno', '@', '', '', '', '', 0],
-      [1, 0, 2, 0, 1, 'ITA', 'Carmy', '', '@', '', '', '', 0],
-      [1, '', 3, 0, 1, 'COL', 'William', '', '', '@', '', '', 0],
-      [1, '', 4, 0, 1, 'ITA', 'Samuel', '', '', '', '@', '', 0],
-      [1, '', 5, 0, 1, 'SRB', 'Jorge', '', '', '', '', '@', 0],
+      [1, 5, 1, 0, 3, 'IRL', 'Bruno', '@', '', '', '', '', 0],
+      [1, 1, 2, 12, 1, 'ITA', 'Carmy', '', '@', 9, '', '', 1],
+      [1, '', 3, 7, 2, 'COL', 'William', '', 6, '@', '', '', 1],
+      [1, '', 4, 0, 3, 'ITA', 'Samuel', '', '', '', '@', '', 0],
+      [1, '', 5, 0, 3, 'SRB', 'Jorge', '', '', '', '', '@', 0],
       [2, 5, 1, 0, 1, 'CAM', 'Loyd', '@', '', '', '', '', 0],
       [2, 0, 2, 0, 1, 'GBR', 'Natasha', '', '@', '', '', '', 0],
       [2, '', 3, 0, 1, 'SRB', 'Milan', '', '', '@', '', '', 0],
@@ -423,11 +423,11 @@ async function renderScores() {
       ],
     ],
     main: {
-      totMatches: 20,
+      totMatches: 19,
       numPlayers: 10,
-      matchPlayed: 0,
+      matchPlayed: 1,
       numCountries: 7,
-      lastUpdated: '2022-12-15T14:03:00.000Z',
+      lastUpdated: '2022-12-16T07:03:00.000Z',
       showRank: 0,
     },
     error: false,
