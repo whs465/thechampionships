@@ -365,7 +365,7 @@ geojson.features.forEach(function (marker) {
 
 async function getData() {
   let url =
-    'https://script.google.com/macros/s/AKfycbx9wtgF-cC3AjyNwHJYoQf79nrNUC-qZPcDWMx01BoT853oaZ1slRaHEpUOU3fIgx5_bA/exec'
+    'https://script.google.com/macros/s/AKfycbz-TMGbvU9sUf0IjeEfIiMoRdqEfeY2GeTMQyqVJdMHhhqApOOL4O68fGZFIHD95e8mZg/exec'
   try {
     let res = await fetch(url)
     if (!res.ok) throw new Error('Request failed. Try again later')
@@ -385,53 +385,8 @@ async function renderScores() {
 
   let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  // const scores = await getData()
-
-  const scores = {
-    data: [
-      [1, 5, 1, 0, 3, 'IRL', 'Bruno', '@', '', '', '', '', 0],
-      [1, 1, 2, 0, 1, 'ITA', 'Carmy', '', '@', '', '', '', 0],
-      [1, '', 3, 0, 2, 'COL', 'William', '', '', '@', '', '', 0],
-      [1, '', 4, 0, 3, 'ITA', 'Samuel', '', '', '', '@', '', 0],
-      [1, '', 5, 0, 3, 'NIG', 'Daniel', '', '', '', '', '@', 0],
-      [2, 5, 1, 0, 1, 'CAM', 'Loyd', '@', '', '', '', '', 0],
-      [2, 0, 2, 0, 1, 'GBR', 'Natasha', '', '@', '', '', '', 0],
-      [2, '', 3, 0, 1, 'SRB', 'Milan', '', '', '@', '', '', 0],
-      [2, '', 4, 0, 1, 'GBR', 'Seale', '', '', '', '@', '', 0],
-      [2, '', 5, 0, 1, 'SIN', 'Lim', '', '', '', '', '@', 0],
-      [
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-      ],
-    ],
-    main: {
-      totMatches: 19,
-      numPlayers: 10,
-      matchPlayed: 1,
-      numCountries: 8,
-      lastUpdated: '2022-12-16T07:03:00.000Z',
-      showRank: 0,
-    },
-    error: false,
-  }
+  const scores = await getData()
+  console.log(scores)
 
   const date = new Date(scores.main.lastUpdated)
 
