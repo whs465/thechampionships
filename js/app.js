@@ -224,8 +224,8 @@ mapboxgl.accessToken =
 var map = new mapboxgl.Map({
   container: 'mapid', // container id
   style: 'mapbox://styles/whs465/ckr1wbjam84eq17mc4tpw4heh', // style URL
-  center: [38.779015, 8.99628], // starting position [lng, lat]
-  zoom: 11, // starting zoom
+  center: [54.416264, 24.446542], // starting position [lng, lat]
+  zoom: 10, // starting zoom
 })
 
 var geojson = {
@@ -235,35 +235,35 @@ var geojson = {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [38.768564, 9.009075],
+        coordinates: [54.38302, 24.44304],
       },
       properties: {
-        title: 'Greek Club',
+        title: 'Abu Dhabi Country Club',
         description:
-          '3 clay courts. Restaurant, <strong>beer</strong> and coffee. <br>Coordinates: 9.009075, 38.768564',
+          '9 courts. Restaurants, <strong>beer</strong> and coffee. <br>Coordinates: 24.442947, 54.383117',
       },
     },
     {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [38.765493, 9.018302],
+        coordinates: [54.388927, 24.504229],
       },
       properties: {
-        title: 'Hilton Hotel',
-        description:
-          '4 really dry clay courts. The most expensive fees in Addis! <br>Coordinates: 9.018302, 38.765493',
+        title: 'ACTIVE Al Maryah',
+        description: '4 courts. <br>Coordinates: 24.504229, 54.388927',
       },
     },
     {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [38.761022, 9.009386],
+        coordinates: [54.458793, 24.413473],
       },
       properties: {
-        title: 'Juventus Sport Club',
-        description: '<br>Coordinates: 9.009386, 38.761022',
+        title: 'Zayed Sports City',
+        description:
+          'With eight tennis courts to practice, a stunning tennis stadium and the city’s best tennis coaches. <br>Coordinates: 24.413473, 54.458793',
       },
     },
     {
