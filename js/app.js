@@ -385,8 +385,52 @@ async function renderScores() {
 
   let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  const scores = await getData()
-  console.log(scores)
+  //const scores = await getData()
+  const scores = {
+    data: [
+      [1, 5, 1, 4, 3, 'ITA', 'Samuel', '@', '', '', 3, '', 0.5],
+      [1, 2, 2, 9, 2, 'SIN', 'Lim', '', '@', '', 8, '', 0.5],
+      [1, '', 3, 0, 4, 'PHI', 'Ariez', '', '', '@', '', '', 0],
+      [1, '', 4, 24, 1, 'COL', 'William', 9, 9, '', '@', '', 1],
+      [1, '', 5, 0, 4, '', '', '', '', '', '', '@', 0],
+      [2, 5, 1, 0, 1, '', '', '@', '', '', '', '', 0],
+      [2, 0, 2, 0, 1, '', '', '', '@', '', '', '', 0],
+      [2, '', 3, 0, 1, '', '', '', '', '@', '', '', 0],
+      [2, '', 4, 0, 1, '', '', '', '', '', '@', '', 0],
+      [2, '', 5, 0, 1, '', '', '', '', '', '', '@', 0],
+      [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+      ],
+    ],
+    main: {
+      totMatches: 4,
+      numPlayers: 4,
+      matchPlayed: 2,
+      numCountries: 4,
+      lastUpdated: '2024-01-18T14:30:00.000Z',
+      showRank: 0,
+    },
+    error: false,
+  }
 
   const date = new Date(scores.main.lastUpdated)
 
