@@ -365,7 +365,7 @@ geojson.features.forEach(function (marker) {
 
 async function getData() {
   let url =
-    'https://script.google.com/macros/s/AKfycbz-TMGbvU9sUf0IjeEfIiMoRdqEfeY2GeTMQyqVJdMHhhqApOOL4O68fGZFIHD95e8mZg/exec'
+    'https://script.google.com/macros/s/AKfycbwRtkiZxXWZ7U0kU8xpA08p5POIYa_wc9OOBveSGqePvwJ9MN2zmzxj4t8UyMZ0dRckyQ/exec'
   try {
     let res = await fetch(url)
     if (!res.ok) throw new Error('Request failed. Try again later')
@@ -388,24 +388,24 @@ async function renderScores() {
   //const scores = await getData()
   const scores = {
     data: [
-      [1, 6, 1, 4, 4, 'ITA', 'Samuel', '@', '', '', 3, '', '', 0.33],
-      [1, 3, 2, 17, 2, 'SIN', 'Lim', '', '@', '', 8, 7, '', 0.67],
-      [1, '', 3, 0, 5, 'PHI', 'Ariez', '', '', '@', '', '', '', 0],
-      [1, '', 4, 24, 1, 'COL', 'William', 9, 9, '', '@', '', '', 0.67],
-      [1, '', 5, 12, 3, 'IND', 'Vik', '', 9, '', '', '@', '', 0.33],
-      [1, '', 6, 0, 5, 'ITA', 'Paolo', '', '', '', '', '', '@', 0],
+      [1, 7, 1, 4, 4, 'ITA', 'Samuel', '@', '', '', 3, '', '', '', 0.25],
+      [1, 3, 2, 17, 2, 'SIN', 'Lim', '', '@', '', 8, 7, '', '', 0.5],
+      [1, '', 3, 0, 5, 'PHI', 'Ariez', '', '', '@', '', '', '', '', 0],
+      [1, '', 4, 24, 1, 'COL', 'William', 9, 9, '', '@', '', '', '', 0.5],
+      [1, '', 5, 12, 3, 'IND', 'Vik', '', 9, '', '', '@', '', '', 0.25],
+      [1, '', 6, 0, 5, 'ITA', 'Paolo', '', '', '', '', '', '@', '', 0],
+      [1, '', 7, 0, 5, 'GRE', 'Vas', '', '', '', '', '', '', '@', 0],
     ],
     main: {
-      totMatches: 12,
-      numPlayers: 6,
+      totMatches: 18,
+      numPlayers: 7,
       matchPlayed: 3,
-      numCountries: 5,
-      lastUpdated: '2024-01-21T04:10:00.000Z',
+      numCountries: 6,
+      lastUpdated: '2024-01-25T05:38:00.000Z',
       showRank: 0,
     },
     error: false,
   }
-
   const date = new Date(scores.main.lastUpdated)
 
   document.getElementById('updated').innerHTML = new Intl.DateTimeFormat('en-GB', {
