@@ -401,7 +401,7 @@ async function renderScores() {
       numPlayers: 7,
       matchPlayed: 5,
       numCountries: 6,
-      lastUpdated: '2024-02-02T13:57:00.000Z',
+      lastUpdated: '2024-02-02T15:57:00.000Z',
       showRank: 1,
     },
     error: false,
