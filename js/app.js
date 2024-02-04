@@ -388,20 +388,20 @@ async function renderScores() {
   //const scores = await getData()
   const scores = {
     data: [
-      [1, 7, 1, 12, 4, 'ITA', 'Samuel', '@', '', '', 3, '', 7, '', 0.4],
-      [1, 5, 2, 17, 3, 'SIN', 'Lim', '', '@', '', 8, 7, '', '', 0.4],
+      [1, 7, 1, 24, 2, 'ITA', 'Samuel', '@', 9, '', 3, '', 7, '', 0.6],
+      [1, 6, 2, 22, 4, 'SIN', 'Lim', 4, '@', '', 8, 7, '', '', 0.6],
       [1, '', 3, 0, 6, 'PHI', 'Ariez', '', '', '@', '', '', '', '', 0],
       [1, '', 4, 33, 1, 'COL', 'William', 9, 9, '', '@', '', 8, '', 0.6],
-      [1, '', 5, 12, 4, 'IND', 'Vik', '', 9, '', '', '@', '', '', 0.2],
+      [1, '', 5, 12, 5, 'IND', 'Vik', '', 9, '', '', '@', '', '', 0.2],
       [1, '', 6, 24, 2, 'ITA', 'Paolo', 9, '', '', 9, '', '@', '', 0.4],
       [1, '', 7, 0, 6, 'GRE', 'Vas', '', '', '', '', '', '', '@', 0],
     ],
     main: {
-      totMatches: 16,
+      totMatches: 15,
       numPlayers: 7,
-      matchPlayed: 5,
+      matchPlayed: 6,
       numCountries: 6,
-      lastUpdated: '2024-02-02T15:57:00.000Z',
+      lastUpdated: '2024-02-04T04:50:00.000Z',
       showRank: 1,
     },
     error: false,
