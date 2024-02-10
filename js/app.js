@@ -767,7 +767,7 @@ async function renderScores() {
         startAngle: -135,
         endAngle: 135,
         track: {
-          background: '#00503c',
+          background: '#436180',
           opacity: 0.1,
           strokeWidth: '67%',
           margin: 0, // margin is in pixels
@@ -782,13 +782,13 @@ async function renderScores() {
         dataLabels: {
           name: {
             fontSize: '16px',
-            color: '#00503c',
+            color: '#336699',
             offsetY: 120,
           },
           value: {
             offsetY: 76,
             fontSize: '22px',
-            color: '#00503c',
+            color: '#336699',
             formatter: function (val) {
               return val + '%'
             },
