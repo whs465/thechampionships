@@ -385,28 +385,7 @@ async function renderScores() {
 
   let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  //const scores = await getData()
-
-  const scores = {
-    data: [
-      [1, 7, 1, 42, 1, 'ITA', 'Samuel', '@', 9, 9, 3, '', 7, 5, 0.83],
-      [1, 11, 2, 40, 2, 'SIN', 'Lim', 4, '@', 9, 8, 7, 5, '', 0.83],
-      [1, '', 3, 21, 6, 'PHI', 'Ariez', 8, 4, '@', '', 6, '', '', 0.5],
-      [1, '', 4, 33, 4, 'COL', 'William', 9, 9, '', '@', '', 8, '', 0.5],
-      [1, '', 5, 24, 5, 'IND', 'Vik', '', 9, 9, '', '@', '', '', 0.33],
-      [1, '', 6, 36, 3, 'ITA', 'Paolo', 9, 9, '', 9, '', '@', '', 0.5],
-      [1, '', 7, 12, 7, 'GRE', 'Vas', 9, '', '', '', '', '', '@', -1],
-    ],
-    main: {
-      totMatches: 10,
-      numPlayers: 7,
-      matchPlayed: 11,
-      numCountries: 6,
-      lastUpdated: '2024-02-09T04:12:00.000Z',
-      showRank: 1,
-    },
-    error: false,
-  }
+  const scores = await getData()
 
   const date = new Date(scores.main.lastUpdated)
 
