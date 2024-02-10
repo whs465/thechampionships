@@ -806,33 +806,33 @@ async function renderScores() {
         colorStops: [
           {
             offset: 0,
-            color: '#c85a19',
+            color: '#336699',
             opacity: 1,
           },
           {
             offset: 20,
-            color: '#c85a19',
+            color: '#336699',
             opacity: 0.8,
           },
           {
             offset: 40,
-            color: '#c85a19',
+            color: '#336699',
             opacity: 0.6,
           },
 
           {
             offset: 60,
-            color: '#c85a19',
+            color: '#336699',
             opacity: 0.4,
           },
           {
             offset: 80,
-            color: '#c85a19',
+            color: '#336699',
             opacity: 0.2,
           },
           {
             offset: 100,
-            color: '#c85a19',
+            color: '#336699',
             opacity: 0.1,
           },
         ],
