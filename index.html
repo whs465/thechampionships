@@ -207,28 +207,92 @@
     </div> -->
     <!-- Add to Home Android End -->
 
-    <!-- cbe Popup Start -->
-    <div class="modal fade" id="cbe" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+    <!-- Subscribe popup Start -->
+    <div class="modal fade" id="subscribe-popup" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content rounded shadow border-0">
-          <div class="modal-body py-5">
-            <div class="text-center">
-              <img src="images/CBE_SA.png" class="avatar avatar-ex-large" alt="" />
-              <div class="mt-4">
-                <h4>Commercial Bank of Ethiopia</h4>
-                <h5>Girum Bekele Yeshewawork 1000296818597</h5>
-                <p class="text-muted">
-                  <span class="text-primary fw-bold">Important:</span> Please send a
-                  photo of the slip in a private message to the Box Master to
-                  confirm.
-                </p>
+          <div
+            class="modal-body p-0"
+            style="background: url('images/subscribe.png') no-repeat"
+          >
+            <button
+              type="button"
+              class="btn-close float-end m-2"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="clearfix"></div>
+            <div class="container-fluid px-0">
+              <div class="row align-items-center g-0">
+                <div class="col-lg-6 offset-lg-6">
+                  <div class="pb-5 pt-4 px-4">
+                    <h6 class="text-muted">Be the first to know daily updates</h6>
+
+                    <h4>Signup for daily updates</h4>
+                    <p class="text-muted mb-0">
+                      Subscribe to the Landrick mailing list to receive updates on
+                      new arrivals, special offers and our promotions.
+                    </p>
+                    <form class="mt-4">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="foot-subscribe mb-3">
+                            <div class="form-icon position-relative">
+                              <i data-feather="mail" class="fea icon-sm icons"></i>
+                              <input
+                                type="email"
+                                name="email"
+                                id="daily-updates"
+                                class="form-control ps-5 rounded"
+                                placeholder="Your email : "
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-lg-12">
+                          <div class="d-grid">
+                            <input
+                              type="submit"
+                              id="submitsubscribe"
+                              name="send"
+                              class="btn btn-primary"
+                              value="Subscribe"
+                            />
+                          </div>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-12">
+                          <div class="text-center">
+                            <p class="mb-0 mt-3">
+                              <small class="text-dark me-2"
+                                >Already have an account ?</small
+                              >
+                              <a href="javascript:void(0)" class="text-dark fw-bold"
+                                >Sign in</a
+                              >
+                            </p>
+                          </div>
+                        </div>
+                        <!--end col-->
+                      </div>
+                      <!--end row-->
+                    </form>
+                  </div>
+                </div>
+                <!--end col-->
               </div>
+              <!--end row-->
             </div>
+            <!--end container-->
           </div>
         </div>
       </div>
     </div>
-    <!-- cbe Popup End -->
+    <!-- Subscribe popup End -->
 
     <!-- qrcode Popup Start -->
     <div class="modal fade" id="ebirrqrcode" tabindex="-1" aria-hidden="true">
@@ -1040,7 +1104,227 @@
                 <div class="col-md-4 mt-4 pt-2">
                     <div class="card shop-features ">
 -->
+    <!-- Modal Start -->
+    <section class="section d-none">
+      <div class="container">
+        <div class="col mt-4 pt-2" id="modals">
+          <div class="component-wrapper rounded shadow">
+            <div class="p-4 border-bottom">
+              <h4 class="title mb-0">
+                Statistics are just tools. Their true value lies in your ability to
+                interpret them, draw meaningful conclusions and implement them
+                effectively to elevate your game.
+              </h4>
+            </div>
 
+            <div class="p-4">
+              <a
+                href="javascript:void(0)"
+                data-bs-toggle="modal"
+                data-bs-target="#LoginForm"
+                class="btn btn-primary m-1"
+              >
+                Round 1-2024</a
+              >
+            </div>
+
+            <!-- Modal Content Start -->
+            <div
+              class="modal fade"
+              id="LoginForm"
+              tabindex="-1"
+              aria-labelledby="LoginForm-title"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content rounded shadow border-0">
+                  <div class="modal-header border-bottom">
+                    <h5 class="modal-title" id="LoginForm-title">Statistics</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Table Start -->
+                    <div class="col mt-4 pt-2" id="tables">
+                      <div class="component-wrapper rounded shadow">
+                        <div class="p-4 border-bottom">
+                          <h4 class="title mb-0">Achievements & Performance</h4>
+                        </div>
+
+                        <div class="p-4">
+                          <div class="table-responsive bg-white shadow rounded">
+                            <table class="table table-striped mb-0 table-center">
+                              <thead>
+                                <tr>
+                                  <th>Round</th>
+                                  <th>Box</th>
+                                  <th>Rank</th>
+                                  <th>Country</th>
+                                  <th>Name</th>
+                                  <th>Games Won</th>
+                                  <th>Games Conceded</th>
+                                  <th>Matches Won</th>
+                                  <th>Matches Lost</th>
+                                  <th>Matches Played</th>
+                                  <th>Total Points</th>
+                                  <th>Win %</th>
+                                  <th>Games Won %</th>
+                                  <th>Games Match Avg</th>
+                                  <th>Matches Completed %</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>ITA</td>
+                                  <td>Paolo</td>
+                                  <td>36</td>
+                                  <td>28</td>
+                                  <td>4</td>
+                                  <td>0</td>
+                                  <td>4</td>
+                                  <td>48</td>
+                                  <td>100.0%</td>
+                                  <td>56.2%</td>
+                                  <td>9.0</td>
+                                  <td>66.7%</td>
+                                </tr>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>2</td>
+                                  <td>COL</td>
+                                  <td>William</td>
+                                  <td>35</td>
+                                  <td>24</td>
+                                  <td>3</td>
+                                  <td>1</td>
+                                  <td>4</td>
+                                  <td>45</td>
+                                  <td>75.0%</td>
+                                  <td>59.3%</td>
+                                  <td>8.8</td>
+                                  <td>66.7%</td>
+                                </tr>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>3</td>
+                                  <td>SIN</td>
+                                  <td>Lim</td>
+                                  <td>36</td>
+                                  <td>49</td>
+                                  <td>1</td>
+                                  <td>5</td>
+                                  <td>6</td>
+                                  <td>44</td>
+                                  <td>16.7%</td>
+                                  <td>42.4%</td>
+                                  <td>6.0</td>
+                                  <td>100.0%</td>
+                                </tr>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>4</td>
+                                  <td>ITA</td>
+                                  <td>Samuel</td>
+                                  <td>33</td>
+                                  <td>39</td>
+                                  <td>2</td>
+                                  <td>3</td>
+                                  <td>5</td>
+                                  <td>42</td>
+                                  <td>40.0%</td>
+                                  <td>45.8%</td>
+                                  <td>6.6</td>
+                                  <td>83.3%</td>
+                                </tr>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>5</td>
+                                  <td>IND</td>
+                                  <td>Vik</td>
+                                  <td>26</td>
+                                  <td>22</td>
+                                  <td>2</td>
+                                  <td>1</td>
+                                  <td>3</td>
+                                  <td>33</td>
+                                  <td>66.7%</td>
+                                  <td>54.2%</td>
+                                  <td>8.7</td>
+                                  <td>50.0%</td>
+                                </tr>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>6</td>
+                                  <td>PHI</td>
+                                  <td>Ariez</td>
+                                  <td>22</td>
+                                  <td>36</td>
+                                  <td>0</td>
+                                  <td>4</td>
+                                  <td>4</td>
+                                  <td>26</td>
+                                  <td>0.0%</td>
+                                  <td>37.9%</td>
+                                  <td>5.5</td>
+                                  <td>66.7%</td>
+                                </tr>
+                                <tr>
+                                  <td>1-24</td>
+                                  <td>1</td>
+                                  <td>7</td>
+                                  <td>GRE</td>
+                                  <td>Vas</td>
+                                  <td>18</td>
+                                  <td>8</td>
+                                  <td>2</td>
+                                  <td>0</td>
+                                  <td>2</td>
+                                  <td>24</td>
+                                  <td>100.0%</td>
+                                  <td>69.2%</td>
+                                  <td>9.0</td>
+                                  <td>33.3%</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--end col-->
+                    <!-- Table End -->
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Content End -->
+          </div>
+        </div>
+        <!--end col-->
+        <!-- Modal End -->
+      </div>
+    </section>
     <!-- Start CTA -->
     <div class="container-fluid mt-100 mt-60">
       <div class="rounded py-5" style="background: url('images/rfed.jpg') fixed">
@@ -1050,9 +1334,9 @@
               <div class="p-5">
                 <blockquote class="blockquote p-3 mb-0">
                   <p class="text-white fw-bold mb-0 fst-italic">
-                    "Tennis is more than just a game; it's a reflection of your
-                    spirit. Play with passion, fight with courage, and always
-                    remember, victory lies not just in the score, but in the journey
+                    "Tennis is more than just a game, it's a reflection of your
+                    spirit. Play with passion, fight with courage and always
+                    remember, victory lies not just in the score but in the journey
                     you take."
                   </p>
                 </blockquote>
