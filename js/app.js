@@ -390,23 +390,24 @@ async function renderScores() {
   const scores = {
     data: [
       [1, 7, 1, 42, 4, 'ITA', 'Samuel', '@', 9, 9, 3, '', 7, 5, 0.83],
-      [1, 15, 2, 44, 3, 'SIN', 'Lim', 4, '@', 9, 8, 7, 5, 3, 1],
+      [1, 16, 2, 44, 3, 'SIN', 'Lim', 4, '@', 9, 8, 7, 5, 3, 1],
       [1, '', 3, 26, 6, 'PHI', 'Ariez', 8, 4, '@', 4, 6, '', '', 0.67],
-      [1, '', 4, 57, 1, 'COL', 'William', 9, 9, 9, '@', '', 8, 9, 0.83],
-      [1, '', 5, 33, 5, 'IND', 'Vik', '', 9, 9, '', '@', 8, '', 0.5],
+      [1, '', 4, 69, 1, 'COL', 'William', 9, 9, 9, '@', 9, 8, 9, 1],
+      [1, '', 5, 41, 5, 'IND', 'Vik', '', 9, 9, 7, '@', 8, '', 0.67],
       [1, '', 6, 48, 2, 'ITA', 'Paolo', 9, 9, '', 9, 9, '@', '', 0.67],
       [1, '', 7, 26, 6, 'GRE', 'Vas', 9, 9, '', 1, '', '', '@', 0.5],
     ],
     main: {
-      totMatches: 6,
+      totMatches: 5,
       numPlayers: 7,
-      matchPlayed: 14,
+      matchPlayed: 15,
       numCountries: 6,
-      lastUpdated: '2024-02-16T03:56:00.000Z',
+      lastUpdated: '2024-02-17T05:50:00.000Z',
       showRank: 1,
     },
     error: false,
   }
+
   const date = new Date(scores.main.lastUpdated)
 
   document.getElementById('updated').innerHTML = new Intl.DateTimeFormat('en-GB', {
