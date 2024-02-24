@@ -385,33 +385,7 @@ async function renderScores() {
 
   let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  //const scores = await getData()
-
-  const scores = {
-    data: [
-      [1, 6, 1, 12, 1, 'COL', 'William 🥇', '@', '', '', 9, '', '', 1],
-      [1, 1, 2, 0, 3, 'IND', 'Vik', '', '@', '', '', '', '', 0],
-      [1, '', 3, 0, 3, 'ITA', 'Paolo', '', '', '@', '', '', '', 0],
-      [1, '', 4, 9, 2, 'ITA', 'Samuel', 8, '', '', '@', '', '', 1],
-      [1, '', 5, 0, 3, 'SIN', 'Lim', '', '', '', '', '@', '', 0],
-      [1, '', 6, 0, 3, 'NIG', 'Daniel', '', '', '', '', '', '@', 0],
-      [2, 6, 1, 0, 3, 'GRE', 'Vas', '@', '', '', '', '', '', 0],
-      [2, 1, 2, 0, 3, 'PHI', 'Ariez', '', '@', '', '', '', '', 0],
-      [2, '', 3, 4, 2, 'CAM', 'Loic', '', '', '@', '', 3, '', 1],
-      [2, '', 4, 0, 3, 'GBR', 'Seale', '', '', '', '@', '', '', 0],
-      [2, '', 5, 12, 1, 'CAM', 'Brad', '', '', 9, '', '@', '', 1],
-      [2, '', 6, 0, 3, 'RUS', 'Pavel', '', '', '', '', '', '@', 0],
-    ],
-    main: {
-      totMatches: 28,
-      numPlayers: 12,
-      matchPlayed: 2,
-      numCountries: 10,
-      lastUpdated: '2024-02-21T10:26:00.000Z',
-      showRank: 0,
-    },
-    error: false,
-  }
+  const scores = await getData()
 
   const date = new Date(scores.main.lastUpdated)
 
