@@ -404,7 +404,7 @@ async function renderScores() {
     main: {
       totMatches: 26,
       numPlayers: 12,
-      matchPlayed: 2,
+      matchPlayed: 4,
       numCountries: 10,
       lastUpdated: '2024-02-26T06:56:00.000Z',
       showRank: 0,
