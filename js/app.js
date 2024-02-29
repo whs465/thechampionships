@@ -394,19 +394,19 @@ async function renderScores() {
       [1, '', 4, 9, 2, 'ITA', 'Samuel', 8, '', '', '@', '', '', 1],
       [1, '', 5, 0, 3, 'SIN', 'Lim', '', '', '', '', '@', '', 0],
       [1, '', 6, 0, 3, 'NIG', 'Daniel', '', '', '', '', '', '@', 0],
-      [2, 6, 1, 0, 5, 'GRE', 'Vas ', '@', '', '', '', '', '', 0],
-      [2, 3, 2, 0, 5, 'PHI', 'Ariez', '', '@', '', '', '', '', 0],
-      [2, '', 3, 16, 1, 'CAM', 'Loic', '', '', '@', '', 3, 9, 0.67],
-      [2, '', 4, 12, 2, 'GBR', 'Seale', '', '', '', '@', '', 9, 0.33],
-      [2, '', 5, 12, 2, 'CAM', 'Brad', '', '', 9, '', '@', '', 0.33],
-      [2, '', 6, 11, 4, 'RUS', 'Pavel', '', '', 5, 4, '', '@', 0.67],
+      [2, 6, 1, 12, 2, 'GRE', 'Vas ', '@', 9, '', '', '', '', 0.2],
+      [2, 4, 2, 2, 6, 'PHI', 'Ariez', 1, '@', '', '', '', '', 0.2],
+      [2, '', 3, 16, 1, 'CAM', 'Loic', '', '', '@', '', 3, 9, 0.4],
+      [2, '', 4, 12, 2, 'GBR', 'Seale', '', '', '', '@', '', 9, 0.2],
+      [2, '', 5, 12, 2, 'CAM', 'Brad', '', '', 9, '', '@', '', 0.2],
+      [2, '', 6, 11, 5, 'RUS', 'Pavel', '', '', 5, 4, '', '@', 0.4],
     ],
     main: {
-      totMatches: 26,
+      totMatches: 25,
       numPlayers: 12,
-      matchPlayed: 4,
+      matchPlayed: 5,
       numCountries: 10,
-      lastUpdated: '2024-02-26T06:56:00.000Z',
+      lastUpdated: '2024-02-29T07:08:00.000Z',
       showRank: 0,
     },
     error: false,
@@ -661,14 +661,14 @@ async function renderScores() {
             goals: [
               {
                 name: 'Expected',
-                value: 21,
+                value: 15,
                 strokeWidth: 5,
                 strokeHeight: 10,
                 strokeColor: '#c85a19',
               },
             ],
           },
-          {
+          /* {
             x: 'Box 3',
             y: matchesPlayedBox3,
             goals: [
@@ -706,7 +706,7 @@ async function renderScores() {
                 strokeColor: '#c85a19',
               },
             ],
-          },
+          }, */
         ],
       },
     ],
@@ -745,13 +745,13 @@ async function renderScores() {
         horizontal: true,
       },
     },
-    colors: ['#00503c', '#c85a19'],
+    colors: ['#336699', '#c85a19'],
     legend: {
       show: true,
       showForSingleSeries: true,
       customLegendItems: ['Actual', 'Expected'],
       markers: {
-        fillColors: ['#00503c', '#c85a19'],
+        fillColors: ['#336699', '#c85a19'],
       },
     },
   }
