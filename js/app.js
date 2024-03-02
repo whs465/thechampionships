@@ -470,7 +470,7 @@ async function renderScores() {
       htmlPoints = `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
     }
 
-    playerInactive = totalPoints == 0 ? `class="opacity-25"` : ``
+    playerInactive = totalPoints == 0 ? `class="opacity-50"` : ``
 
     flag = `<span class="logo-light-mode">
                 <img src="images/${scores.data[i][5]}_h.gif" class="me-0 l-light" height="auto" width="21" alt="" />
