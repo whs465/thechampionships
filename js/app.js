@@ -465,14 +465,12 @@ async function renderScores() {
     totalPoints = scores.data[i][3]
     playerRank = scores.data[i][4]
     htmlPoints = `<td class="text-center">${totalPoints}</td>`
+
     if (playerRank === '') {
       htmlPoints = `<td class="text-center"><i class="mdi mdi-lock text-palid"></i></td>`
     }
 
-    playerOut =
-      scores.data[i][6] === 'Mesay' || scores.data[i][6] === 'Sami M.'
-        ? `class="text-black-50  text-decoration-line-through"`
-        : ``
+    playerInactive = totalPoints == 0 ? `class="opacity-25"` : ``
 
     flag = `<span class="logo-light-mode">
                 <img src="images/${scores.data[i][5]}_h.gif" class="me-0 l-light" height="auto" width="21" alt="" />
@@ -608,15 +606,10 @@ async function renderScores() {
           : `<td class="text-center">${p8}</td>`
     }
 
-    playerStr =
-      totalPoints == 0
-        ? `<td class="text-nowrap opacity-50">${flag}${p}</td>`
-        : `<td class="text-nowrap">${flag}${p}</td>`
-
     strHtml = `
-              <tr ${playerOut}>
+              <tr ${playerInactive}>
                 <td class="text-center">${playerNumber}</td>
-                ${playerStr}
+                <td class="text-nowrap">${flag}${p}</td>
                 ${cellP1}
                 ${cellP2}
                 ${cellP3}
