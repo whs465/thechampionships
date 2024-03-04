@@ -3,42 +3,41 @@ window.addEventListener('load', fn, false)
 // showModal()
 renderScores()
 
-function showModal() {
-  // Beginning Licence
-  // var myModal = new bootstrap.Modal(document.getElementById('license'), {})
-  // document.onreadystatechange = function () {
-  //   myModal.show()
-  // }
-  // End Licence
-
-  // if (/Android/i.test(navigator.userAgent)) {
-  //   // true for android mobile device
-  //   if (navigator.userAgent.indexOf('Chrome') !== -1) {
-  //     var myModal = new bootstrap.Modal(
-  //       document.getElementById('AndroidAddHome'),
-  //       {}
-  //     )
-  //     if (!window.matchMedia('(display-mode: standalone)').matches) {
-  //       document.onreadystatechange = function () {
-  //         myModal.show()
-  //       }
-  //     }
-  //   }
-  // } else
-  if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
-    if (navigator.userAgent.indexOf('Safari') !== -1) {
-      var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
-      if (!window.matchMedia('(display-mode: standalone)').matches) {
-        document.onreadystatechange = function () {
-          myModal.show()
-        }
-      }
-    }
-  }
-  // else {
-  //   // console.log('other mobile device')
-  // }
-}
+//function showModal() {
+// Beginning Licence
+// var myModal = new bootstrap.Modal(document.getElementById('license'), {})
+// document.onreadystatechange = function () {
+//   myModal.show()
+// }
+// End Licence
+// if (/Android/i.test(navigator.userAgent)) {
+//   // true for android mobile device
+//   if (navigator.userAgent.indexOf('Chrome') !== -1) {
+//     var myModal = new bootstrap.Modal(
+//       document.getElementById('AndroidAddHome'),
+//       {}
+//     )
+//     if (!window.matchMedia('(display-mode: standalone)').matches) {
+//       document.onreadystatechange = function () {
+//         myModal.show()
+//       }
+//     }
+//   }
+// } else
+// if (/iPad|iPhone|iPod/i.test(navigator.userAgent)) {
+//   if (navigator.userAgent.indexOf('Safari') !== -1) {
+//     var myModal = new bootstrap.Modal(document.getElementById('IOSAddHome'), {})
+//     if (!window.matchMedia('(display-mode: standalone)').matches) {
+//       document.onreadystatechange = function () {
+//         myModal.show()
+//       }
+//     }
+//   }
+// }
+// else {
+//   // console.log('other mobile device')
+// }
+//}
 
 //  window.onload = function loader() {
 function fn() {
@@ -385,32 +384,32 @@ async function renderScores() {
 
   let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  // const scores = await getData()
-  const scores = {
-    data: [
-      [1, 6, 1, 12, 2, 'COL', 'William 🥇', '@', '', '', 9, '', '', 0.33],
-      [1, 3, 2, 0, 5, 'IND', 'Vik', '', '@', '', '', '', '', 0],
-      [1, '', 3, 0, 5, 'ITA', 'Paolo', '', '', '@', '', '', '', 0],
-      [1, '', 4, 24, 1, 'ITA', 'Samuel', 8, '', '', '@', 9, 2, 1],
-      [1, '', 5, 8, 4, 'SIN', 'Lim', '', '', '', 7, '@', '', 0.33],
-      [1, '', 6, 12, 2, 'NIG', 'Daniel', '', '', '', 9, '', '@', 0.33],
-      [2, 6, 1, 12, 2, 'GRE', 'Vas ', '@', 9, '', '', '', '', 0.2],
-      [2, 4, 2, 2, 6, 'PHI', 'Ariez', 1, '@', '', '', '', '', 0.2],
-      [2, '', 3, 16, 1, 'CAM', 'Loic', '', '', '@', '', 3, 9, 0.4],
-      [2, '', 4, 12, 2, 'GBR', 'Seale', '', '', '', '@', '', 9, 0.2],
-      [2, '', 5, 12, 2, 'CAM', 'Brad', '', '', 9, '', '@', '', 0.2],
-      [2, '', 6, 11, 5, 'RUS', 'Pavel', '', '', 5, 4, '', '@', 0.4],
-    ],
-    main: {
-      totMatches: 23,
-      numPlayers: 12,
-      matchPlayed: 7,
-      numCountries: 10,
-      lastUpdated: '2024-03-03T03:53:00.000Z',
-      showRank: 0,
-    },
-    error: false,
-  }
+  const scores = await getData()
+  // const scores = {
+  //   data: [
+  //     [1, 6, 1, 12, 2, 'COL', 'William 🥇', '@', '', '', 9, '', '', 0.33],
+  //     [1, 3, 2, 0, 5, 'IND', 'Vik', '', '@', '', '', '', '', 0],
+  //     [1, '', 3, 0, 5, 'ITA', 'Paolo', '', '', '@', '', '', '', 0],
+  //     [1, '', 4, 24, 1, 'ITA', 'Samuel', 8, '', '', '@', 9, 2, 1],
+  //     [1, '', 5, 8, 4, 'SIN', 'Lim', '', '', '', 7, '@', '', 0.33],
+  //     [1, '', 6, 12, 2, 'NIG', 'Daniel', '', '', '', 9, '', '@', 0.33],
+  //     [2, 6, 1, 12, 4, 'GRE', 'Vas ', '@', 9, '', '', '', '', 0.2],
+  //     [2, 5, 2, 2, 6, 'PHI', 'Ariez', 1, '@', '', '', '', '', 0.2],
+  //     [2, '', 3, 16, 2, 'CAM', 'Loic', '', '', '@', '', 3, 9, 0.4],
+  //     [2, '', 4, 13, 3, 'GBR', 'Seale', '', '', '', '@', 0, 9, 0.4],
+  //     [2, '', 5, 24, 1, 'CAM', 'Brad', '', '', 9, 9, '@', '', 0.4],
+  //     [2, '', 6, 11, 5, 'RUS', 'Pavel', '', '', 5, 4, '', '@', 0.4],
+  //   ],
+  //   main: {
+  //     totMatches: 22,
+  //     numPlayers: 12,
+  //     matchPlayed: 8,
+  //     numCountries: 10,
+  //     lastUpdated: '2024-03-03T16:49:00.000Z',
+  //     showRank: 0,
+  //   },
+  //   error: false,
+  // }
 
   const date = new Date(scores.main.lastUpdated)
 
