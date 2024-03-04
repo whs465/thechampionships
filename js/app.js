@@ -1,5 +1,17 @@
 window.addEventListener('load', fn, false)
 
+// Set this variable to true for API, false for file
+const useApi = true
+
+// Initialize scores as an empty object
+let scores = {}
+
+// Initialize uniqueBoxNumbers as an empty array
+let uniqueBoxNumbers = []
+
+// Flag to track if static table 2 has been added
+let staticTable2Added = false
+
 // showModal()
 renderScores()
 
@@ -366,9 +378,16 @@ async function getData() {
   let url =
     'https://script.google.com/macros/s/AKfycbwRtkiZxXWZ7U0kU8xpA08p5POIYa_wc9OOBveSGqePvwJ9MN2zmzxj4t8UyMZ0dRckyQ/exec'
   try {
-    let res = await fetch(url)
-    if (!res.ok) throw new Error('Request failed. Try again later')
-    return await res.json()
+    if (useApi) {
+      // Replace 'API_URL' with your actual API endpoint
+      const response = await fetch(url)
+      scores = await response.json()
+    } else {
+      // Assuming scores.json is in the same directory as the HTML file
+      const response = await fetch('/data/data-champ.json')
+      scores = await response.json()
+    }
+    console.log(scores)
   } catch (error) {
     console.log(error)
   }
@@ -384,7 +403,7 @@ async function renderScores() {
 
   let cellP1, cellP2, cellP3, cellP4, cellP5, cellP6, cellP7, cellP8
 
-  const scores = await getData()
+  await getData()
   // const scores = {
   //   data: [
   //     [1, 6, 1, 12, 2, 'COL', 'William 🥇', '@', '', '', 9, '', '', 0.33],
