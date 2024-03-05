@@ -288,80 +288,20 @@ function displayStats() {
     return matchesPlayed.length > 0 ? matchesPlayed[0] : 0
   })
 
-  let options = {
-    series: [
-      {
-        name: 'Actual',
+  const possibleMatchesPerBox = uniqueBoxNumbers.map((boxNumber) => {
+    const numPlayers = scores.data
+      .filter((row) => row[0] === boxNumber && row[2] === 1)
+      .map((row) => row[1])
 
-        data: [
-          {
-            x: 'Box 1',
-            y: matchesPlayedPerBox[0],
-            goals: [
-              {
-                name: 'Expected',
-                value: 15,
-                strokeWidth: 5,
-                strokeHeight: 10,
-                strokeColor: '#c85a19',
-              },
-            ],
-          },
-          {
-            x: 'Box 2',
-            y: matchesPlayedPerBox[1],
-            goals: [
-              {
-                name: 'Expected',
-                value: 15,
-                strokeWidth: 5,
-                strokeHeight: 10,
-                strokeColor: '#c85a19',
-              },
-            ],
-          },
-          /* {
-            x: 'Box 3',
-            y: matchesPlayedBox3,
-            goals: [
-              {
-                name: 'Expected',
-                value: 21,
-                strokeWidth: 5,
-                strokeHeight: 10,
-                strokeColor: '#c85a19',
-              },
-            ],
-          },
-          {
-            x: 'Box 4',
-            y: matchesPlayedBox4,
-            goals: [
-              {
-                name: 'Expected',
-                value: 21,
-                strokeWidth: 5,
-                strokeHeight: 10,
-                strokeColor: '#c85a19',
-              },
-            ],
-          },
-          {
-            x: 'Box 5',
-            y: matchesPlayedBox5,
-            goals: [
-              {
-                name: 'Expected',
-                value: 15,
-                strokeWidth: 5,
-                strokeHeight: 10,
-                strokeColor: '#c85a19',
-              },
-            ],
-          }, */
-        ],
-      },
-    ],
+    // Assuming numPlayers array will contain only one element
+    const n = numPlayers.length > 0 ? numPlayers[0] : 0
+
+    // Calculate total possible matches using the formula n * (n-1) / 2
+    return (n * (n - 1)) / 2
+  })
+
+  let options = {
+    series: [],
     chart: {
       toolbar: {
         show: false,
@@ -407,6 +347,27 @@ function displayStats() {
       },
     },
   }
+
+  let seriesData = []
+  for (let i = 0; i < matchesPlayedPerBox.length; i++) {
+    seriesData.push({
+      x: `Box ${i + 1}`,
+      y: matchesPlayedPerBox[i],
+      goals: [
+        {
+          name: 'Expected',
+          value: possibleMatchesPerBox[i], // Use possibleMatchesPerBox here
+          strokeWidth: 5,
+          strokeHeight: 10,
+          strokeColor: '#c85a19',
+        },
+      ],
+    })
+  }
+  options.series.push({
+    name: 'Actual',
+    data: seriesData,
+  })
 
   var chart = new ApexCharts(document.querySelector('#dashboard'), options)
   chart.render()
