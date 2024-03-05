@@ -8,14 +8,16 @@ let scores = {}
 let uniqueBoxNumbers = []
 
 // Flag to track if static table 2 has been added
-let staticTable2Added = false
+let staticTable2Added = true
 
 // Function to fetch data from an API or a file
 async function fetchData() {
   try {
     if (useApi) {
       // Replace 'API_URL' with your actual API endpoint
-      const response = await fetch('API_URL')
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbwRtkiZxXWZ7U0kU8xpA08p5POIYa_wc9OOBveSGqePvwJ9MN2zmzxj4t8UyMZ0dRckyQ/exec'
+      )
       scores = await response.json()
     } else {
       // Assuming scores.json is in the same directory as the HTML file
@@ -405,7 +407,6 @@ function displayStats() {
       },
     },
   }
-  console.log(options)
 
   var chart = new ApexCharts(document.querySelector('#dashboard'), options)
   chart.render()
@@ -695,6 +696,22 @@ function counter(target, start, stop) {
     }
   }, 30)
 }
+
+function obCallBack(entries) {
+  entries.forEach((entry) => {
+    const { target } = entry
+    const stopValue = target.innerText
+    const startValue = 0
+    if (!entry.isIntersecting) return
+    counter(target, startValue, stopValue)
+    counterObserver.unobserve(target)
+  })
+}
+
+const counterObserver = new IntersectionObserver(obCallBack, {
+  threshold: 1,
+})
+counterElements.forEach((counterElem) => counterObserver.observe(counterElem))
 
 // Fetch data when the script is loaded and initialize the page
 fetchData().then(initializePage)
