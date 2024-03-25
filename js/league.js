@@ -39,10 +39,12 @@ function initializePage() {
 
   const date = new Date(scores.main.lastUpdated)
 
-  document.getElementById('updated').innerHTML = new Intl.DateTimeFormat('en-GB', {
-    dateStyle: 'medium',
-    timeStyle: 'long',
-  }).format(date)
+  document.getElementById('updated').innerHTML =
+    'Updated ' +
+    new Intl.DateTimeFormat('en-GB', {
+      dateStyle: 'medium',
+      timeStyle: 'long',
+    }).format(date)
 
   // Loop through the unique box numbers to generate tables for each box
   uniqueBoxNumbers.forEach((boxNumber, index) => {
