@@ -1,5 +1,5 @@
 // Set this variable to true for API, false for file
-const useApi = false
+const useApi = true
 
 // Initialize scores as an empty object
 let scores = {}
